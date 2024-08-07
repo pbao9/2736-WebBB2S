@@ -18,4 +18,14 @@ class Contact extends Model
         return $this->belongsTo(School::class, 'school_id', 'id');
     }
 
+    public function countContact()
+    {
+        return $this->model->count();
+    }
+
+    public function scopeContactPending($query)
+    {
+        return $query->where('status', 0);
+    }
+
 }

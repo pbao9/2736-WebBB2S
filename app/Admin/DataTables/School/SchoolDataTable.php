@@ -17,8 +17,7 @@ class SchoolDataTable extends BaseDataTable
 
     public function __construct(
         SchoolRepositoryInterface $repository
-    )
-    {
+    ) {
         $this->repository = $repository;
 
         parent::__construct();
@@ -33,15 +32,13 @@ class SchoolDataTable extends BaseDataTable
             'province' => 'admin.school.datatable.province',
             'district' => 'admin.school.datatable.district',
             'status' => 'admin.school.datatable.status',
-            'student-details' => 'admin.school.datatable.student-details'
-
         ];
     }
 
     public function setColumnSearch(): void
     {
 
-        $this->columnAllSearch = [0, 1, 2, 3, 4, 5];
+        $this->columnAllSearch = [0, 1, 2, 3, 4];
 
         $this->columnSearchDate = [4];
 
@@ -79,13 +76,12 @@ class SchoolDataTable extends BaseDataTable
     {
         $this->customAddColumns = [
             'action' => $this->view['action'],
-            'student-details' => $this->view['student-details'],
         ];
     }
 
     protected function setCustomRawColumns(): void
     {
-        $this->customRawColumns = ['name', 'action', 'student-details', 'province', 'district','status'];
+        $this->customRawColumns = ['name', 'action', 'province', 'district', 'status'];
     }
 
     public function setCustomFilterColumns(): void

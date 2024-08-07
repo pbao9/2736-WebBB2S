@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="sidebar-menu">
             <ul class="navbar-nav pt-lg-3">
                 @foreach ($menu as $item)
-					@if(auth('admin')->user()->checkPermissions($item['permissions']) || in_array("mevivuDev",$item['permissions']))
+                    @if (auth('admin')->user()->checkPermissions($item['permissions']) || in_array('mevivuDev', $item['permissions']))
                         <li @class(['nav-item', 'dropdown' => count($item['sub']) > 0])>
                             <x-admin-item-link-sidebar-left class="nav-link" :href="$routeName($item['routeName'], $item['param'] ?? [])" :dropdown="count($item['sub']) > 0 ? true : false">
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
@@ -25,6 +25,10 @@
                                 </span>
                                 <span class="nav-link-title">
                                     {{ __($item['title']) }}
+                                    @if (isset($item['bubble']) && $countShowBubble[$item['bubble']['key']] > 0)
+                                        <span
+                                            class="badge bg-danger text-primary-fg me-auto">{{ $countShowBubble[$item['bubble']['key']] }}</span>
+                                    @endif
                                 </span>
                             </x-admin-item-link-sidebar-left>
                             @if (count($item['sub']))
@@ -32,7 +36,7 @@
                                     <div class="dropdown-menu-columns">
                                         <div class="dropdown-menu-column">
                                             @foreach ($item['sub'] as $item)
-                                                @if(auth('admin')->user()->checkPermissions($item['permissions']) || in_array("mevivuDev",$item['permissions']) )
+                                                @if (auth('admin')->user()->checkPermissions($item['permissions']) || in_array('mevivuDev', $item['permissions']))
                                                     <x-admin-item-link-sidebar-left class="dropdown-item"
                                                         :href="$routeName($item['routeName'], $item['param'] ?? [])">
                                                         <span class="nav-link-icon d-md-none d-lg-inline-block">

@@ -54,6 +54,6 @@ class ViewServiceProvider extends ServiceProvider
         // View::composer(['public.home.partials.news'], PostComposer::class);
         // View::composer(['public.layouts.components.floating-cart'], ShoppingCartComposer::class);
 
-        View::composer(['public.layouts.header', 'public.layouts.footer', 'public.car.index', 'public.layouts.head','mails.include.sign', 'public.components.floating-button', 'public.contact.index', 'public.blog.include.lien-he','public.blog.blog-2','public.blog.blog-3'], SettingComposer::class);
+        View::composer(['public.layouts.header', 'public.layouts.footer', 'public.car.index', 'public.layouts.head', 'mails.include.sign', 'public.components.floating-button', 'public.contact.index', 'public.blog.include.lien-he', 'public.blog.blog-2', 'public.blog.blog-3', 'mails.contact-form'], SettingComposer::class);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Admin\Http\Controllers\Dashboard;
 
 use App\Admin\Http\Controllers\Controller;
+use App\Models\Contact;
 
 class DashboardController extends Controller
 {
@@ -14,8 +15,15 @@ class DashboardController extends Controller
             'index' => 'admin.dashboard.index'
         ];
     }
-    public function index(){
-        return view($this->view['index']);
+    public function index()
+    {
+        $countContact = Contact::count();
+        return view(
+            $this->view['index'],
+            [
+                'countContact' => $countContact
+            ]
+        );
     }
 
 }

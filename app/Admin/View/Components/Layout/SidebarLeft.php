@@ -14,6 +14,7 @@ class SidebarLeft extends Component
      * @var array
      */
     public $menu;
+    public $countShowBubble = [];
     /**
      * Create a new component instance.
      *
@@ -23,9 +24,11 @@ class SidebarLeft extends Component
     {
         //
         $this->menu = $this->traitGetConfigSidebar();
+        $this->countShowBubble['countPending'] = app()->make('App\Admin\Repositories\Contact\ContactRepositoryInterface')->countPending();
     }
 
-    public function routeName($routeName, $param){
+    public function routeName($routeName, $param)
+    {
         return $routeName ? route($routeName, $param) : '#';
     }
     /**

@@ -3,7 +3,7 @@
         <div class="row justify-content-center py-5 ">
             <div class="col-12 col-lg-3 mb-3">
                 <img class="d-block mx-auto" width="125px" height="125px" style="margin-bottom: 20px"
-                    src="{{ asset('public/assets/images/footer-title.png') }}">
+                    src="{{ asset($settings['site_logo']) }}">
                 <h2 class="mb-2 mx-auto">Dịch vụ công nghệ</h2>
                 <h2 class="mb-2 mx-auto">Đưa đón học sinh bằng xe 7 chỗ</h2>
                 <div class="d-flex pt-2 justify-content-center">

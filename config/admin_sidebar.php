@@ -2,7 +2,7 @@
 
 return [
     [
-        'title' => 'Dashboard',
+        'title' => 'Tổng quan',
         'routeName' => 'admin.dashboard',
         'icon' => '<i class="ti ti-home"></i>',
         'roles' => [],
@@ -15,6 +15,9 @@ return [
         'icon' => '<i class="ti ti-forms"></i>',
         'roles' => [],
         'permissions' => ['viewContact', 'updateContact', 'deleteContact'],
+        'bubble' => [
+            'key' => 'countPending'
+        ],
         'sub' => [
             [
                 'title' => 'DS Đơn liên hệ',
@@ -55,8 +58,13 @@ return [
         'roles' => [],
         'permissions' =>
             [
-                'createPost', 'viewPost', 'updatePost',
-                'deletePost', 'viewPostCategory', 'createPostCategory', 'updatePostCategory'
+                'createPost',
+                'viewPost',
+                'updatePost',
+                'deletePost',
+                'viewPostCategory',
+                'createPostCategory',
+                'updatePostCategory'
             ],
         'sub' => [
             [
