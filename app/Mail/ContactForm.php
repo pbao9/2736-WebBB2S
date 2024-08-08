@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Enums\Contact\ContactService;
 use App\Enums\Contact\UserType;
 use App\Models\District;
 use App\Models\Province;
@@ -59,6 +60,7 @@ class ContactForm extends Mailable
                 'province' => $province,
                 'district' => $district,
                 'type' => UserType::asSelectArray(),
+                'service' => ContactService::asSelectArray(),
                 'data' => $this->data
             ]
         );

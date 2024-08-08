@@ -8,7 +8,7 @@
                 <p class="text-dark">Nếu có bất kỳ câu hỏi nào về các dịch vụ của Babi2School, vui lòng liên hệ với chúng
                     tôi:</p>
                 <p class="text-dark"><strong>Địa chỉ: </strong>{{ $settings['address'] }}</p>
-                <p class="text-dark"><strong>Di động: </strong>{{ $settings['hotline'] }}</p>
+                <p class="text-dark"><strong>Di động: </strong>{{ $settings['hotline'] }} - {{$settings['hotline-1']}}</p>
                 <p class="text-dark"><strong>Email: </strong><span
                         style="text-decoration: underline;">{{ $settings['email'] }}</span></p>
             </div>

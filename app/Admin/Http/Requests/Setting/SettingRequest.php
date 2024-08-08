@@ -35,6 +35,8 @@ class SettingRequest extends BaseRequest
             ],
             'info' => ['nullable', 'string'],
             'address' => ['nullable', 'string'],
+            'facebook' => ['nullable', 'string'],
+            'tax_code' => ['nullable', 'string'],
         ];
     }
 }

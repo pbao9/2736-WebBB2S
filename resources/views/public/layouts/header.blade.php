@@ -6,7 +6,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-4 text-center">
             <x-link :href="route('home.index')">
-                <img src="{{ asset('public/assets/images/logo.jpg') }}" width="164" height="96">
+                <img src="{{ asset($settings['site_logo']) }}" width="164" height="96">
             </x-link>
         </div>
 
@@ -32,7 +32,7 @@
         </div>
         <div class="col-lg-2 col-md-6 d-lg-block d-none">
             <div class="d-flex gap-2 align-items-center">
-                <x-link :href="route('form.findcar')" :title="__('Tìm xe')" class="btn btn-danger d-none d-lg-block rounded-2" />
+                <x-link :href="route('form.findcar')" :title="__('Tìm xe')" class="btn btn-danger d-none d-lg-block rounded-2 text-uppercase" />
                 <div class="gtranslate_wrapper"></div>
             </div>
         </div>

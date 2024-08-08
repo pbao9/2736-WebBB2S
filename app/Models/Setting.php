@@ -32,7 +32,9 @@ class Setting extends Model
             return 'input-email';
         }elseif($this->type_input == SettingTypeInput::Phone()){
             return 'input-phone';
-        }else{
+        }elseif($this->type_input == SettingTypeInput::Video()){
+            return 'input-video-ckfinder';}
+        else{
             return 'input';
         }
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SinglePage;
 
 use App\Admin\Http\Controllers\Controller;
+use App\Enums\Contact\ContactService;
 use App\Repositories\Province\ProvinceRepository;
 use App\Repositories\Setting\SettingRepositoryInterface;
 use App\Enums\Contact\UserType;
@@ -38,15 +39,11 @@ class SinglePageController extends Controller
     }
     public function findcar()
     {
-        // $school = School::all();
-        // $provinces = Province::all();
-
         $provinces = $this->repoProvince->get2Province();
-        // $provinces = Province::whereIn('code', [1, 79])->get();
         return view($this->view['findcar'], [
-            // 'school' => $school,
             'provinces' => $provinces,
             'type' => UserType::asSelectArray(),
+            'service' => ContactService::asSelectArray()
         ]);
     }
 }

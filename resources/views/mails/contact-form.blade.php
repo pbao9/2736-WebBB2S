@@ -13,7 +13,7 @@
         type="text/css" />
     <style>
         table {
-            width: 100%;
+            width: 50%;
             border-collapse: collapse;
         }
 
@@ -37,9 +37,11 @@
 
 <body>
     @if ($data['form_type'] == 0)
-        <p>Xin chào bạn vừa nhận được <strong>Đơn liên hệ tìm xe</strong></p>
         <hr>
         <table>
+            <tr>
+                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ tìm xe</strong></th>
+            </tr>
             <tr>
                 <th>Thông tin</th>
                 <th>Chi tiết</th>
@@ -101,15 +103,27 @@
                 </td>
             </tr>
             <tr>
+                <td>Dịch vụ</td>
+                <td>
+                    @foreach ($service as $key => $value)
+                        @if ($key == $data['service'])
+                            {{ $value }}
+                        @endif
+                    @endforeach
+                </td>
+            </tr>
+            <tr>
                 <td>Thời gian đón</td>
                 <td>@lang(':time_pickup', ['time_pickup' => $data['time_pickup']])</td>
             </tr>
         </table>
         <hr>
     @elseif($data['form_type'] == 1)
-        <p>Xin chào bạn vừa nhận được <strong>Đơn liên hệ từ Phụ Huynh</strong></p>
         <hr>
         <table>
+            <tr>
+                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ từ Phụ Huynh</strong></th>
+            </tr>
             <tr>
                 <th>Thông tin</th>
                 <th>Chi tiết</th>
@@ -137,9 +151,11 @@
         </table>
         <hr>
     @else
-        <p>Xin chào bạn vừa nhận được <strong>Đơn liên hệ từ Trường Học</strong></p>
         <hr>
         <table>
+            <tr>
+                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ từ Trường Học</strong></th>
+            </tr>
             <tr>
                 <th>Thông tin</th>
                 <th>Chi tiết</th>

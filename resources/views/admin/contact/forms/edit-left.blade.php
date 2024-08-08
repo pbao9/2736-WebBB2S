@@ -8,12 +8,21 @@
                         App\Enums\Contact\ContactType::from($contact->form_type)->badge(),
                     ])>{{ __('Loại đơn: ') . ' ' . \App\Enums\Contact\ContactType::getDescription($contact->form_type) }}</span>
             </div>
-            <div class="text-uppercase">
+            <div class="text-uppercase me-3">
                 <span
                     @class([
                         'badge',
                         App\Enums\Contact\UserType::from($contact->type)->badge(),
                     ])>{{ __('Đối tượng: ') . ' ' . \App\Enums\Contact\UserType::getDescription($contact->type) }}</span>
+            </div>
+            <div class="text-uppercase">
+                @if($contact->service)
+                    <span
+                    @class([
+                        'badge',
+                        App\Enums\Contact\ContactService::from($contact->service)->badge(),
+                    ])>{{ __('Dịch vụ: ') . ' ' . \App\Enums\Contact\ContactService::getDescription($contact->service) }}</span>
+                @endif
             </div>
         </div>
         <div class="row card-body">

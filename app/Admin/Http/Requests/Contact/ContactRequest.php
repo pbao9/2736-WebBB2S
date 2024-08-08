@@ -25,7 +25,8 @@ class ContactRequest extends BaseRequest
             'school_other' => ['nullable'],
             'location' => ['nullable'],
             'time_pickup' => ['nullable'],
-            'status' => ['nullable']
+            'status' => ['nullable'],
+            'service' => ['nullable']
         ];
     }
 

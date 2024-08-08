@@ -31,13 +31,11 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
-        // dd($request);
         $response = $this->service->store($request);
         $data = $request->validated();
         if ($response) {
             $mailTo = $this->repositorySetting->getValueByKey('email');
             Mail::to($mailTo)->send(new ContactForm($data));
-
             return response()->json(['success' => true, 'message' => __('Đã gửi liên hệ thành công!')]);
         } else {
             return response()->json(['success' => false, 'message' => __('notifyFail')]);

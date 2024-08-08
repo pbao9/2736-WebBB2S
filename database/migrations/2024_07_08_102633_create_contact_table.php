@@ -28,6 +28,7 @@ return new class extends Migration {
             $table->string('location', 255)->nullable();
             $table->time('time_pickup')->nullable();
             $table->boolean('school_other')->nullable()->default(0);
+            $table->integer('service')->nullable()->default(1);
             $table->integer('status')->default(0);
             $table->timestamps();
 

@@ -79,6 +79,13 @@ Route::controller(App\Http\Controllers\Blog\BlogController::class)
     ->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/{slug}', 'showPost')->name('show');
+    });
+
+//San phams
+Route::controller(App\Http\Controllers\Blog\BlogController::class)
+    ->prefix('/san-pham')
+    ->as('blog.')
+    ->group(function () {
         Route::get('/review-nhanh-ung-dung-anta-bao-mau-va-website-danh-cho-nha-truong', 'blog1')->name('blog1');
         Route::get('/dich-vu-dua-don-hoc-sinh-tien-loi-va-linh-hoat', 'blog2')->name('blog2');
         Route::get('/thue-xe-dua-don-hoc-sinh-cho-con-dich-vu-hay-di-xe-ghep', 'blog3')->name('blog3');

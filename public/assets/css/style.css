@@ -365,6 +365,16 @@ footer {
   background-color: var(--blue-white);
 }
 
+footer a.nav-link,
+footer p.nav-link{
+  transition: padding .3s ease-in-out;
+  cursor: pointer;
+}
+footer p.nav-link:hover,
+footer a.nav-link:hover{
+  padding-left: 10px;
+}
+
 footer h2 {
   /* font-family: "Patrick Hand", cursive; */
   font-size: 1.5em;

@@ -36,13 +36,13 @@ class SettingSeeder extends Seeder
             [
                 'setting_key' => 'site_logo',
                 'setting_name' => 'Logo',
-                'plain_value' => '/public/assets/images/favi-icon.png',
+                'plain_value' => '/public/assets/images/logo.jpg',
                 'type_input' => SettingTypeInput::Image,
                 'group' => 1
             ],
             [
-                'setting_key' => 'banner_on_app',
-                'setting_name' => 'Banner trên App',
+                'setting_key' => 'favi_icon',
+                'setting_name' => 'Favi icon',
                 'plain_value' => '/public/assets/images/favi-icon.png',
                 'type_input' => SettingTypeInput::Image,
                 'group' => 1
@@ -90,10 +90,23 @@ class SettingSeeder extends Seeder
                 'group' => 1
             ],
             [
+                'setting_key' => 'tax_code',
+                'setting_name' => 'Mã số doanh nghiệp',
+                'plain_value' => '0318155206 do Sở Kế Hoạch và Đầu Tư TP. Hồ Chí Minh cấp năm 2023',
+                'type_input' => SettingTypeInput::Text,
+                'group' => 1
+            ],
+            [
                 'setting_key' => 'facebook',
                 'setting_name' => 'Facebook',
                 'plain_value' => 'https://www.facebook.com/profile.php?id=61557847006591',
                 'type_input' => SettingTypeInput::Text,
+                'group' => 1
+            ],[
+                'setting_key' => 'video',
+                'setting_name' => 'video',
+                'plain_value' => '/public/assets/videos/Babi2school-FINAL-1.mp4',
+                'type_input' => SettingTypeInput::Video,
                 'group' => 1
             ],
         ]);
