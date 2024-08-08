@@ -20,10 +20,10 @@
         </div>
     </div>
     <div class="page-body">
-        <div class="container-xl">
+        <div class="container-fluid">
             <div class="card">
                 <div class="card-header justify-content-between">
-                    <h2 class="mb-0">{{ __('Danh sách slider') }}</h2>
+                    <h2 class="mb-0">{{ __('Danh sách Banner') }}</h2>
                     <x-link :href="route('admin.slider.create')" class="btn btn-primary"><i class="ti ti-plus"></i>{{ __('Thêm slider') }}</x-link>
                 </div>
                 <div class="card-body">

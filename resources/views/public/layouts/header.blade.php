@@ -19,10 +19,14 @@
         <div class="col-lg-8 col-md-6">
             <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                 <div class="navbar-nav p-4 p-lg-0">
-                    <x-link :href="route('home.index')" :title="__('Về Babi2School')" class="nav-item nav-link fw-bold" />
-                    <x-link :href="route('product.index')" :title="__('Sản phẩm')" class="nav-item nav-link fw-bold" />
-                    <x-link :href="route('process.index')" :title="__('Quy trình đón đưa')" class="nav-item nav-link fw-bold" />
-                    <x-link :href="route('form.contact')" :title="__('Liên hệ')" class="nav-item nav-link fw-bold" />
+                    <x-link :href="route('home.index')" :title="__('Về Babi2School')"
+                        class="nav-item nav-link fw-bold {{ Request::routeIs('home.index') ? 'active' : '' }}" />
+                    <x-link :href="route('product.index')" :title="__('Sản phẩm')"
+                        class="nav-item nav-link fw-bold {{ Request::routeIs('product.index') ? 'active' : '' }}" />
+                    <x-link :href="route('process.index')" :title="__('Quy trình đón đưa')"
+                        class="nav-item nav-link fw-bold {{ Request::routeIs('process.index') ? 'active' : '' }}" />
+                    <x-link :href="route('form.contact')" :title="__('Liên hệ')"
+                        class="nav-item nav-link fw-bold {{ Request::routeIs('form.contact') ? 'active' : '' }}" />
                 </div>
             </div>
         </div>

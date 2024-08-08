@@ -16,11 +16,9 @@ return new class extends Migration {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('address');
+            $table->text('address')->nullable();
             $table->string('province_code')->nullable();
             $table->string('district_code')->nullable();
-            $table->double('latitude', 10, 6)->nullable();
-            $table->double('longitude', 10, 6)->nullable();
             $table->string('status')->default(SchoolStatus::Active->value);
             $table->timestamps();
         });

@@ -472,3 +472,20 @@ $(document).ready(function () {
         });
     });
 });
+
+// Hiệu ứng đếm số dashboard
+$(document).ready(function() {
+    $('.count').each(function() {
+        var $this = $(this);
+        var countTo = $this.attr('data-count');
+        $this.prop('Counter', 0).animate({
+            Counter: countTo
+        }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function(now) {
+                $this.text(Math.ceil(now));
+            }
+        });
+    });
+});

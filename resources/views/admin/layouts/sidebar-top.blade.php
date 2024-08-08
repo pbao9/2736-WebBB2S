@@ -9,7 +9,7 @@
     </div>
     {{-- @include('admin.layouts.partials.notification') --}}
 
-    <div class="navbar-nav flex-row order-md-last">
+    <div class="navbar-nav flex-row order-md-last pe-3">
         @include('admin.layouts.partials.account')
     </div>
 

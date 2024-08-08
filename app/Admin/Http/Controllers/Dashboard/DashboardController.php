@@ -4,6 +4,8 @@ namespace App\Admin\Http\Controllers\Dashboard;
 
 use App\Admin\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Post;
+use App\Models\School;
 
 class DashboardController extends Controller
 {
@@ -18,10 +20,14 @@ class DashboardController extends Controller
     public function index()
     {
         $countContact = Contact::count();
+        $countPost = Post::count();
+        $countSchool = School::count();
         return view(
             $this->view['index'],
             [
-                'countContact' => $countContact
+                'countContact' => $countContact,
+                'countPost' => $countPost,
+                'countSchool' => $countSchool
             ]
         );
     }

@@ -12,7 +12,7 @@ return [
     [
         'title' => 'Đơn liên hệ',
         'routeName' => null,
-        'icon' => '<i class="ti ti-forms"></i>',
+        'icon' => '<i class="ti ti-mail"></i>',
         'roles' => [],
         'permissions' => ['viewContact', 'updateContact', 'deleteContact'],
         'bubble' => [
@@ -31,7 +31,7 @@ return [
     [
         'title' => 'Trường học',
         'routeName' => null,
-        'icon' => '<i class="ti ti-book"></i>',
+        'icon' => '<i class="ti ti-school"></i>',
         'roles' => [],
         'permissions' => ['createSchool', 'viewSchool', 'updateSchool', 'deleteSchool'],
         'sub' => [
@@ -54,7 +54,7 @@ return [
     [
         'title' => 'Bài viết',
         'routeName' => null,
-        'icon' => '<i class="ti ti-article"></i>',
+        'icon' => '<i class="ti ti-pin"></i>',
         'roles' => [],
         'permissions' =>
             [
@@ -75,19 +75,19 @@ return [
                 'permissions' => ['createPost'],
             ],
             [
-                'title' => 'DS bài viết',
+                'title' => 'Tất cả bài viết',
                 'routeName' => 'admin.post.index',
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
                 'permissions' => ['viewPost'],
             ],
             [
-                'title' => 'DS chuyên mục',
+                'title' => 'Danh mục',
                 'routeName' => 'admin.post_category.index',
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
                 'permissions' => ['viewPostCategory'],
-            ]
+            ],
         ]
     ],
     [

@@ -52,4 +52,8 @@ class Post extends Model
             $query->whereIn('id', $categoriesId);
         });
     }
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'id');
+    }
 }

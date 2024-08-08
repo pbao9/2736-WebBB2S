@@ -37,7 +37,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-12 col-lg-3 text-center">
+            <div class="col-12 col-lg-3">
                 <iframe
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61557847006591%26mibextid%3DZbWKwL&tabs=timeline&width=340&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                     width="320" height="331" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
