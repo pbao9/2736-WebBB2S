@@ -1,48 +1,29 @@
 @extends('public.layouts.master')
+<head>
+    <meta property="og:title" content="{{ $posts['title_seo'] ?? '' }}" />
+    <meta property="og:description" content="{{ $posts['desc_seo'] ?? '' }}" />
+    <meta property="og:image" content="{{ url($posts['image'] ?? '') }}" />
+    <title>@yield('title', $posts['title'])</title>
+</head>
+
 
 @section('content')
-    @include('public.layouts.breadcrums', [
-        'breadcrums' => $breadcrums,
-    ])
-    <!-- Content -->
     <main class="container py-5">
-        <div class="row justify-content-between">
-            <div class="col-md-8">
-                <div>
-                    <h1 class="title-section mb-3" style="font-size: 2em">{{ $posts['title'] }}</h1>
-                    <div class="product-last-seen">
-                        @foreach ($posts->categories as $category)
-                            <span class="title-product fw-bold fst-italic">Chuyên mục: {{ $category->name }}</span>
-                        @endforeach
-                        <strong> - </strong>
-                        <span class="fw-bold fst-italic">Ngày viết: {{ $posts->created_at->format('d/m/Y') }}</span>
-                    </div>
-                    <br>
-                    <p>{!! $posts['excerpt'] !!}</p>
-                    <p>{!! $posts['content'] !!}</p>
-                    <div class="card-img ">
-                        <img class="img-fluid w-100 h-100" src="{{asset($posts->feature_image)}}" alt="Bài Post">
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-md-9 col-12 pe-lg-3 pe-0">
+                <h1 class="text-center text-uppercase fw-bold">{{ $posts->title }}</h1>
+                <div class="is-diviner mx-auto"></div>
+                <p>{!! $posts['content'] !!}</p>
+                <p class="text-center">- - -</p>
+                @include('public.blog.include.lien-he')
             </div>
-            <aside class="col-md-3">
-                <div class="py-4">
-                    <h5 class=" text-primary fw-bold text-uppercase title-sidebar pb-2">Bài viết liên quan</h5>
-                    @foreach ($related as $post)
-                        <a href="{{ route('blog.show', $post->slug) }}" class="text-decoration-none">
-                            <div class="text-center py-3 mb-5 box-blog">
-                                <img src="{{ asset($post->feature_image) }}" alt="Bài viết" class="img-fluid">
-                                <a href="{{ route('blog.show', $post->slug) }}"
-                                    class="text-uppercase mt-3 fw-bold nav-link pb-3">{{ $post->title }}</a>
-                                <span class="d-flex gap-2">
-                                    <p class="fw-normal text-black-50">Ngày viết: {{ $post->created_at->format('d/m/Y') }}
-                                    </p>
-                                </span>
-                            </div>
-                        </a>
-                    @endforeach
+            <aside class="col-md-3 sidebar">
+                <div class="py-1">
+                    @include('public.components.sidebar')
                 </div>
             </aside>
         </div>
     </main>
 @endsection
+
+

@@ -351,7 +351,7 @@ return [
     ],
     'post' => [
         'image' => [
-            'title' => 'Ảnh',
+            'title' => 'Ảnh đại diện',
             'orderable' => false,
             'addClass' => 'text-center align-middle'
         ],
@@ -365,11 +365,15 @@ return [
             'orderable' => false,
             'addClass' => 'text-center align-middle'
         ],
-        'is_featured' => [
-            'title' => 'Nổi bật',
+        'updated_at' => [
+            'title' => 'Thời gian',
             'orderable' => false,
             'addClass' => 'text-center align-middle',
-            'visible' => false
+        ],
+        'viewed' => [
+            'title' => 'Lượt xem',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle',
         ],
         'created_at' => [
             'title' => 'Ngày tạo',
@@ -377,13 +381,7 @@ return [
             'addClass' => 'text-center align-middle',
             'visible' => false
         ],
-        //        'action' => [
-//            'title' => 'Thao tác',
-//            'orderable' => false,
-//            'exportable' => false,
-//            'printable' => false,
-//            'addClass' => 'text-center align-middle'
-//        ],
+
     ],
 
     'contact' => [

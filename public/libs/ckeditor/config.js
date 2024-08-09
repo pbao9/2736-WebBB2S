@@ -19,5 +19,5 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserImageUploadUrl = domain +'/admin/quan-ly-file/ket-noi?command=QuickUpload&type=Images';
      
     config.filebrowserFlashUploadUrl = domain +'/admin/quan-ly-file/ket-noi?command=QuickUpload&type=Files';
-	config.height = 300;
+	config.height = 600;
 };

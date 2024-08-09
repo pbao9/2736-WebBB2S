@@ -1,5 +1,12 @@
 <?php
 return [
+    'frontend_url' => env('APP_URL'),
+    'prefix_url' => [
+        'category' => '/category',
+        'page' => '/page',
+        'post' => '/blog',
+        'tag' => '/tag'
+    ],
     'images' => [
         'favicon' => '/public/assets/images/favi-icon.png',
         'avatar' => '/public/assets/images/avatar-user.png',

@@ -1,29 +1,22 @@
 @extends('public.layouts.master')
 
 @section('content')
-    <section id="activism_section" class="activism-section">
+    <section class="my-5 section-1">
         <div class="container-xl">
             <div class="row justify-content-center">
-                <div class="col-md-9 col-12">
-                    <h1 class="title-section mb-3 mt-2" style="font-size: 2em">Tin Tức
-                    </h1>
-                    <div class="blog">
-                        <div class="row">
-                            @foreach ($posts as $item)
-                                <div class="col-md-4 text-center">
-                                    <x-link :href="route('blog.show', $item->slug)">
-                                        <img src="{{ asset($item->image) }}"
-                                            class="w-100 h-100 object-cover card-img-start img-fluid " alt="Bài Post">
-                                        </x-li>
-                                        <span class="text-uppercase fw-bold text-center">
-                                            {{ $item->title }}
-                                        </span>
-                                </div>
-                            @endforeach
-
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4"></div>
-                        </div>
+                <div class="col-md-10 col-12">
+                    <div class="row">
+                        @foreach ($posts as $item)
+                            <x-link :href="route('blog.show', $item->slug)"
+                                class="col-lg-4 col-12 text-center animate__animated animate__fadeInLeft animate__slow text-decoration-none">
+                                <img src="{{ asset($item->image) }}" class="object-cover card-img-start img-fluid "
+                                    alt="{{ $item->title }}" width="252" height="252">
+                                <p class="text-uppercase fw-bold text-center py-3 text-dark">
+                                    {{ $item->title }}
+                                </p>
+                                <div class="is-diviner mx-auto my-1"></div>
+                            </x-link>
+                        @endforeach
                     </div>
                     {{ $posts->appends(request()->all())->links() }}
                 </div>

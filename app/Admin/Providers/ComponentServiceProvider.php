@@ -45,6 +45,7 @@ class ComponentServiceProvider extends ServiceProvider
         Blade::component('input-pick-address-user', \App\Admin\View\Components\Input\InputPickAddressUser::class);
         Blade::component('input-pick-end-address', \App\Admin\View\Components\Input\InputPickEndAddress::class);
         Blade::component('input-video-ckfinder', \App\Admin\View\Components\Input\InputVideoCkfinder::class);
+        Blade::component('input-prepended-text', \App\Admin\View\Components\Input\InputPrependedText::class);
 
 
 

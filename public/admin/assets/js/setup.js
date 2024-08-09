@@ -471,6 +471,20 @@ $(document).ready(function () {
             }
         });
     });
+    if ($("#blockSubmit").length) {
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop();
+
+            if (
+                scrollTop >=
+                $("#blockSubmit").offset().top + $("#blockSubmit").height()
+            ) {
+                $("#blockSubmitFixed").css("display", "block");
+            } else {
+                $("#blockSubmitFixed").css("display", "none");
+            }
+        });
+    }
 });
 
 // Hiệu ứng đếm số dashboard

@@ -6,7 +6,6 @@
     <meta name="position_currency" content="{{ config('custom.format.position_currency') }}">
     <title>@yield('title', $settings['site_name'])</title>
 
-{{--    <link rel="shortcut icon" href="{{ asset(config('custom.images.favicon')) }}" type="image/x-icon" />--}}
     <link rel="shortcut icon" href="{{ asset($settings['favi_icon']) }}" type="image/x-icon" />
 
     <link href="{{ asset('public/libs/tabler/dist/css/tabler.min.css') }}" rel="stylesheet" />
@@ -17,7 +16,6 @@
     <link href="{{ asset('public/libs/Parsley.js-2.9.2/style.css') }}" rel="stylesheet" />
 
     <link href="{{ asset('public/assets/css/style.css') }}" rel="stylesheet" />
-    {{-- <link href="{{ asset('public/assets/css/bootstrap.min.css') }}" rel="stylesheet" /> --}}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 

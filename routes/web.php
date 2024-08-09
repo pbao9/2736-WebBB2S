@@ -74,7 +74,7 @@ Route::controller(App\Http\Controllers\SinglePage\SinglePageController::class)
 
 // Blog
 Route::controller(App\Http\Controllers\Blog\BlogController::class)
-    ->prefix('/bai-viet')
+    ->prefix('/blog')
     ->as('blog.')
     ->group(function () {
         Route::get('/', 'index')->name('index');

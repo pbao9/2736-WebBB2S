@@ -41,6 +41,13 @@ class SettingSeeder extends Seeder
                 'group' => 1
             ],
             [
+                'setting_key' => 'logo_footer',
+                'setting_name' => 'Logo Footer',
+                'plain_value' => '/public/assets/images/favi-icon.png',
+                'type_input' => SettingTypeInput::Image,
+                'group' => 1
+            ],
+            [
                 'setting_key' => 'favi_icon',
                 'setting_name' => 'Favi icon',
                 'plain_value' => '/public/assets/images/favi-icon.png',

@@ -30,7 +30,7 @@ class PostDataTable extends BaseDataTable
             'image' => 'admin.posts.datatable.image',
             'editlink' => 'admin.posts.datatable.editlink',
             'status' => 'admin.posts.datatable.status',
-            'is_featured' => 'admin.posts.datatable.is-featured'
+            // 'is_featured' => 'admin.posts.datatable.is-featured'
         ];
     }
 
@@ -70,8 +70,9 @@ class PostDataTable extends BaseDataTable
             'image' => $this->view['image'],
             'status' => $this->view['status'],
             'title' => $this->view['editlink'],
-            'is_featured' => $this->view['is_featured'],
+            // 'is_featured' => $this->view['is_featured'],
             'created_at' => '{{ date("d-m-Y", strtotime($created_at)) }}',
+            'updated_at' => '{{ date("d-m-Y", strtotime($updated_at)) }}',
         ];
     }
 
@@ -86,7 +87,7 @@ class PostDataTable extends BaseDataTable
 
     protected function setCustomRawColumns(): void
     {
-        $this->customRawColumns = ['image', 'title', 'status', 'is_featured', 'action'];
+        $this->customRawColumns = ['image', 'title', 'status', 'action'];
     }
 
 

@@ -208,5 +208,6 @@
   "uploadSuccess": "Nhập dữ liệu thành công!",
   "district": "Quận/Huyện",
   "province": "Tỉnh/Thành",
-  "location": "Vị trí"
+  "location": "Vị trí",
+  "slug": "Đường dẫn bài viết"
 }

@@ -1,11 +1,18 @@
-<div class="col-12 col-md-3">
-    <div class="card mb-3">
-        <div class="card-header">
-            {{ __('Đăng') }}
+<div class="col-12 col-md-2">
+    <div id="blockSubmit" class="card mb-3">
+        <div class="card-header fw-bold justify-content-between">
+            {{ __('Cập nhật') }}
+            <x-link :href="config('custom.frontend_url') . config('custom.prefix_url.post') . '/' . $post->slug" :title="__('Xem bài viết')" target="_blank" />
         </div>
         <div class="card-body p-2 d-flex justify-content-between">
             <x-button.submit :title="__('Cập nhật')" />
             <x-button.modal-delete data-route="{{ route('admin.post.delete', $post->id) }}" :title="__('Xóa')" />
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header justify-content-between">
+            {{ __('Lượt xem') }} 
+            <span class="badge bg-green-lt">{{ $post->viewed }} <i class="ti ti-eye"></i></span>
         </div>
     </div>
     <div class="card mb-3">
@@ -18,16 +25,7 @@
             @endforeach
         </div>
     </div>
-    <div class="card mb-3">
-        <div class="card-header">
-            {{ __('Nổi bật') }}
-        </div>
-        <div class="card-body p-2">
-            <input type="hidden" name="is_featured" value="{{ App\Enums\Post\FeaturedStatus::Featureless->value }}">
-            <x-input-switch name="is_featured" value="{{ App\Enums\Post\FeaturedStatus::Featured->value }}" :label="__('Nổi bật?')" :checked="$post->is_featured->value == App\Enums\Post\FeaturedStatus::Featured->value"/>
-        </div>
-    </div>
-
+    
     <div class="card mb-3">
         <div class="card-header">
             {{ __('Trạng thái') }}

@@ -21,10 +21,12 @@ class PostRequest extends BaseRequest
             'categories_id.*' => ['nullable', 'exists:App\Models\PostCategory,id'],
             'title' => ['required', 'string'],
             'image' => ['required'],
-            'is_featured' => ['nullable', new Enum(FeaturedStatus::class)],
+            // 'is_featured' => ['nullable', new Enum(FeaturedStatus::class)],
             'status' => ['required', new Enum(PostStatus::class)],
             'excerpt' => ['nullable'],
-            'content' => ['nullable']
+            'content' => ['nullable'],
+            'title_seo' => ['nullable'],
+            'desc_seo' => ['nullable']
         ];
     }
 
@@ -35,11 +37,14 @@ class PostRequest extends BaseRequest
             'categories_id' => ['nullable', 'array'],
             'categories_id.*' => ['nullable', 'exists:App\Models\PostCategory,id'],
             'title' => ['required', 'string'],
+            'slug' => ['nullable', 'string'],
             'image' => ['required'],
-            'is_featured' => ['nullable', new Enum(FeaturedStatus::class)],
+            // 'is_featured' => ['nullable', new Enum(FeaturedStatus::class)],
             'status' => ['required', new Enum(PostStatus::class)],
             'excerpt' => ['nullable'],
-            'content' => ['nullable']
+            'content' => ['nullable'],
+            'title_seo' => ['nullable'],
+            'desc_seo' => ['nullable']
         ];
     }
 }

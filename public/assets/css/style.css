@@ -624,8 +624,16 @@ h2 {
 /* sidebar */
 .sidebar {
   border-left: 1px #ececec solid;
-  padding-left: 40px;
-  transition: padding 0.15 ease-in-out;
+  padding-left: 30px;
+  transition: padding 0.15s ease-in-out;
+}
+
+.sidebar .nav-link{
+  transition: padding 0.3s ease-in-out;
+}
+
+.sidebar .nav-link:hover{
+  padding-left: 10px;
 }
 
 @media (max-width: 768px) {

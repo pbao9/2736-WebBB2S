@@ -26,8 +26,7 @@ class PostController extends Controller
         PostRepositoryInterface         $repository,
         PostCategoryRepositoryInterface $repositoryPostCategory,
         PostServiceInterface            $service
-    )
-    {
+    ) {
 
         parent::__construct();
 
@@ -35,7 +34,6 @@ class PostController extends Controller
         $this->repositoryPostCategory = $repositoryPostCategory;
 
         $this->service = $service;
-
     }
 
     public function getView(): array
@@ -60,6 +58,7 @@ class PostController extends Controller
     public function index(PostDataTable $dataTable)
     {
         return $dataTable->render($this->view['index'], [
+            'breadcrumbs' => $this->crums->add(__('post'),route($this->route['index'])),
             'status' => PostStatus::asSelectArray(),
         ]);
     }
@@ -69,6 +68,7 @@ class PostController extends Controller
         $categories = $this->repositoryPostCategory->getFlatTree();
         return view($this->view['create'], [
             'categories' => $categories,
+            'breadcrumbs' => $this->crums->add(__('post'),route($this->route['index']))->add(__('add')),
             'status' => PostStatus::asSelectArray()
         ]);
     }
@@ -90,10 +90,10 @@ class PostController extends Controller
                 'categories' => $categories,
                 'post' => $post,
                 'status' => PostStatus::asSelectArray(),
-                'featured_status' => FeaturedStatus::asSelectArray()
+                'featured_status' => FeaturedStatus::asSelectArray(),
+                'breadcrumbs' => $this->crums->add(__('post'),route($this->route['index']))->add(__('edit')),
             ],
         );
-
     }
 
     public function update(PostRequest $request): RedirectResponse
@@ -108,7 +108,5 @@ class PostController extends Controller
         $this->service->delete($id);
 
         return to_route($this->route['index'])->with('success', __('notifySuccess'));
-
     }
-
 }

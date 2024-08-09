@@ -69,6 +69,12 @@ class BlogController extends Controller
 
         $posts = $this->repoPost->findBy(['slug' => $slug], ['posts', 'categories']);
 
+        if (!$posts) {
+            abort(404, 'Post not found');
+        }
+    
+        $posts->increment('viewed');
+        
         $breadcrums = [
             ['label' => $posts->title]
         ];

@@ -15,7 +15,7 @@ class PostRepository extends EloquentRepository implements PostRepositoryInterfa
     }
 
     
-    public function paginate(array $filter, array $relationCondition = [], array $relations = [], int $paginate = 2)
+    public function paginate(array $filter, array $relationCondition = [], array $relations = [], int $paginate = 10)
     {
 
         $this->getQueryBuilder();

@@ -1,5 +1,5 @@
-<div class="col-12 col-md-3">
-    <div class="card mb-3">
+<div class="col-12 col-md-2">
+    <div id="id="blockSubmit"" class="card mb-3">
         <div class="card-header">
             {{ __('Đăng') }}
         </div>
@@ -17,16 +17,6 @@
             @endforeach
         </div>
     </div>
-    <div class="card mb-3">
-        <div class="card-header">
-            {{ __('Nổi bật') }}
-        </div>
-        <div class="card-body p-2">
-            <input type="hidden" name="is_featured" value="{{ App\Enums\Post\FeaturedStatus::Featureless->value }}">
-            <x-input-switch name="is_featured" value="{{ App\Enums\Post\FeaturedStatus::Featured->value }}" :label="__('Nổi bật?')"/>
-        </div>
-    </div>
-
     <div class="card mb-3">
         <div class="card-header">
             {{ __('Trạng thái') }}

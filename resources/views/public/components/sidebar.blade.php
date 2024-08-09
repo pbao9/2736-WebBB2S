@@ -1,6 +1,9 @@
-<div class="row g-2 mb-3">
-    <h1 class="fw-bold" style="font-size: 1.6rem">Bài viết mới</h1>
-    <x-link :href="route('blog.blog3')" :title="__('Dịch vụ đưa đón 02 chiều')" class="nav-link text-uppercase" />
-    <x-link :href="route('blog.blog2')" :title="__('Dịch vụ đưa đón 01 chiều')" class="nav-link text-uppercase" />
-    <x-link :href="route('blog.blog1')" :title="__('Babi2school App')" class="nav-link text-uppercase" />
-</div>
+<h2 class=" text-dark fw-bold text-uppercase title-sidebar pb-2">Bài viết khác</h2>
+@foreach ($related as $post)
+<a href="{{ route('blog.show', $post->slug) }}" class="text-decoration-none">
+    <div class="text-center mb-2">
+        <a href="{{ route('blog.show', $post->slug) }}"
+            class="text-uppercase mt-3 fw-bold nav-link">{{ $post->title }}</a>
+    </div>
+</a>
+@endforeach

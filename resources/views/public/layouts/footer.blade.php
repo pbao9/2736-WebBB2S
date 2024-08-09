@@ -3,14 +3,14 @@
         <div class="row justify-content-center py-5 ">
             <div class="col-12 col-lg-3 mb-3">
                 <img class="d-block mx-auto" width="125px" height="125px" style="margin-bottom: 20px"
-                     src="{{ asset($settings['site_logo']) }}">
+                     src="{{ asset($settings['logo_footer']) }}">
                 <h2 class="mb-2 mx-auto text-uppercase">Dịch vụ công nghệ</h2>
                 <h2 class="mb-2 mx-auto mb-3 text-uppercase">Đưa đón học sinh bằng xe 7 chỗ</h2>
-                <div class="text-center d-flex flex-column align-items-center">
+                {{-- <div class="text-center d-flex flex-column align-items-center">
                     <p class="nav-link fw-bold mb-2">{{__('DỊCH VỤ CÔNG NGHỆ')}}</p>
                     <p class="nav-link fw-bold mb-2">{{__('ĐƯA ĐÓN HỌC SINH')}}</p>
                     <p class="nav-link fw-bold mb-2">{{__('BẰNG XE ÔTÔ')}}</p>
-                </div>
+                </div> --}}
             </div>
             <div class="col-12 col-lg-3 mb-3">
                 <h2 class="mb-3 mx-auto">BABI2SCHOOL - AN TOÀN ĐẾN TRƯỜNG</h2>
