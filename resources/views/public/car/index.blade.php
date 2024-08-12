@@ -34,13 +34,13 @@
                             </div>
                         </div>
                         <x-form id="form-contact" action="{{ route('contact.store') }}" :validate="true" type="POST">
-                            <x-input type="hidden" value="0" name="form_type"/>
+                            <x-input type="hidden" value="0" name="form_type" />
                             <div class="card-body">
                                 <div class="mb-3">
                                     <div class="form-label required">Bạn là</div>
                                     <x-select name="type" :required="true">
                                         @foreach ($type as $key => $value)
-                                            <x-select-option :value="$key" :title="$value"/>
+                                            <x-select-option :value="$key" :title="$value" />
                                         @endforeach
                                     </x-select>
                                 </div>
@@ -49,7 +49,7 @@
                                         <div class="mb-3">
                                             <div class="form-label required">Tên</div>
                                             <x-input type="text" class="form-control shadow-none" name="name"
-                                                     :value="old('name')" :required="true" placeholder="Họ & tên">
+                                                :value="old('name')" :required="true" placeholder="Họ & tên">
                                             </x-input>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                         <div class="mb-3">
                                             <div class="form-label required">Số điện thoại</div>
                                             <x-input-phone class="form-control" name="phone" placeholder="Số điện thoại"
-                                                           :value="old('phone')"/>
+                                                :value="old('phone')" />
                                         </div>
                                     </div>
                                 </div>
@@ -68,12 +68,10 @@
                                         <div class="mb-3">
                                             <label class="form-label">Tỉnh/Thành</label>
                                             <x-select name="province_code" :required="true"
-                                                      class="form-select shadow-none">
-                                                <x-select-option value="" :title="__('— Chọn Tỉnh/Thành —')"
-                                                                 disable="true"/>
+                                                class="form-select shadow-none">
+                                                <x-select-option value="" :title="__('— Chọn Tỉnh/Thành —')" disable="true" />
                                                 @foreach ($provinces as $province)
-                                                    <x-select-option :value="$province->code"
-                                                                     :title="__($province->name)"/>
+                                                    <x-select-option :value="$province->code" :title="__($province->name)" />
                                                 @endforeach
                                             </x-select>
                                         </div>
@@ -82,7 +80,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Quận/Huyện</label>
                                             <select name="district_code" class="form-select shadow-none" required
-                                                    id="district-select">
+                                                id="district-select">
                                                 <option value="">— Chọn Quận/Huyện —</option>
                                             </select>
                                         </div>
@@ -98,19 +96,18 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="form-label">Trường khác</div>
                                         <span class="float-end text-yellow mb-2" data-bs-toggle="tooltip"
-                                              data-bs-placement="top"
-                                              data-bs-title="Không có trường học trong danh sách?">
+                                            data-bs-placement="top" data-bs-title="Không có trường học trong danh sách?">
                                             <i class="ti ti-bulb"></i>
                                         </span>
                                     </div>
                                     <label class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="school_other" value="1"
-                                               id="radio_yes" {{ old('school_other', 0) == 1 ? 'checked' : '' }}>
+                                            id="radio_yes" {{ old('school_other', 0) == 1 ? 'checked' : '' }}>
                                         <span class="form-check-label">Có</span>
                                     </label>
                                     <label class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="school_other" value="0"
-                                               id="radio_no" {{ old('school_other', 0) == 0 ? 'checked' : '' }}>
+                                            id="radio_no" {{ old('school_other', 0) == 0 ? 'checked' : '' }}>
                                         <span class="form-check-label">Không</span>
                                     </label>
                                 </div>
@@ -118,45 +115,63 @@
                                     <div class="col-md-6 col-12">
                                         <label for="school_name_other" class="form-label">Tên trường khác</label>
                                         <x-input type="text" class="form-control shadow-none" name="school_name"
-                                                 :value="old('school_name')" placeholder="Tên trường học"></x-input>
+                                            :value="old('school_name')" placeholder="Tên trường học"></x-input>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <label for="school_address_other" class="form-label">Địa chỉ trường
                                             khác</label>
                                         <x-input type="text" class="form-control shadow-none" name="school_address"
-                                                 :value="old('school_address')"
-                                                 placeholder="Địa chỉ trường học"></x-input>
+                                            :value="old('school_address')" placeholder="Địa chỉ trường học"></x-input>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-label required">Địa chỉ đón/trả</div>
-                                    <textarea class="form-control" name="location" rows="6"
-                                              placeholder="Địa chỉ đón/trả bé"></textarea>
+                                    <textarea class="form-control" name="location" rows="6" placeholder="Địa chỉ đón/trả bé"></textarea>
                                 </div>
                                 <hr>
                                 <div class="row align-items-start mb-3">
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-label required">Thời gian đưa đón (07h - 17h)</div>
-                                        <input type="time" class="form-control" name="time_pickup"
-                                               placeholder="Thời gian chiều" required>
-                                    </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-12 col-12 mb-3">
                                         <label for="service" class="form-label required">Dịch vụ</label>
-                                        <x-select name="service" :required="true"
-                                                  class="form-select shadow-none">
-                                            <x-select-option value="" :title="__('— Chọn Dịch vụ —')" disable="true"/>
+                                        <x-select name="service" :required="true" class="form-select shadow-none">
+                                            <x-select-option value="" :title="__('— Chọn Dịch vụ —')" disable="true" />
                                             @foreach ($service as $key => $value)
-                                                <x-select-option :value="$key" :title="__($value)"/>
+                                                <x-select-option :value="$key" :title="__($value)" />
                                             @endforeach
                                         </x-select>
                                     </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <label for="session_arrive_school"
+                                            class="form-label required">{{ __('Buổi đón đi') }}</label>
+                                        <x-select name="session_arrive_school" :required="true" class="form-select shadow-none">
+                                            @foreach ($session as $key => $value)
+                                                <x-select-option :value="$key" :title="__($value)" />
+                                            @endforeach
+                                        </x-select>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-label required">{{__('Thời gian tới trường')}}</div>
+                                        <input type="time" class="form-control" name="time_arrive_school"
+                                            placeholder="Thời gian tới trường" required>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <label for="session_off"
+                                            class="form-label required">{{ __('Buổi đón về') }}</label>
+                                        <x-select name="session_off" :required="true" class="form-select shadow-none">
+                                            @foreach ($session as $key => $value)
+                                                <x-select-option :option="2" :value="$key" :title="__($value)" />
+                                            @endforeach
+                                        </x-select>
+                                    </div>
+                                    <div class="col-md-6 col-12 mb-3">
+                                        <div class="form-label required">{{__('Thời gian về')}}</div>
+                                        <input type="time" class="form-control" name="time_off"
+                                            placeholder="Thời gian tới trường" required>
+                                    </div>
                                 </div>
                                 <hr>
-                                <button type="submit" class="btn btn-yellow w-100">Nhận báo giá</button>
+                                <button type="submit" class="btn btn-yellow w-100">{{ __('Nhận báo giá') }}</button>
                             </div>
-
                         </x-form>
-
                     </div>
                 </div>
                 <div class="col-lg-6 col-12 text-center d-none" id="car">

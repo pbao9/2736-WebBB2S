@@ -2,40 +2,33 @@
 
 namespace App\Models;
 
-use App\Enums\Setting\{SettingTypeInput, SettingGroup};
+use App\Enums\Setting\{SettingGroup, SettingTypeInput};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
     use HasFactory;
+    
+    const CACHE_KEY_GET_ALL = 'cache_settings';
 
     protected $table = 'settings';
-
-    const CACHE_KEY_GET_ALL = 'cache_settings';
 
     protected $guarded = [];
 
     protected $casts = [
         'type_input' => SettingTypeInput::class,
-        'group' => SettingGroup::class,
+        'group' => SettingGroup::class
     ];
 
-    public function getNameComponentTypeInput(){
-        if($this->type_input == SettingTypeInput::Text()){
-            return 'input';
-        }elseif($this->type_input == SettingTypeInput::Number()){
-            return 'input-number';
-        }elseif($this->type_input == SettingTypeInput::Image()){
-            return 'input-image-ckfinder';
-        }elseif($this->type_input == SettingTypeInput::Email()){
-            return 'input-email';
-        }elseif($this->type_input == SettingTypeInput::Phone()){
-            return 'input-phone';
-        }elseif($this->type_input == SettingTypeInput::Video()){
-            return 'input-video-ckfinder';}
-        else{
-            return 'input';
-        }
+    public function getNameComponent(){
+        return match($this->type_input){
+            SettingTypeInput::Text => 'input',
+            SettingTypeInput::Number => 'input-number',
+            SettingTypeInput::Image => 'input-image-ckfinder',
+            SettingTypeInput::Email => 'input-email',
+            SettingTypeInput::Phone => 'input-phone',
+            default => 'input'
+        };
     }
 }

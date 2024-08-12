@@ -24,9 +24,12 @@ class ContactRequest extends BaseRequest
             'school_id' => ['nullable'],
             'school_other' => ['nullable'],
             'location' => ['nullable'],
-            'time_pickup' => ['nullable'],
             'status' => ['nullable'],
-            'service' => ['nullable']
+            'service' => ['nullable'],
+            'session_arrive_school' => ['nullable'],
+            'time_arrive_school' => ['nullable'],
+            'session_off' => ['nullable'],
+            'time_off' => ['nullable']
         ];
     }
 
@@ -46,7 +49,11 @@ class ContactRequest extends BaseRequest
             'school_id' => ['nullable'],
             'location' => ['nullable'],
             'time_pickup' => ['nullable'],
-            'status' => ['nullable']
+            'status' => ['nullable'],
+            'session_arrive_school' => ['nullable'],
+            'time_arrive_school' => ['nullable'],
+            'session_off' => ['nullable'],
+            'time_off' => ['nullable']
         ];
     }
 }

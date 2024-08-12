@@ -27,11 +27,18 @@ class SettingSeeder extends Seeder
                 'group' => 1
             ],
             [
-                'setting_key' => 'info',
-                'setting_name' => 'Thông tin giới thiệu',
-                'plain_value' => 'Babi2School',
+                'setting_key' => 'company',
+                'setting_name' => 'Tên công ty',
+                'plain_value' => 'Công ty cổ phần Kỹ thuật Công nghệ HP',
                 'type_input' => SettingTypeInput::Text,
-                'group' => 1
+                'group' => 2
+            ],
+            [
+                'setting_key' => 'slogan',
+                'setting_name' => 'Slogan',
+                'plain_value' => 'BABI2SCHOOL - AN TOÀN ĐẾN TRƯỜNG',
+                'type_input' => SettingTypeInput::Text,
+                'group' => 2
             ],
             [
                 'setting_key' => 'site_logo',
@@ -57,23 +64,23 @@ class SettingSeeder extends Seeder
             [
                 'setting_key' => 'slot_seat',
                 'setting_name' => 'Số chỗ còn',
-                'plain_value' => '2',
+                'plain_value' => '50',
                 'type_input' => SettingTypeInput::Text,
                 'group' => 1
             ],
             [
                 'setting_key' => 'hotline',
-                'setting_name' => 'Số điện thoại',
+                'setting_name' => 'Hotline 1',
                 'plain_value' => '0822625562',
                 'type_input' => SettingTypeInput::Text,
-                'group' => 1
+                'group' => 2
             ],
             [
                 'setting_key' => 'hotline-1',
-                'setting_name' => 'Số điện thoại 1',
+                'setting_name' => 'Hotline 2',
                 'plain_value' => '0924229988',
                 'type_input' => SettingTypeInput::Text,
-                'group' => 1
+                'group' => 2
             ],
             [
                 'setting_key' => 'email',
@@ -83,25 +90,18 @@ class SettingSeeder extends Seeder
                 'group' => 1
             ],
             [
-                'setting_key' => 'zalo',
-                'setting_name' => 'Zalo',
-                'plain_value' => '0924229988',
-                'type_input' => SettingTypeInput::Text,
-                'group' => 1
-            ],
-            [
                 'setting_key' => 'address',
                 'setting_name' => 'Địa chỉ',
                 'plain_value' => 'Tầng 12 Tháp A2 Tòa nhà Viettel số 285 Cách Mạng Tháng Tám, Phường 12, Quận 10, Thành phố Hồ Chí Minh',
                 'type_input' => SettingTypeInput::Text,
-                'group' => 1
+                'group' => 2
             ],
             [
                 'setting_key' => 'tax_code',
                 'setting_name' => 'Mã số doanh nghiệp',
                 'plain_value' => '0318155206 do Sở Kế Hoạch và Đầu Tư TP. Hồ Chí Minh cấp năm 2023',
                 'type_input' => SettingTypeInput::Text,
-                'group' => 1
+                'group' => 2
             ],
             [
                 'setting_key' => 'facebook',
@@ -109,12 +109,20 @@ class SettingSeeder extends Seeder
                 'plain_value' => 'https://www.facebook.com/profile.php?id=61557847006591',
                 'type_input' => SettingTypeInput::Text,
                 'group' => 1
-            ],[
+            ],
+            [
                 'setting_key' => 'video',
                 'setting_name' => 'video',
                 'plain_value' => '/public/assets/videos/Babi2school-FINAL-1.mp4',
-                'type_input' => SettingTypeInput::Video,
+                'type_input' => SettingTypeInput::Image,
                 'group' => 1
+            ],
+            [
+                'setting_key' => 'introduce',
+                'setting_name' => 'Thông tin giới thiệu',
+                'plain_value' => 'DỊCH VỤ CÔNG NGHỆ ĐƯA ĐÓN HỌC SINH BẰNG XE 7 CHỖ',
+                'type_input' => SettingTypeInput::Textarea,
+                'group' => 2
             ],
         ]);
     }

@@ -19,6 +19,7 @@ class SettingController extends Controller
     {
         return [
             'general' => 'admin.settings.general',
+            'company' => 'admin.settings.company',
             'user_shopping' => 'admin.settings.user-shopping',
         ];
     }
@@ -27,11 +28,11 @@ class SettingController extends Controller
         return view($this->view['general'], compact('settings'));
     }
 
-    public function userShopping(){
-        $setting_groups = $this->repository->getByGroup([SettingGroup::UserDiscount, SettingGroup::UserUpgrade])
-        ->groupBy('group');
-        return view($this->view['user_shopping'], compact('setting_groups'));
+    public function company(){
+        $settings = $this->repository->getByGroup([SettingGroup::Company]);
+        return view($this->view['company'], compact('settings'));
     }
+
 
     public function update(SettingRequest $request){
         // $data = $request->except('_token', '_method');

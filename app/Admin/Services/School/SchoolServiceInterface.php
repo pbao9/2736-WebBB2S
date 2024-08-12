@@ -11,5 +11,6 @@ interface SchoolServiceInterface
     public function update(Request $request);
 
     public function delete($id);
+    public function import($file);
 
 }

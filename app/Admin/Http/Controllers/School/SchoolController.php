@@ -17,6 +17,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Validators\ValidationException;
 
@@ -137,7 +138,6 @@ class SchoolController extends Controller
         return to_route($this->route['index'])->with('success', __('notifySuccess'));
     }
 
-    // Import excel truong hoc
     public function import(Request $request)
     {
         $request->validate([
@@ -145,23 +145,25 @@ class SchoolController extends Controller
         ]);
 
         $file = $request->file('file');
-        // Log::info('File details', ['file' => $file]);
-        if ($file->isValid()) {
-            try {
-                Excel::import(new SchoolImport, $file);
-                return redirect()->back()->with('success', __('uploadSuccess'));
-            } catch (ValidationException $e) {
-                $failures = $e->failures();
-                $errorMessages = [];
-                foreach ($failures as $failure) {
-                    $errorMessages[] = $failure->errors();
-                }
-                return redirect()->back()->with('error', 'Nhập file thất bại, kiểm tra lại!');
-            } catch (\Exception $e) {
-                return redirect()->back()->with('error', 'Kiểm tra lại: ' . $e->getMessage());
-            }
+        $result = $this->service->import($file);
+
+        if ($result['success']) {
+            return redirect()->back()->with('success', $result['message']);
         } else {
-            return redirect()->back()->with('error', __('uploadFail'));
+            return redirect()->back()->with('error', $result['message']);
         }
+    }
+
+    public function download()
+    {
+        $filePath = public_path('assets/file/school_file.xlsx');
+
+        if (file_exists($filePath)) {
+            return Response::download($filePath, 'school_file.xlsx', [
+                'Content-Type' => mime_content_type($filePath),
+            ]);
+        }
+
+        return redirect()->back()->with('error', 'Không tìm thấy file!');
     }
 }

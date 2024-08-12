@@ -51,7 +51,7 @@ return [
     ],
     SettingGroup::class => [
         SettingGroup::General => 'Chung',
-        SettingGroup::UserDiscount => 'Chiếc khấu mua hàng theo cấp TV',
+        SettingGroup::Company => 'Công ty',
         SettingGroup::UserUpgrade => 'SL SP nâng cấp TV',
     ],
     PostCategoryStatus::class => [
@@ -89,5 +89,9 @@ return [
         ContractType::PickUpOnly->value => 'Chỉ đón đi',
         ContractType::DropOffOnly->value => 'Chỉ đón về',
         ContractType::Both->value => 'Cả hai',
+    ],
+    Session::class => [
+        Session::morning->value => 'Buổi sáng',
+        Session::afternoon->value => 'Buổi chiều',
     ],
 ];

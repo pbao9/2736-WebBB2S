@@ -16,10 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Địa chỉ
+// Dia chi 
 Route::get('/address/districts', [AddressController::class, 'getDistrictsByProvince'])->name('districts');
 Route::get('/address/wards', [AddressController::class, 'getWardsByDistrict'])->name('wards');
-// Route::get('/address/schools-by-district', [AddressController::class, 'getSchoolsByDistrict'])->name('schools');
 Route::get('/address/schools-by-district', [SchoolSearchSelectController::class, 'getSchoolsByDistrict'])->name('schools');
 
 Route::controller(App\Http\Controllers\Contact\ContactController::class)
@@ -74,7 +73,7 @@ Route::controller(App\Http\Controllers\SinglePage\SinglePageController::class)
 
 // Blog
 Route::controller(App\Http\Controllers\Blog\BlogController::class)
-    ->prefix('/blog')
+    ->prefix('/tin-tuc')
     ->as('blog.')
     ->group(function () {
         Route::get('/', 'index')->name('index');

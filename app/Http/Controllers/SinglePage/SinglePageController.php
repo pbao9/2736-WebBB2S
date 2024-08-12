@@ -7,6 +7,7 @@ use App\Enums\Contact\ContactService;
 use App\Repositories\Province\ProvinceRepository;
 use App\Repositories\Setting\SettingRepositoryInterface;
 use App\Enums\Contact\UserType;
+use App\Enums\Session\Session;
 use App\Models\Province;
 use App\Models\School;
 use Illuminate\Http\Request;
@@ -43,7 +44,8 @@ class SinglePageController extends Controller
         return view($this->view['findcar'], [
             'provinces' => $provinces,
             'type' => UserType::asSelectArray(),
-            'service' => ContactService::asSelectArray()
+            'service' => ContactService::asSelectArray(),
+            'session' => Session::asSelectArray(),
         ]);
     }
 }

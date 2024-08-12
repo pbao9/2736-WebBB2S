@@ -2,34 +2,20 @@
 
 namespace App\Enums\Setting;
 
-use BenSampo\Enum\Enum;
-use BenSampo\Enum\Contracts\LocalizedEnum;
+use App\Supports\Enum;
 
-/**
- * @method static static Text()
- * @method static static Number()
- * @method static static Email()
- * @method static static Phone()
- * @method static static Password()
- * @method static static Textarea()
- * @method static static Image()
- * @method static static Video()
- * @method static static Gallery()
- * @method static static Checkbox()
- * @method static static Radio()
- */
-final class SettingTypeInput extends Enum implements LocalizedEnum
+enum SettingTypeInput: int
 {
-    const Text = 1;
-    const Number = 2;
-    const Email = 3;
-    const Phone = 4;
-    const Password = 5;
-    const Textarea = 6;
-    const Image = 7;
-    const Gallery = 8;
-    const Checkbox = 9;
-    const Radio = 10;
+    use Enum;
 
-    const Video = 11;
+    case Text = 1;
+    case Number = 2;
+    case Email = 3;
+    case Phone = 4;
+    case Password = 5;
+    case Textarea = 6;
+    case Image = 7;
+    case Gallery = 8;
+    case Checkbox = 9;
+    case Radio = 10;
 }

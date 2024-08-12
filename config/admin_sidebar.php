@@ -40,14 +40,14 @@ return [
                 'routeName' => 'admin.school.create',
                 'icon' => '<i class="ti ti-plus"></i>',
                 'roles' => [],
-                'permissions' => ['createStudent'],
+                'permissions' => ['createSchool'],
             ],
             [
                 'title' => 'DS Trường học',
                 'routeName' => 'admin.school.index',
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
-                'permissions' => ['viewStudent'],
+                'permissions' => ['viewSchool'],
             ]
         ]
     ],
@@ -174,66 +174,66 @@ return [
                 'permissions' => ['settingGeneral'],
             ],
             [
-                'title' => 'Thành viên mua hàng',
-                'routeName' => 'admin.setting.user_shopping',
-                'icon' => '<i class="ti ti-user-cog"></i>',
+                'title' => 'Công ty',
+                'routeName' => 'admin.setting.company',
+                'icon' => '<i class="ti ti-building"></i>',
                 'roles' => [],
-                'permissions' => [],
+                'permissions' => ['settingCompany'],
             ],
         ]
     ],
-    // [
-    //     'title' => 'Dev: Quyền',
-    //     'routeName' => null,
-    //     'icon' => '<i class="ti ti-code"></i>',
-    //     'roles' => [],
-    //     'permissions' => ['mevivuDev'],
-    //     'sub' => [
-    //         [
-    //             'title' => 'Thêm Quyền',
-    //             'routeName' => 'admin.permission.create',
-    //             'icon' => '<i class="ti ti-plus"></i>',
-    //             'roles' => [],
-    //             'permissions' => ['mevivuDev'],
-    //         ],
-    //         [
-    //             'title' => 'DS Quyền',
-    //             'routeName' => 'admin.permission.index',
-    //             'icon' => '<i class="ti ti-list"></i>',
-    //             'roles' => [],
-    //             'permissions' => ['mevivuDev'],
-    //         ]
-    //     ]
-    // ],
-    // [
-    //     'title' => 'Dev: Module',
-    //     'routeName' => null,
-    //     'icon' => '<i class="ti ti-code"></i>',
-    //     'roles' => [],
-    //     'permissions' => ['mevivuDev'],
-    //     'sub' => [
-    //         [
-    //             'title' => 'Thêm Module',
-    //             'routeName' => 'admin.module.create',
-    //             'icon' => '<i class="ti ti-plus"></i>',
-    //             'roles' => [],
-    //             'permissions' => ['mevivuDev'],
-    //         ],
-    //         [
-    //             'title' => 'DS Module',
-    //             'routeName' => 'admin.module.index',
-    //             'icon' => '<i class="ti ti-list"></i>',
-    //             'roles' => [],
-    //             'permissions' => ['mevivuDev'],
-    //         ]
-    //     ]
-    // ],
-    // [
-    //     'title' => 'Dev: Nghiệm thu',
-    //     'routeName' => 'admin.module.summary',
-    //     'icon' => '<i class="ti ti-code"></i>',
-    //     'roles' => [],
-    //     'permissions' => ['mevivuDev'],
-    //     'sub' => []
-    // ]
+    [
+        'title' => 'Dev: Quyền',
+        'routeName' => null,
+        'icon' => '<i class="ti ti-code"></i>',
+        'roles' => [],
+        'permissions' => ['mevivuDev'],
+        'sub' => [
+            [
+                'title' => 'Thêm Quyền',
+                'routeName' => 'admin.permission.create',
+                'icon' => '<i class="ti ti-plus"></i>',
+                'roles' => [],
+                'permissions' => ['mevivuDev'],
+            ],
+            [
+                'title' => 'DS Quyền',
+                'routeName' => 'admin.permission.index',
+                'icon' => '<i class="ti ti-list"></i>',
+                'roles' => [],
+                'permissions' => ['mevivuDev'],
+            ]
+        ]
+    ],
+    [
+        'title' => 'Dev: Module',
+        'routeName' => null,
+        'icon' => '<i class="ti ti-code"></i>',
+        'roles' => [],
+        'permissions' => ['mevivuDev'],
+        'sub' => [
+            [
+                'title' => 'Thêm Module',
+                'routeName' => 'admin.module.create',
+                'icon' => '<i class="ti ti-plus"></i>',
+                'roles' => [],
+                'permissions' => ['mevivuDev'],
+            ],
+            [
+                'title' => 'DS Module',
+                'routeName' => 'admin.module.index',
+                'icon' => '<i class="ti ti-list"></i>',
+                'roles' => [],
+                'permissions' => ['mevivuDev'],
+            ]
+        ]
+    ],
+    [
+        'title' => 'Dev: Nghiệm thu',
+        'routeName' => 'admin.module.summary',
+        'icon' => '<i class="ti ti-code"></i>',
+        'roles' => [],
+        'permissions' => ['mevivuDev'],
+        'sub' => []
+    ]
 ];

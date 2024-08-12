@@ -13,30 +13,28 @@ class SettingRequest extends BaseRequest
     protected function methodPut(): array
     {
         return [
-            'site_name' => ['required'],
+            'site_name' => ['nullable'],
             'site_logo' => ['nullable'],
             'banner_on_app' => ['nullable'],
-            'zalo' => [
-                'required',
-                'regex:/((09|03|07|08|05)+([0-9]{8})\b)/',
-            ],
-            'email' => ['required', 'email'],
+            'email' => ['nullable', 'email'],
             'hotline' => [
-                'required',
+                'nullable',
                 // 'regex:/((09|03|07|08|05)+([0-9]{8})\b)/'
             ],
             'hotline-1' => [
-                'required',
+                'nullable',
                 // 'regex:/((09|03|07|08|05)+([0-9]{8})\b)/'
             ],
             'slot_seat' => [
-                'required',
+                'nullable',
                 'int'
             ],
             'info' => ['nullable', 'string'],
             'address' => ['nullable', 'string'],
             'facebook' => ['nullable', 'string'],
             'tax_code' => ['nullable', 'string'],
+            'company' => ['nullable', 'string'],
+            'introduce' => ['nullable', 'string'],
         ];
     }
 }

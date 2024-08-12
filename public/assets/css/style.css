@@ -370,9 +370,20 @@ footer p.nav-link{
   transition: padding .3s ease-in-out;
   cursor: pointer;
 }
+
 footer p.nav-link:hover,
 footer a.nav-link:hover{
   padding-left: 10px;
+}
+
+@media (max-width:1441px) {
+  footer .col-service{
+    padding-left: 90px;
+  }
+}
+
+footer .col-service{
+  padding-left: 120px;
 }
 
 footer h2 {

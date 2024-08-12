@@ -2,16 +2,30 @@
 
 namespace App\Enums\Session;
 
-use BenSampo\Enum\Enum;
-use BenSampo\Enum\Contracts\LocalizedEnum;
 
-/**
- * @method static static Morning()
- * @method static static Afternoon()
- */
-final class Session extends Enum implements LocalizedEnum
+use App\Admin\Support\Enum;
+
+enum Session: int
 {
-    const Morning = 1;
-    const Afternoon = 2;
+    use Enum;
 
+    case morning = 1;
+    case afternoon = 2;
+
+    public function label(): string
+    {
+        return match ($this) {
+            Session::morning => __('Buổi sáng'),
+            Session::afternoon => __('Buổi chiều'),
+        };
+    }
+
+
+    public function badge(): string
+    {
+        return match($this) {
+            Session::morning => 'bg-purple-lt',
+            Session::afternoon => 'bg-indigo-lt',
+        };
+    }
 }

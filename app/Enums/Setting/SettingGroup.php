@@ -13,6 +13,6 @@ use BenSampo\Enum\Contracts\LocalizedEnum;
 final class SettingGroup extends Enum implements LocalizedEnum
 {
     const General = 1;
-    const UserDiscount = 2;
+    const Company = 2;
     const UserUpgrade = 3;
 }
