@@ -3,7 +3,7 @@
         <div class="row justify-content-center py-5 ">
             <div class="col-12 col-lg-3 mb-3">
                 <img class="d-block mx-auto" width="125px" height="125px" style="margin-bottom: 20px"
-                     src="{{ asset($settings['logo_footer']) }}">
+                    src="{{ asset($settings['logo_footer']) }}">
                 <h2 class="mb-2 mx-auto text-uppercase text-center">{!! $settings['introduce'] !!}</h2>
             </div>
             <div class="col-12 col-lg-3 mb-3">
@@ -27,36 +27,36 @@
                     <ul class="list-unstyled">
                         <li class="mb-2">
                             <x-link :href="route('blog.blog1')" :title="__('Ứng dụng Babi2School')"
-                                    class="text-decoration-none nav-link fs-3 nav-link"/>
+                                class="text-decoration-none nav-link fs-3 nav-link" />
                         </li>
                         <li class="mb-2">
                             <x-link :href="route('blog.blog2')" :title="__('Dịch vụ đưa đón 01 chiều')"
-                                    class="text-decoration-none nav-link fs-3 nav-link"/>
+                                class="text-decoration-none nav-link fs-3 nav-link" />
                         </li>
                         <li class="mb-2">
                             <x-link :href="route('blog.blog3')" :title="__('Dịch vụ đưa đón 02 chiều')"
-                                    class="text-decoration-none nav-link fs-3 nav-link"/>
+                                class="text-decoration-none nav-link fs-3 nav-link" />
                         </li>
                     </ul>
                 </div>
-               
+
             </div>
             <div class="col-12 col-lg-3">
-                <iframe
+                {{-- <iframe
                     src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61557847006591%26mibextid%3DZbWKwL&tabs=timeline&width=340&height=331&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                     width="320" height="331" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
                     allowfullscreen="true"
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
+                </iframe> --}}
             </div>
         </div>
     </div>
 
     <hr class="m-0">
     <div class="container py-3 text-center">
-      <span class="text-white">
-         Copyright <?php echo date("Y"); ?> © <strong>Babi2School</strong>
-    </span>
+        <span class="text-white">
+            Copyright <?php echo date('Y'); ?> © <strong>Babi2School</strong>
+        </span>
     </div>
 </footer>
 

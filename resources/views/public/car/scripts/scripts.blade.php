@@ -15,51 +15,23 @@
             $('#school_select').removeClass('d-none').addClass('d-block');
         }
     });
-
-    $('input[name="time_pickup"]').on('change', function() {
-        var selectedTime = $(this).val();
-        var selectedHour = parseInt(selectedTime.split(':')[0], 10);
-
-        var minHour = 7;
-        var maxHour = 17;
-
-        if (selectedHour < minHour || selectedHour > maxHour) {
-            $(this).val('');
-            Swal.fire({
-                icon: 'error',
-                title: 'Lỗi',
-                text: 'Thời gian đưa đón phải từ 07:00 sáng đến 17:00 chiều.',
-            });
-        }
-    })
-
+    
     $(document).ready(function() {
-        function formatTime(input) {
-            let timeValue = input.val();
-            let timeParts = timeValue.split(':');
-            let hours = parseInt(timeParts[0]);
-            let minutes = timeParts[1];
-
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-
-            return hours + ':' + minutes + ' ' + ampm;
-        }
-
-        $('input[name="time_arrive_school"], input[name="time_off"]').on('input', function() {
-            let inputName = $(this).attr('name');
-            let formattedTime = formatTime($(this));
-            console.log(`Input Name: ${inputName}, Formatted Time: ${formattedTime}`);
-        });
+        $('input[name="time_arrive_school"], input[name="time_off"]').prop('disabled', true);
 
         $('select[name="session_arrive_school"], select[name="session_off"]').on('change', function() {
+            let sessionName = $(this).attr('name');
+            let relatedTimeInput = sessionName === 'session_arrive_school' ? 'time_arrive_school' :
+                'time_off';
+
+            $('input[name="' + relatedTimeInput + '"]').prop('disabled', false);
+
             let arriveValue = $('select[name="session_arrive_school"]').val();
             let offValue = $('select[name="session_off"]').val();
 
             const morning = '{{ \App\Enums\Session\Session::morning }}';
             const afternoon = '{{ \App\Enums\Session\Session::afternoon }}';
-            
+
             if (arriveValue == afternoon && offValue == morning) {
                 Swal.fire({
                     title: 'Không hợp lệ!',
@@ -72,6 +44,34 @@
             }
         });
 
+        $('input[name="time_arrive_school"], input[name="time_off"]').on('input', function() {
+            let inputName = $(this).attr('name');
+            let timeValue = $(this).val();
+            let sessionValue = inputName === 'time_arrive_school' ? $(
+                    'select[name="session_arrive_school"]').val() : $('select[name="session_off"]')
+                .val();
 
+            const morning = '{{ \App\Enums\Session\Session::morning }}';
+            const afternoon = '{{ \App\Enums\Session\Session::afternoon }}';
+
+            if (timeValue) {
+                let hours = parseInt(timeValue.split(':')[0]);
+                let ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                let formattedTime = hours + ':' + timeValue.split(':')[1] + ' ' + ampm;
+
+                if ((sessionValue == morning && ampm != 'AM') || (sessionValue == afternoon && ampm !=
+                        'PM')) {
+                    Swal.fire({
+                        title: 'Không hợp lệ!',
+                        text: 'Thời gian phải khớp với buổi bạn chọn!',
+                        icon: 'warning'
+                    }).then(() => {
+                        $(this).val('');
+                    });
+                }
+            }
+        });
     });
 </script>

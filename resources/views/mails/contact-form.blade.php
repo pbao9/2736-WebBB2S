@@ -40,7 +40,8 @@
         <hr>
         <table>
             <tr>
-                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ tìm xe</strong></th>
+                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ tìm
+                        xe</strong></th>
             </tr>
             <tr>
                 <th>Thông tin</th>
@@ -114,7 +115,22 @@
             </tr>
             <tr>
                 <td>Thời gian đón</td>
-                <td>@lang(':time_pickup', ['time_pickup' => $data['time_pickup']])</td>
+                <td>
+                    @foreach ($session as $key => $value)
+                        @if ($key == $data['session_arrive_school'])
+                            {{ $value }}
+                        @endif
+                    @endforeach
+
+                    @lang(':time_arrive_school', ['time_arrive_school' => $data['time_arrive_school']])
+
+                    @foreach ($session as $key => $value)
+                        @if ($key == $data['session_off'])
+                            {{ $value }}
+                        @endif
+                    @endforeach
+                    @lang(':time_off', ['time_off' => $data['time_off']])
+                </td>
             </tr>
         </table>
         <hr>
@@ -122,7 +138,8 @@
         <hr>
         <table>
             <tr>
-                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ từ Phụ Huynh</strong></th>
+                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ từ Phụ
+                        Huynh</strong></th>
             </tr>
             <tr>
                 <th>Thông tin</th>
@@ -154,7 +171,8 @@
         <hr>
         <table>
             <tr>
-                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ từ Trường Học</strong></th>
+                <th colspan="2" style="text-align: center; text-transform: uppercase"><strong>Đơn liên hệ từ Trường
+                        Học</strong></th>
             </tr>
             <tr>
                 <th>Thông tin</th>

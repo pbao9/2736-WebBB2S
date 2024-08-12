@@ -26,10 +26,13 @@ return new class extends Migration {
             $table->string('school_address')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
             $table->string('location', 255)->nullable();
-            $table->time('time_pickup')->nullable();
             $table->boolean('school_other')->nullable()->default(0);
             $table->integer('service')->nullable()->default(1);
-            $table->integer('status')->default(0);
+            $table->string('session_arrive_school')->nullable();
+            $table->string('time_arrive_school')->nullable();
+            $table->string('session_off')->nullable();
+            $table->string('time_off')->nullable();
+            $table->string('status')->default(0);
             $table->timestamps();
 
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');

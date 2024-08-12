@@ -133,7 +133,7 @@
                                     <div class="col-md-12 col-12 mb-3">
                                         <label for="service" class="form-label required">Dịch vụ</label>
                                         <x-select name="service" :required="true" class="form-select shadow-none">
-                                            <x-select-option value="" :title="__('— Chọn Dịch vụ —')" disable="true" />
+                                            <x-select-option value="" :title="__('— Chọn Dịch vụ —')" disabled selected />
                                             @foreach ($service as $key => $value)
                                                 <x-select-option :value="$key" :title="__($value)" />
                                             @endforeach
@@ -142,14 +142,16 @@
                                     <div class="col-md-6 col-12 mb-3">
                                         <label for="session_arrive_school"
                                             class="form-label required">{{ __('Buổi đón đi') }}</label>
-                                        <x-select name="session_arrive_school" :required="true" class="form-select shadow-none">
+                                        <x-select name="session_arrive_school" :required="true"
+                                            class="form-select shadow-none">
+                                            <x-select-option value="" :title="__('— Buổi đón đi —')" disabled selected />
                                             @foreach ($session as $key => $value)
                                                 <x-select-option :value="$key" :title="__($value)" />
                                             @endforeach
                                         </x-select>
                                     </div>
                                     <div class="col-md-6 col-12 mb-3">
-                                        <div class="form-label required">{{__('Thời gian tới trường')}}</div>
+                                        <div class="form-label required">{{ __('Thời gian tới trường') }}</div>
                                         <input type="time" class="form-control" name="time_arrive_school"
                                             placeholder="Thời gian tới trường" required>
                                     </div>
@@ -157,13 +159,14 @@
                                         <label for="session_off"
                                             class="form-label required">{{ __('Buổi đón về') }}</label>
                                         <x-select name="session_off" :required="true" class="form-select shadow-none">
+                                            <x-select-option value="" :title="__('— Buổi đón về —')" disabled selected />
                                             @foreach ($session as $key => $value)
-                                                <x-select-option :option="2" :value="$key" :title="__($value)" />
+                                                <x-select-option :value="$key" :title="__($value)" />
                                             @endforeach
                                         </x-select>
                                     </div>
                                     <div class="col-md-6 col-12 mb-3">
-                                        <div class="form-label required">{{__('Thời gian về')}}</div>
+                                        <div class="form-label required">{{ __('Thời gian về') }}</div>
                                         <input type="time" class="form-control" name="time_off"
                                             placeholder="Thời gian tới trường" required>
                                     </div>
