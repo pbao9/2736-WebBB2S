@@ -113,19 +113,20 @@
                                 </div>
                                 <div class="row mb-3 d-none" id="school_other_frm">
                                     <div class="col-md-6 col-12">
-                                        <label for="school_name_other" class="form-label">Tên trường khác</label>
+                                        <label for="school_name_other"
+                                            class="form-label">{{ __('Tên trường khác') }}</label>
                                         <x-input type="text" class="form-control shadow-none" name="school_name"
                                             :value="old('school_name')" placeholder="Tên trường học"></x-input>
                                     </div>
                                     <div class="col-md-6 col-12">
-                                        <label for="school_address_other" class="form-label">Địa chỉ trường
-                                            khác</label>
+                                        <label for="school_address_other"
+                                            class="form-label">{{ __('Địa chỉ trường khác') }}</label>
                                         <x-input type="text" class="form-control shadow-none" name="school_address"
                                             :value="old('school_address')" placeholder="Địa chỉ trường học"></x-input>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="form-label required">Địa chỉ đón/trả</div>
+                                    <div class="form-label required">{{ __('Địa chỉ đón/trả') }}</div>
                                     <textarea class="form-control" name="location" rows="6" placeholder="Địa chỉ đón/trả bé"></textarea>
                                 </div>
                                 <hr>
@@ -139,37 +140,47 @@
                                             @endforeach
                                         </x-select>
                                     </div>
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <label for="session_arrive_school"
-                                            class="form-label required">{{ __('Buổi đón đi') }}</label>
-                                        <x-select name="session_arrive_school" :required="true"
-                                            class="form-select shadow-none">
-                                            <x-select-option value="" :title="__('— Buổi đón đi —')" disabled selected />
-                                            @foreach ($session as $key => $value)
-                                                <x-select-option :value="$key" :title="__($value)" />
-                                            @endforeach
-                                        </x-select>
+
+                                    <div class="col-12" id="pickUpOnlyRow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 mb-3">
+                                                <label for="session_arrive_school"
+                                                    class="form-label required">{{ __('Buổi đón đi') }}</label>
+                                                <x-select name="session_arrive_school" class="form-select shadow-none">
+                                                    <x-select-option value="" :title="__('— Buổi đón đi —')" disabled selected />
+                                                    @foreach ($session as $key => $value)
+                                                        <x-select-option :value="$key" :title="__($value)" />
+                                                    @endforeach
+                                                </x-select>
+                                            </div>
+                                            <div class="col-md-6 col-12 mb-3">
+                                                <div class="form-label required">{{ __('Thời gian tới trường') }}</div>
+                                                <input type="time" class="form-control" name="time_arrive_school"
+                                                    placeholder="Thời gian tới trường">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <div class="form-label required">{{ __('Thời gian tới trường') }}</div>
-                                        <input type="time" class="form-control" name="time_arrive_school"
-                                            placeholder="Thời gian tới trường" required>
+
+                                    <div class="col-12" id="dropOffOnlyRow">
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 mb-3">
+                                                <label for="session_off"
+                                                    class="form-label required">{{ __('Buổi đón về') }}</label>
+                                                <x-select name="session_off" class="form-select shadow-none">
+                                                    <x-select-option value="" :title="__('— Buổi đón về —')" disabled selected />
+                                                    @foreach ($session as $key => $value)
+                                                        <x-select-option :value="$key" :title="__($value)" />
+                                                    @endforeach
+                                                </x-select>
+                                            </div>
+                                            <div class="col-md-6 col-12 mb-3">
+                                                <div class="form-label required">{{ __('Thời gian về') }}</div>
+                                                <input type="time" class="form-control" name="time_off"
+                                                    placeholder="Thời gian tới trường">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <label for="session_off"
-                                            class="form-label required">{{ __('Buổi đón về') }}</label>
-                                        <x-select name="session_off" :required="true" class="form-select shadow-none">
-                                            <x-select-option value="" :title="__('— Buổi đón về —')" disabled selected />
-                                            @foreach ($session as $key => $value)
-                                                <x-select-option :value="$key" :title="__($value)" />
-                                            @endforeach
-                                        </x-select>
-                                    </div>
-                                    <div class="col-md-6 col-12 mb-3">
-                                        <div class="form-label required">{{ __('Thời gian về') }}</div>
-                                        <input type="time" class="form-control" name="time_off"
-                                            placeholder="Thời gian tới trường" required>
-                                    </div>
+
                                 </div>
                                 <hr>
                                 <button type="submit" class="btn btn-yellow w-100">{{ __('Nhận báo giá') }}</button>

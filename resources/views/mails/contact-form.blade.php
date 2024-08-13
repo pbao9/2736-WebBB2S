@@ -13,7 +13,7 @@
         type="text/css" />
     <style>
         table {
-            width: 50%;
+            width: 100%;
             border-collapse: collapse;
         }
 
@@ -116,20 +116,29 @@
             <tr>
                 <td>Thời gian đón</td>
                 <td>
-                    @foreach ($session as $key => $value)
-                        @if ($key == $data['session_arrive_school'])
-                            {{ $value }}
-                        @endif
-                    @endforeach
+                    @if (isset($data['session_arrive_school']) && isset($session[$data['session_arrive_school']]))
+                        @foreach ($session as $key => $value)
+                            @if ($key == $data['session_arrive_school'])
+                                {{ $value }}
+                            @endif
+                        @endforeach
+                    @endif
 
-                    @lang(':time_arrive_school', ['time_arrive_school' => $data['time_arrive_school']])
+                    @if (!empty($data['time_arrive_school']))
+                        @lang(':time_arrive_school', ['time_arrive_school' => $data['time_arrive_school']])
+                    @endif
 
-                    @foreach ($session as $key => $value)
-                        @if ($key == $data['session_off'])
-                            {{ $value }}
-                        @endif
-                    @endforeach
-                    @lang(':time_off', ['time_off' => $data['time_off']])
+                    @if (isset($data['session_off']) && isset($session[$data['session_off']]))
+                        @foreach ($session as $key => $value)
+                            @if ($key == $data['session_off'])
+                                {{ $value }}
+                            @endif
+                        @endforeach
+                    @endif
+
+                    @if (!empty($data['time_off']))
+                        @lang(':time_off', ['time_off' => $data['time_off']])
+                    @endif
                 </td>
             </tr>
         </table>

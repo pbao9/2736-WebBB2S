@@ -15,8 +15,36 @@
             $('#school_select').removeClass('d-none').addClass('d-block');
         }
     });
-    
+
     $(document).ready(function() {
+        let service = 'select[name="service"]';
+        let both = "{{ \App\Enums\Contact\ContactService::Both }}";
+        let pickupOnly = "{{ \App\Enums\Contact\ContactService::PickUpOnly }}";
+        let dropoffOnly = "{{ \App\Enums\Contact\ContactService::DropOffOnly }}";
+
+        const dropOffRow = document.getElementById('dropOffOnlyRow');
+        const pickUpRow = document.getElementById('pickUpOnlyRow');
+        const dropOffSession = $('select[name="session_off"], input[name="time_off"]');
+        const pickUpSession = $('select[name="session_arrive_school"], input[name="time_arrive_school"]');
+
+        $(service).on('change', function() {
+            let selectedValue = $(this).val();
+
+            if (selectedValue == pickupOnly) {
+                $(dropOffRow).addClass('d-none').removeClass('d-block');
+                $(pickUpRow).addClass('d-block').removeClass('d-none');
+                $(dropOffSession).val('');
+            } else if (selectedValue == dropoffOnly) {
+                $(pickUpRow).addClass('d-none').removeClass('d-block');
+                $(dropOffRow).addClass('d-block').removeClass('d-none');
+                $(pickUpSession).val('');
+            } else {
+                $(dropOffRow).addClass('d-block').removeClass('d-none');
+                $(pickUpRow).addClass('d-block').removeClass('d-none');
+            }
+        });
+
+
         $('input[name="time_arrive_school"], input[name="time_off"]').prop('disabled', true);
 
         $('select[name="session_arrive_school"], select[name="session_off"]').on('change', function() {

@@ -9,8 +9,8 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"
                                     class="text-muted">{{ __('Dashboard') }}</a></li>
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.slider.index') }}"
-                                        class="text-muted">{{ __('Slider') }}</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.slider.index') }}"
+                                    class="text-muted">{{ __('Slider') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ __('Thêm slider item') }}</li>
                         </ol>
                     </nav>
@@ -32,5 +32,6 @@
 @endsection
 
 @push('libs-js')
+    <script src="{{ asset('public/libs/ckeditor/ckeditor.js') }}"></script>
     @include('ckfinder::setup')
 @endpush

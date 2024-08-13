@@ -20,6 +20,13 @@
                         placeholder="{{ __('link') }}" />
                 </div>
             </div>
+             <!-- description -->
+             <div class="col-12">
+                <div class="mb-3">
+                    <label class="control-label">{{ __('Mô tả') }}:</label>
+                    <x-textarea name="describe" class="ckeditor">{!! $sliderItem->describe !!}</x-textarea>
+                </div>
+            </div>
             <!-- position -->
             <div class="col-md-12 col-12">
                 <div class="mb-3">

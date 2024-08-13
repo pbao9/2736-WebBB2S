@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Slider extends Model
 {
     use HasFactory;
+    
+    const CACHE_KEY_GET_ALL = 'cache_sliders';
 
     protected $table = 'sliders';
 

@@ -1,23 +1,29 @@
 <div class="col-12 col-md-9">
     <div class="card">
         <div class="card-header justify-content-center">
-            <h2 class="mb-0">{{ __('Thông tin slider item') }} - <x-link class="text-primary" :href="route('admin.slider.edit', $slider->id)" :title="$slider->name" /></h2>
+            <h2 class="mb-0">{{ __('Thông tin slider item') }} - <x-link class="text-primary" :href="route('admin.slider.edit', $slider->id)"
+                    :title="$slider->name" /></h2>
         </div>
         <div class="row card-body">
             <!-- name -->
             <div class="col-12">
                 <div class="mb-3">
                     <label class="control-label">{{ __('Tiêu đề') }}:</label>
-                    <x-input name="title" :value="old('title')" :required="true"
-                        placeholder="{{ __('Tiêu đề') }}" />
+                    <x-input name="title" :value="old('title')" :required="true" placeholder="{{ __('Tiêu đề') }}" />
                 </div>
             </div>
             <!-- link -->
             <div class="col-12">
                 <div class="mb-3">
                     <label class="control-label">{{ __('Link') }}:</label>
-                    <x-input name="link" :value="old('link', '#')" :required="true"
-                        placeholder="{{ __('link') }}" />
+                    <x-input name="link" :value="old('link', '#')" :required="true" placeholder="{{ __('Link') }}" />
+                </div>
+            </div>
+            <!-- desc -->
+            <div class="col-12">
+                <div class="mb-3">
+                    <label class="control-label">{{ __('Mô tả') }}:</label>
+                    <x-textarea name="describe" class="ckeditor"></x-textarea>
                 </div>
             </div>
             <!-- position -->
@@ -27,7 +33,7 @@
                     <x-input type="number" name="position" :value="old('position', 0)" :required="true" />
                 </div>
             </div>
-            
+
             <!-- mobile image -->
             <div class="col-12 col-md-6">
                 <div class="mb-3">

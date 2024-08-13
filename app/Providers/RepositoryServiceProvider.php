@@ -26,7 +26,8 @@ class RepositoryServiceProvider extends ServiceProvider
         'App\Repositories\Province\ProvinceRepositoryInterface' => 'App\Repositories\Province\ProvinceRepository',
         'App\Repositories\District\DistrictRepositoryInterface' => 'App\Repositories\District\DistrictRepository',
         'App\Repositories\Ward\WardRepositoryInterface' => 'App\Repositories\Ward\WardRepository',
-
+        'App\Repositories\Slider\SliderRepositoryInterface' => 'App\Repositories\Slider\SliderRepository',
+        'App\Repositories\Slider\SliderItemRepositoryInterface' => 'App\Repositories\Slider\SliderItemRepository',
     ];
     /**
      * Register services.

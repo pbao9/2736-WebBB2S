@@ -1,6 +1,6 @@
 <script src="{{ asset('/public/libs/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('public/libs/tabler/dist/js/tabler.min.js') }}"></script>
-<script defer src="{{ asset('public/libs/tabler/dist/litepicker/dist/litepicker.js') }}"></script>
+{{-- <script defer src="{{ asset('public/libs/tabler/dist/litepicker/dist/litepicker.js') }}"></script> --}}
 <script src="{{ asset('/public/libs/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('/public/libs/datatables/plugins/bs5/js/dataTables.bootstrap5.min.js') }}"></script>
 <script src="{{ asset('/public/libs/datatables/plugins/buttons/js/dataTables.buttons.min.js') }}"></script>
@@ -16,7 +16,7 @@
 <script src="{{ asset('public/assets/js/scripts.js') }}"></script>
 <script src="{{ asset('public/admin/assets/js/setup.js') }}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ asset('/public/libs/sweetalert2/sweetalert2.all.min.js') }}"></script>
 <script src="{{ asset('/public/libs/select2/dist/js/select2.min.js') }}"></script>
 <script src="{{ asset('/public/libs/select2/dist/js/i18n/vi.js') }}"></script>
 <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>

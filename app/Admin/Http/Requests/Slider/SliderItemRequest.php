@@ -17,12 +17,13 @@ class SliderItemRequest extends BaseRequest
             'title' => ['required', 'string'],
             'slider_id' => ['required', 'exists:App\Models\Slider,id'],
             'link' => ['nullable'],
+            'describe' => ['nullable'],
             'position' => ['required', 'integer'],
             'image' => ['required'],
             'mobile_image' => ['required']
         ];
     }
-
+    
     protected function methodPut()
     {
         return [
@@ -30,6 +31,7 @@ class SliderItemRequest extends BaseRequest
             'slider_id' => ['required', 'exists:App\Models\Slider,id'],
             'title' => ['required', 'string'],
             'link' => ['nullable'],
+            'describe' => ['nullable'],
             'position' => ['required', 'integer'],
             'image' => ['required'],
             'mobile_image' => ['required']

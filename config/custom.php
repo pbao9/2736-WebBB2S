@@ -19,5 +19,10 @@ return [
         'date' => 'd-m-Y',
         'position_currency' => 'left'
     ],
-    'currency' => '$'
+    'currency' => '$',
+    'sliders' => [
+        'banner-1-slider' => 'slider-1',
+        'banner-2-slider' => 'slider-2',
+        'blog-slider' => 'slider-3',
+    ],
 ];
