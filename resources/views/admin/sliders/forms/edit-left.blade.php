@@ -8,9 +8,8 @@
             <!-- name -->
             <div class="col-12">
                 <div class="mb-3">
-                    <label class="control-label">{{ __('Tên slider') }}:</label>
-                    <x-input name="name" :value="$slider->name" :required="true"
-                        placeholder="{{ __('Tên slider') }}" />
+                    <label class="control-label">{{ __('Tên Banner') }}:</label>
+                    <x-input name="name" :value="$slider->name" :required="true" placeholder="{{ __('Tên Banner') }}" />
                 </div>
             </div>
             <!-- name -->
@@ -18,7 +17,7 @@
                 <div class="mb-3">
                     <label class="control-label">{{ __('Key') }}:</label>
                     <x-input name="plain_key" :value="$slider->plain_key" :required="true"
-                        placeholder="{{ __('Định danh slider') }}" />
+                        placeholder="{{ __('Định danh Banner') }}" />
                 </div>
             </div>
             <!-- desc -->

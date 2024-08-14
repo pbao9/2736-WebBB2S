@@ -35,6 +35,7 @@ class SettingRequest extends BaseRequest
             'tax_code' => ['nullable', 'string'],
             'company' => ['nullable', 'string'],
             'introduce' => ['nullable', 'string'],
+            'video' => ['nullable', 'max:102400'], // max 100MB
         ];
     }
 }

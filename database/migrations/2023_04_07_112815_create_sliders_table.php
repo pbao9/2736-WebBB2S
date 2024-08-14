@@ -20,7 +20,6 @@ return new class extends Migration {
             $table->string('plain_key');
             $table->text('desc')->nullable();
             $table->tinyInteger('status')->default(SliderStatus::Active->value);
-            $table->tinyInteger('type')->default(SliderType::Staff->value);
             $table->timestamps();
         });
     }

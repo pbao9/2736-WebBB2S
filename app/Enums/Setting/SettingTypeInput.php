@@ -18,4 +18,5 @@ enum SettingTypeInput: int
     case Gallery = 8;
     case Checkbox = 9;
     case Radio = 10;
+    case Video = 11;
 }

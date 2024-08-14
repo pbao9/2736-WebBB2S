@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     use HasFactory;
-    
+
     const CACHE_KEY_GET_ALL = 'cache_settings';
 
     protected $table = 'settings';
@@ -21,13 +21,15 @@ class Setting extends Model
         'group' => SettingGroup::class
     ];
 
-    public function getNameComponent(){
-        return match($this->type_input){
+    public function getNameComponent()
+    {
+        return match ($this->type_input) {
             SettingTypeInput::Text => 'input',
             SettingTypeInput::Number => 'input-number',
             SettingTypeInput::Image => 'input-image-ckfinder',
             SettingTypeInput::Email => 'input-email',
             SettingTypeInput::Phone => 'input-phone',
+            SettingTypeInput::Video => 'input-video-ckfinder',
             default => 'input'
         };
     }

@@ -307,7 +307,6 @@ function selectImageCKFinder( preview, in_value, type ) {
 	} );
 
 }
-
 function selectFileCKFinder( in_value ) {
 	CKFinder.popup( {
 		chooseFiles: true,
@@ -324,6 +323,50 @@ function selectFileCKFinder( in_value ) {
 		}
 
 	} );
+}
+
+function selectVideoCKFinder( preview, in_value, type ) {
+    var url_home = $('meta[name="url-home"]').attr('content');
+	CKFinder.popup( {
+		chooseFiles: true,
+		width: 800,
+		height: 600,
+		onInit: function( finder ) {
+
+			finder.on( 'files:choose', function( evt ) {
+
+				if(type == 'MULTIPLE'){
+					var files = evt.data.files;
+
+				    var html = '', url_file;
+				    var value = $(in_value).val() ? $(in_value).val()+',' : '' ;
+				    files.forEach( function( file, i ) {
+						url_file = file.getUrl().replace(url_home, '');
+				    	html += `<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 mt-3">
+                                    <span data-route="0" data-url="${url_file}" class="delete-image-ckfinder">
+                                        <i class="ti ti-x"></i>
+                                    </span>
+                                    <video src="${file.getUrl()}" width="100%" control></video>
+                                </div>`;
+						if(i < files.length - 1){
+							value += url_file + ',';
+						}else{
+							value += url_file;
+						}
+				    } );
+				    $(preview).append(html);
+				    $(in_value).val(value);
+				}
+				else{
+                    var file = evt.data.files.first();
+					$(preview).attr('src', file.getUrl());
+					$(in_value).val(file.getUrl().replace(url_home, ''));
+				}
+			} );
+		}
+
+	} );
+
 }
 function deleteItemGallery(that, input) {
 	var url = that.data('url'),
@@ -360,6 +403,10 @@ $(document).ready(function () {
 });
 $(document).on('click', '.add-image-ckfinder', function(e){
     selectImageCKFinder($(this).data('preview'), $(this).data('input'), $(this).data('type'));
+});
+
+$(document).on('click', '.add-video-ckfinder', function(e){
+    selectVideoCKFinder($(this).data('preview'), $(this).data('input'), $(this).data('type'));
 });
 
 

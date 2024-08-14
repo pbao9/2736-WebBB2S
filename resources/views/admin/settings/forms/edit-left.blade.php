@@ -11,7 +11,6 @@
                         <x-textarea :name="$setting->setting_key" class="ckeditor">
                             {!! $setting->plain_value ?? '' !!}
                         </x-textarea>
-                      
                     @else
                         <x-dynamic-component :component="$setting->getNameComponent()" :name="$setting->setting_key" :value="$setting->plain_value"
                             showImage="{{ $setting->setting_key }}" :required="true" />

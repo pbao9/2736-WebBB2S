@@ -18,7 +18,6 @@ class SliderRequest extends BaseRequest
     {
         return [
             'status' => ['required', new Enum(SliderStatus::class)],
-            'type' => ['required', new Enum(SliderType::class)],
             'name' => ['required', 'string'],
             'plain_key' => ['required', 'string', 'unique:App\Models\Slider,plain_key'],
             'desc' => ['nullable'],
@@ -29,10 +28,9 @@ class SliderRequest extends BaseRequest
     {
         return [
             'id' => ['required', 'exists:App\Models\Slider,id'],
-            'type' => ['required', new Enum(SliderType::class)],
             'status' => ['required', new Enum(SliderStatus::class)],
             'name' => ['required', 'string'],
-            'plain_key' => ['required', 'string', 'unique:App\Models\Slider,plain_key,'.$this->id],
+            'plain_key' => ['required', 'string', 'unique:App\Models\Slider,plain_key,' . $this->id],
             'desc' => ['nullable'],
         ];
     }

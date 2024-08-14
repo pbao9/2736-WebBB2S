@@ -114,7 +114,7 @@ class SettingSeeder extends Seeder
                 'setting_key' => 'video',
                 'setting_name' => 'video',
                 'plain_value' => '/public/assets/videos/Babi2school-FINAL-1.mp4',
-                'type_input' => SettingTypeInput::Image,
+                'type_input' => SettingTypeInput::Video,
                 'group' => 1
             ],
             [

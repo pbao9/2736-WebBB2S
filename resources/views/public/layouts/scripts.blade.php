@@ -21,3 +21,7 @@
 <script src="{{ asset('/public/libs/select2/dist/js/i18n/vi.js') }}"></script>
 <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
 @stack('custom-js')
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0"
+    nonce="jaMOfkWb"></script>

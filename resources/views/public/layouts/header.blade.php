@@ -12,7 +12,7 @@
 
         <div class="d-lg-none d-block col-4 text-end pe-3">
             {{-- <i class="ti ti-car"></i> --}}
-            <x-link :href="route('form.findcar')" class="text-decoration-none fs-3 text-white bg-gray-500 rounded-5 p-2">
+            <x-link :href="route('form.findcar')" class="text-decoration-none fs-3 text-white bg-danger rounded-5 p-2">
                 <img alt="Findcar" src="{{ asset('public/assets/images/car-svgrepo-com.svg') }}" width="15%">
             </x-link>
         </div>
@@ -34,7 +34,8 @@
         </div>
         <div class="col-lg-2 col-md-6 d-lg-block d-none">
             <div class="d-flex gap-2 align-items-center">
-                <x-link :href="route('form.findcar')" :title="__('Tìm xe')" class="btn btn-danger d-none d-lg-block rounded-2 text-uppercase" />
+                <x-link :href="route('form.findcar')" :title="__('Tìm xe')"
+                    class="btn btn-danger d-none d-lg-block rounded-2 text-uppercase" />
                 <div class="gtranslate_wrapper"></div>
             </div>
         </div>
@@ -48,10 +49,21 @@
     </div>
     <div class="offcanvas-body">
         <ul class="list-unstyled">
-            <x-link :href="route('home.index')" :title="__('Về Babi2School')" class="nav-item nav-link fw-bold" />
-            <x-link :href="route('product.index')" :title="__('Sản phẩm')" class="nav-item nav-link fw-bold" />
-            <x-link :href="route('process.index')" :title="__('Quy trình đón đưa')" class="nav-item nav-link fw-bold" />
-            <x-link :href="route('form.contact')" :title="__('Liên hệ')" class="nav-item nav-link fw-bold" />
+            <li>
+                <x-link :href="route('home.index')" :title="__('Về Babi2School')" class="nav-item nav-link text-uppercase mb-3" />
+            </li>
+            <li>
+                <x-link :href="route('product.index')" :title="__('Sản phẩm')" class="nav-item nav-link text-uppercase mb-3" />
+            </li>
+            <li>
+                <x-link :href="route('blog.index')" :title="__('Tin tức')" class="nav-item nav-link text-uppercase mb-3" />
+            </li>
+            <li>
+                <x-link :href="route('process.index')" :title="__('Quy trình đón đưa')" class="nav-item nav-link text-uppercase mb-3" />
+            </li>
+            <li>
+                <x-link :href="route('form.contact')" :title="__('Liên hệ')" class="nav-item nav-link text-uppercase mb-3" />
+            </li>
         </ul>
     </div>
 </div>

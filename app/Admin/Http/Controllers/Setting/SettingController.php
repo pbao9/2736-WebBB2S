@@ -10,10 +10,9 @@ class SettingController extends Controller
 {
     public function __construct(
         SettingRepositoryInterface $repository
-    )
-    {
+    ) {
         parent::__construct();
-        $this->repository = $repository;    
+        $this->repository = $repository;
     }
     public function getView()
     {
@@ -23,19 +22,21 @@ class SettingController extends Controller
             'user_shopping' => 'admin.settings.user-shopping',
         ];
     }
-    public function general(){
+    public function general()
+    {
         $settings = $this->repository->getByGroup([SettingGroup::General]);
         return view($this->view['general'], compact('settings'));
     }
 
-    public function company(){
+    public function company()
+    {
         $settings = $this->repository->getByGroup([SettingGroup::Company]);
         return view($this->view['company'], compact('settings'));
     }
 
 
-    public function update(SettingRequest $request){
-        // $data = $request->except('_token', '_method');
+    public function update(SettingRequest $request)
+    {
         $data = $request->validated();
         $this->repository->updateMultipleRecord($data);
         return back()->with('success', __('notifySuccess'));

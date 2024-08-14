@@ -3,8 +3,8 @@
 @section('content')
     <div class="container mt-5">
         <h1 class="text-center" style="font-size: 250% !important">QUY TRÌNH ĐÓN HỌC SINH CỦA BABI2SCHOOL</h1>
-        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" height="570" controls>
-            <source src="{{ asset('public/assets/videos/Babi2school-FINAL-1.mp4') }}" type="video/mp4">
+        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" height="570" controls autoplay>
+            <source src="{{ asset($settings['video']) }}" type="video/mp4">
         </video>
 
         <script>
@@ -19,7 +19,8 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 6:00</h1>
                 </div>
-                <p class="mb-0 text-center">Babi2School bắt đầu hoạt động khi giám sinh mở app bên trong xe 7 chỗ để khởi động
+                <p class="mb-0 text-center">Babi2School bắt đầu hoạt động khi giám sinh mở app bên trong xe 7 chỗ để khởi
+                    động
                     chuyến xe. Phụ huynh sẽ cập nhật được vị trí xe bắt đầu chuyến hành trình</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">
@@ -56,7 +57,8 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 6:50</h1>
                 </div>
-                <p class="mb-0 text-center">Giám sinh đưa bé lên xe. Giám sinh chụp hình xác nhận tại điểm đón, cập nhật tự động
+                <p class="mb-0 text-center">Giám sinh đưa bé lên xe. Giám sinh chụp hình xác nhận tại điểm đón, cập nhật tự
+                    động
                     lên App</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">
@@ -75,7 +77,8 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 7:00</h1>
                 </div>
-                <p class="mb-0 text-center">Khi xe đến trường, giám sinh đưa bé đến trường, chụp hình điểm danh, cập nhật lên
+                <p class="mb-0 text-center">Khi xe đến trường, giám sinh đưa bé đến trường, chụp hình điểm danh, cập nhật
+                    lên
                     App. Phụ huynh sẽ nhận được thông báo trạng thái kèm hình ảnh, an tâm bé đã vào trườn</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">

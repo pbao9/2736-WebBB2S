@@ -19,8 +19,7 @@ class SinglePageController extends Controller
 
     public function __construct(
         ProvinceRepository $repoProvince,
-    )
-    {
+    ) {
         parent::__construct();
 
         $this->repoProvince = $repoProvince;

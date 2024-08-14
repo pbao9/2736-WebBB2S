@@ -4,25 +4,17 @@ use App\Enums\Contact\ContactStatus;
 use App\Enums\Contact\ContactType;
 use App\Enums\Contact\UserType;
 use App\Enums\Contact\ContactService;
-use App\Enums\Contract\ContractStatus;
-use App\Enums\Contract\ContractTerm;
-use App\Enums\Contract\ContractType;
-use App\Enums\Driver\DriverStatus;
-use App\Enums\Event\EventType;
 use App\Enums\Post\PostStatus;
 use App\Enums\PostCategory\PostCategoryStatus;
 use App\Enums\Module\ModuleStatus;
 use App\Enums\Notification\NotificationType;
 use App\Enums\Notification\NotificationStatus;
-use App\Enums\ScheduleOff\ScheduleOffType;
+use App\Enums\Product\ProductStatus;
 use App\Enums\School\SchoolStatus;
 use App\Enums\Slider\SliderType;
-use App\Enums\Trip\PickupStatus;
-use App\Enums\Trip\TripStatus;
 use App\Enums\Session\Session;
 use App\Enums\Setting\SettingGroup;
 use App\Enums\Slider\SliderStatus;
-use App\Enums\Student\StudentGrade;
 use App\Enums\User\{Gender};
 
 return [
@@ -77,6 +69,11 @@ return [
         ContactStatus::contacted->value => 'Đã liên hệ',
         ContactStatus::notContacted->value => 'Chưa liên hệ',
     ],
+    ContactService::class => [
+        ContactService::Both->value => 'Cả hai',
+        ContactService::PickUpOnly->value => 'Chỉ đón đi',
+        ContactService::DropOffOnly->value => 'Chỉ đón về',
+    ],
     UserType::class => [
         UserType::parent->value => 'Phụ Huynh',
         UserType::school->value => 'Trường học',
@@ -85,13 +82,12 @@ return [
         SchoolStatus::Active->value => 'Hoạt động',
         SchoolStatus::InActive->value => 'Không Hoạt động',
     ],
-    ContactService::class => [
-        ContractType::PickUpOnly->value => 'Chỉ đón đi',
-        ContractType::DropOffOnly->value => 'Chỉ đón về',
-        ContractType::Both->value => 'Cả hai',
-    ],
     Session::class => [
         Session::morning->value => 'Buổi sáng',
         Session::afternoon->value => 'Buổi chiều',
+    ],
+    ProductStatus::class => [
+        ProductStatus::Published->value => 'Đã xuất bản',
+        ProductStatus::Draft->value => 'Bản nháp'
     ],
 ];

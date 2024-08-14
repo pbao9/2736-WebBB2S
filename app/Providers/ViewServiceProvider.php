@@ -35,15 +35,28 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        View::composer([
-            'public.layouts.footer',
-            'public.layouts.head',
-            'public.layouts.header',
-        ], SettingComposer::class);
 
         View::composer(['public.home.include.slider'], SliderComposer::class);
 
-        View::composer(['public.layouts.header', 'public.layouts.footer', 'public.car.index', 'public.layouts.head', 'mails.include.sign', 'public.components.floating-button', 'public.contact.index', 'public.blog.include.lien-he', 'public.blog.blog-2', 'public.blog.blog-3', 'mails.contact-form'], SettingComposer::class);
-        View::composer(['public.layouts.footer'], ProductComposer::class);
+        View::composer([
+            'public.layouts.header',
+            'public.layouts.footer',
+            'public.car.index',
+            'public.layouts.head',
+            'mails.include.sign',
+            'public.components.floating-button',
+            'public.contact.index',
+            'public.blog.include.lien-he',
+            'public.blog.blog-2',
+            'public.blog.blog-3',
+            'mails.contact-form',
+            'public.home.include.section-2',
+            'public.process.index'
+        ], SettingComposer::class);
+
+        View::composer([
+            'public.layouts.footer',
+            'public.home.include.section-1'
+        ], ProductComposer::class);
     }
 }

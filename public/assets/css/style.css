@@ -227,7 +227,7 @@ span {
   background-size: cover;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
   color: #999999;
 }
 
@@ -243,10 +243,8 @@ span {
 /*** Courses ***/
 .courses {
   min-height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    ),
+  background: linear-gradient(rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)),
     url(../img/carousel-1.jpg) center center no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -366,23 +364,23 @@ footer {
 }
 
 footer a.nav-link,
-footer p.nav-link{
+footer p.nav-link {
   transition: padding .3s ease-in-out;
   cursor: pointer;
 }
 
 footer p.nav-link:hover,
-footer a.nav-link:hover{
+footer a.nav-link:hover {
   padding-left: 10px;
 }
 
 @media (max-width:1441px) {
-  footer .col-service{
+  footer .col-service {
     padding-left: 90px;
   }
 }
 
-footer .col-service{
+footer .col-service {
   padding-left: 120px;
 }
 
@@ -628,8 +626,8 @@ h2 {
     inset 0 2em 15px 0 hsla(0, 0%, 100%, 0.2);
 }
 
-.btn-custom{
-  border-color: rgba(0,0,0,.05);
+.btn-custom {
+  border-color: rgba(0, 0, 0, .05);
 }
 
 /* sidebar */
@@ -639,11 +637,11 @@ h2 {
   transition: padding 0.15s ease-in-out;
 }
 
-.sidebar .nav-link{
+.sidebar .nav-link {
   transition: padding 0.3s ease-in-out;
 }
 
-.sidebar .nav-link:hover{
+.sidebar .nav-link:hover {
   padding-left: 10px;
 }
 
@@ -722,8 +720,16 @@ h2 {
 }
 
 #button-contact-vr .button-contact {
-  /* position: relative; */
-  /* margin-top: -5px; */
+  position: relative;
+  margin-top: -5px;
+}
+
+@media (max-width:490px) {
+  #gom-all-in-one {
+    transition: 1.6s all;
+    display: flex;
+    gap: calc(100% - 80px);
+  }
 }
 
 #button-contact-vr .button-contact .phone-vr {
@@ -916,9 +922,6 @@ h2#swal2-title {
   font-size: 14px !important;
 }
 
-.select2-container--bootstrap-5
-  .select2-dropdown
-  .select2-results__options
-  .select2-results__option {
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option {
   font-size: 14px !important;
 }
