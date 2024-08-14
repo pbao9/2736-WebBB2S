@@ -4,7 +4,8 @@ return [
     'prefix_url' => [
         'category' => '/category',
         'page' => '/page',
-        'post' => '/blog',
+        'post' => '/tin-tuc',
+        'product' => '/san-pham',
         'tag' => '/tag'
     ],
     'images' => [

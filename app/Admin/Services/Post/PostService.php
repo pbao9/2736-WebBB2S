@@ -36,10 +36,10 @@ class PostService implements PostServiceInterface
         $data = $request->validated();
         $data['post_type'] = PostType::Default;
         $data['posted_at'] = now();
-        $data['priority'] = PriorityStatus::NotPriority;
-        if ($data['is_featured'] == 0) {
-            $data['is_featured'] = FeaturedStatus::Featureless;
-        }
+        // $data['priority'] = PriorityStatus::NotPriority;
+        // if ($data['is_featured'] == 0) {
+        //     $data['is_featured'] = FeaturedStatus::Featureless;
+        // }
         $categoriesId = $data['categories_id'] ?? [];
         unset($data['categories_id']);
         DB::beginTransaction();

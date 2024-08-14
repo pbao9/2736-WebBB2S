@@ -77,17 +77,19 @@ Route::controller(App\Http\Controllers\Blog\BlogController::class)
     ->as('blog.')
     ->group(function () {
         Route::get('/', 'index')->name('index');
-        Route::get('/{slug}', 'showPost')->name('show');
+        Route::get('/{slug}', 'show')->name('show');
     });
 
 //San phams
-Route::controller(App\Http\Controllers\Blog\BlogController::class)
+Route::controller(App\Http\Controllers\Product\ProductController::class)
     ->prefix('/san-pham')
-    ->as('blog.')
+    ->as('product.')
     ->group(function () {
-        Route::get('/review-nhanh-ung-dung-anta-bao-mau-va-website-danh-cho-nha-truong', 'blog1')->name('blog1');
-        Route::get('/dich-vu-dua-don-hoc-sinh-tien-loi-va-linh-hoat', 'blog2')->name('blog2');
-        Route::get('/thue-xe-dua-don-hoc-sinh-cho-con-dich-vu-hay-di-xe-ghep', 'blog3')->name('blog3');
+        Route::get('/', 'index')->name('index');
+        Route::get('/{slug}', 'show')->name('show');
+        // Route::get('/review-nhanh-ung-dung-anta-bao-mau-va-website-danh-cho-nha-truong', 'blog1')->name('blog1');
+        // Route::get('/dich-vu-dua-don-hoc-sinh-tien-loi-va-linh-hoat', 'blog2')->name('blog2');
+        // Route::get('/thue-xe-dua-don-hoc-sinh-cho-con-dich-vu-hay-di-xe-ghep', 'blog3')->name('blog3');
     });
 
 

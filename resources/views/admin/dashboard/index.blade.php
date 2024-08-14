@@ -81,6 +81,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card card-sm">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span class="bg-green text-white avatar">
+                                        <i class="ti ti-mail"></i>
+                                    </span>
+                                </div>
+                                <div class="col">
+                                    <div class="fw-bold text-primary">
+                                        <span class="count">
+                                            <span class="count" data-count="{{ $countProduct }}">0</span>
+                                        </span>
+                                    </div>
+                                    <div class="text-secondary text-uppercase fw-bold">
+                                        Sản phẩm</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

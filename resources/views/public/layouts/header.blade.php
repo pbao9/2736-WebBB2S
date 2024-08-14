@@ -24,7 +24,7 @@
                     <x-link :href="route('product.index')" :title="__('Sản phẩm')"
                         class="nav-item nav-link fw-bold {{ Request::routeIs('product.index') ? 'active' : '' }}" />
                     <x-link :href="route('blog.index')" :title="__('Tin tức')"
-                        class="nav-item nav-link fw-bold {{ Request::routeIs('product.index') ? 'active' : '' }}" />
+                        class="nav-item nav-link fw-bold {{ Request::routeIs('blog.index') ? 'active' : '' }}" />
                     <x-link :href="route('process.index')" :title="__('Quy trình đón đưa')"
                         class="nav-item nav-link fw-bold {{ Request::routeIs('process.index') ? 'active' : '' }}" />
                     <x-link :href="route('form.contact')" :title="__('Liên hệ')"

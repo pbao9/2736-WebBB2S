@@ -12,7 +12,7 @@
             }
 
             $.ajax({
-                    url: urlHome + '/address/districts',
+                    url: urlHome + '/admin/address/districts',
                     type: 'GET',
                     dataType: 'json',
                     data: {

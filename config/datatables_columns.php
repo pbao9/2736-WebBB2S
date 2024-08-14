@@ -381,7 +381,54 @@ return [
             'addClass' => 'text-center align-middle',
             'visible' => false
         ],
+        'action' => [
+            'title' => 'action',
+            'orderable' => false,
+            'exportable' => false,
+            'printable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
+    ],
 
+    'product' => [
+        'image' => [
+            'title' => 'Ảnh đại diện',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
+        'title' => [
+            'title' => 'Tiêu đề',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
+        'status' => [
+            'title' => 'Trạng thái',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
+        'updated_at' => [
+            'title' => 'Thời gian',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle',
+        ],
+        'viewed' => [
+            'title' => 'Lượt xem',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle',
+        ],
+        'created_at' => [
+            'title' => 'Ngày tạo',
+            'orderable' => false,
+            'addClass' => 'text-center align-middle',
+            'visible' => false
+        ],
+        'action' => [
+            'title' => 'action',
+            'orderable' => false,
+            'exportable' => false,
+            'printable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
     ],
 
     'contact' => [

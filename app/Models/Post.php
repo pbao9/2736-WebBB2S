@@ -26,8 +26,8 @@ class Post extends Model
     protected $casts = [
         'status' => PostStatus::class,
         'post_type' => PostType::class,
-        'is_featured' => FeaturedStatus::class,
-        'priority' => PriorityStatus::class,
+        // 'is_featured' => FeaturedStatus::class,
+        // 'priority' => PriorityStatus::class,
     ];
 
 

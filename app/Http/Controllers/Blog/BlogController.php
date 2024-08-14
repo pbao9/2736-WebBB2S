@@ -42,7 +42,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $posts = $this->repoPost->paginate([], [], []);
+        $posts = $this->repoPost->paginate([], [], ['categories']);
         $breadcrums = [['label' => trans('Tin tức')]];
 
         return view($this->view['index'], [
@@ -51,20 +51,7 @@ class BlogController extends Controller
         ]);
     }
 
-    public function blog1()
-    {
-        return view($this->view['blog-1']);
-    }
-    public function blog2()
-    {
-        return view($this->view['blog-2']);
-    }
-    public function blog3()
-    {
-        return view($this->view['blog-3']);
-    }
-
-    public function showPost($slug)
+    public function show($slug)
     {
 
         $posts = $this->repoPost->findBy(['slug' => $slug], ['posts', 'categories']);
@@ -72,9 +59,10 @@ class BlogController extends Controller
         if (!$posts) {
             abort(404, 'Post not found');
         }
-    
-        $posts->increment('viewed');
-        
+
+        $posts->viewed += 1;
+        $posts->save();
+
         $breadcrums = [
             ['label' => $posts->title]
         ];
@@ -82,7 +70,7 @@ class BlogController extends Controller
         $related = $this->repoPost->getByLimit([
             ['id', '!=', $posts->id]
         ], [
-            'categories' => fn ($q) => $q->whereIn('id', $posts->categories->pluck('id')->toArray())
+            'categories' => fn($q) => $q->whereIn('id', $posts->categories->pluck('id')->toArray())
         ], [], 5);
 
         return view($this->view['detail'], [

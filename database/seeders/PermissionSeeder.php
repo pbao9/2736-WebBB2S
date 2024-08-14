@@ -97,6 +97,16 @@ class PermissionSeeder extends Seeder
             'updated_at' => DB::raw('NOW()')
         ]);
 
+        // Module Products
+        DB::table('modules')->insert([
+            'id' => 9,
+            'name' => 'Quản lý Sản phẩm',
+            'description' => '<p>Quản lý Sản phẩm</p>',
+            'status' => 2,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+
         //Module API
         DB::table('permissions')->insert([
             'id' => 1,
@@ -443,6 +453,46 @@ class PermissionSeeder extends Seeder
         ]);
         /** End Permission Contact */
 
+         /** Start Permission Products */
+
+         DB::table('permissions')->insert([
+            'id' => 36,
+            'title' => 'Xem Sản phẩm',
+            'name' => 'viewProduct',
+            'guard_name' => 'admin',
+            'module_id' => 9,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 37,
+            'title' => 'Thêm Sản phẩm',
+            'name' => 'createProduct',
+            'guard_name' => 'admin',
+            'module_id' => 9,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 38,
+            'title' => 'Sửa Sản phẩm',
+            'name' => 'updateProduct',
+            'guard_name' => 'admin',
+            'module_id' => 9,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 39,
+            'title' => 'Xóa Sản phẩm',
+            'name' => 'deleteProduct',
+            'guard_name' => 'admin',
+            'module_id' => 9,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        /** End Permission Product */
+
         //seeding model_has_roles
         DB::table('model_has_roles')->insert([
             'role_id' => 1,
@@ -598,6 +648,22 @@ class PermissionSeeder extends Seeder
         ]);
         DB::table('role_has_permissions')->insert([
             'permission_id' => 35,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 36,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 37,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 38,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 39,
             'role_id' => 1
         ]);
 

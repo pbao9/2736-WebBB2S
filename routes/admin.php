@@ -201,22 +201,22 @@ Route::group(['middleware' => 'admin.auth.admin:admin'], function () {
 
     //Post
     Route::prefix('/products')->as('product.')->group(function () {
-        Route::controller(App\Admin\Http\Controllers\Post\PostController::class)->group(function () {
+        Route::controller(App\Admin\Http\Controllers\Product\ProductController::class)->group(function () {
 
-            Route::group(['middleware' => ['permission:createPost', 'auth:admin']], function () {
+            Route::group(['middleware' => ['permission:createProduct', 'auth:admin']], function () {
                 Route::get('/them', 'create')->name('create');
                 Route::post('/them', 'store')->name('store');
             });
-            Route::group(['middleware' => ['permission:viewPost', 'auth:admin']], function () {
+            Route::group(['middleware' => ['permission:viewProduct', 'auth:admin']], function () {
                 Route::get('/', 'index')->name('index');
                 Route::get('/sua/{id}', 'edit')->name('edit');
             });
 
-            Route::group(['middleware' => ['permission:updatePost', 'auth:admin']], function () {
+            Route::group(['middleware' => ['permission:updateProduct', 'auth:admin']], function () {
                 Route::put('/sua', 'update')->name('update');
             });
 
-            Route::group(['middleware' => ['permission:deletePost', 'auth:admin']], function () {
+            Route::group(['middleware' => ['permission:deleteProduct', 'auth:admin']], function () {
                 Route::delete('/xoa/{id}', 'delete')->name('delete');
             });
         });

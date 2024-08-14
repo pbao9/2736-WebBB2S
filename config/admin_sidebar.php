@@ -52,20 +52,20 @@ return [
         ]
     ],
     [
-        'title' => 'Bài viết',
+        'title' => 'Tin tức',
         'routeName' => null,
         'icon' => '<i class="ti ti-pin"></i>',
         'roles' => [],
         'permissions' =>
-            [
-                'createPost',
-                'viewPost',
-                'updatePost',
-                'deletePost',
-                'viewPostCategory',
-                'createPostCategory',
-                'updatePostCategory'
-            ],
+        [
+            'createPost',
+            'viewPost',
+            'updatePost',
+            'deletePost',
+            'viewPostCategory',
+            'createPostCategory',
+            'updatePostCategory'
+        ],
         'sub' => [
             [
                 'title' => 'Thêm bài viết',
@@ -87,6 +87,35 @@ return [
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
                 'permissions' => ['viewPostCategory'],
+            ],
+        ]
+    ],
+    [
+        'title' => 'Sản phẩm',
+        'routeName' => null,
+        'icon' => '<i class="ti ti-pin"></i>',
+        'roles' => [],
+        'permissions' =>
+        [
+            'createProduct',
+            'viewProduct',
+            'updateProduct',
+            'deleteProduct',
+        ],
+        'sub' => [
+            [
+                'title' => 'Thêm sản phẩm',
+                'routeName' => 'admin.product.create',
+                'icon' => '<i class="ti ti-plus"></i>',
+                'roles' => [],
+                'permissions' => ['createProduct'],
+            ],
+            [
+                'title' => 'Tất cả sản phẩm',
+                'routeName' => 'admin.product.index',
+                'icon' => '<i class="ti ti-list"></i>',
+                'roles' => [],
+                'permissions' => ['viewProduct'],
             ],
         ]
     ],

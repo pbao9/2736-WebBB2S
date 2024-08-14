@@ -19,11 +19,15 @@
             </div>
             <aside class="col-md-3 sidebar">
                 <div class="py-1">
-                    @include('public.components.sidebar')
+                    @include('public.blog.include.sidebar')
                 </div>
             </aside>
         </div>
     </main>
 @endsection
+
+@push('custom-js')
+   
+@endpush
 
 

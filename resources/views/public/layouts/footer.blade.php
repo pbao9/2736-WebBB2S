@@ -25,18 +25,14 @@
                 <div class="col-service">
                     <h2 class="text-black fw-bold">DỊCH VỤ</h2>
                     <ul class="list-unstyled">
+                        @foreach ($products as $item)
                         <li class="mb-2">
-                            <x-link :href="route('blog.blog1')" :title="__('Ứng dụng Babi2School')"
+                            <x-link :href="route('product.show', $item['slug'])" :title="__($item['title'])"
                                 class="text-decoration-none nav-link fs-3 nav-link" />
-                        </li>
-                        <li class="mb-2">
-                            <x-link :href="route('blog.blog2')" :title="__('Dịch vụ đưa đón 01 chiều')"
-                                class="text-decoration-none nav-link fs-3 nav-link" />
-                        </li>
-                        <li class="mb-2">
-                            <x-link :href="route('blog.blog3')" :title="__('Dịch vụ đưa đón 02 chiều')"
-                                class="text-decoration-none nav-link fs-3 nav-link" />
-                        </li>
+                        </li> 
+                        @endforeach
+                       
+                       
                     </ul>
                 </div>
 
