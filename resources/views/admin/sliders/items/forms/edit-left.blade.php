@@ -1,7 +1,7 @@
 <div class="col-12 col-md-9">
     <div class="card">
         <div class="card-header justify-content-center">
-            <h2 class="mb-0">{{ __('Thông tin slider item') }} - <x-link class="text-primary" :href="route('admin.slider.edit', optional($sliderItem->slider)->id)" :title="optional($sliderItem->slider)->name" /></h2>
+            <h2 class="mb-0">{{ __('Thông tin Banner item') }} - <x-link class="text-primary" :href="route('admin.slider.edit', optional($sliderItem->slider)->id)" :title="optional($sliderItem->slider)->name" /></h2>
         </div>
         <div class="row card-body">
             <!-- name -->

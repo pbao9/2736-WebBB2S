@@ -10,18 +10,6 @@
     </div>
     <div class="card mb-3">
         <div class="card-header">
-            {{ __('location') }}
-        </div>
-        <div class="card-body p-2">
-            <x-select class="form-select" name="type" :required="true">
-                @foreach ($type as $key => $value )
-                    <x-select-option :option="$slider->type->value" :value="$key" :title="$value" />
-                @endforeach
-            </x-select>
-        </div>
-    </div>
-    <div class="card mb-3">
-        <div class="card-header">
             {{ __('Trạng thái') }}
         </div>
         <div class="card-body p-2">

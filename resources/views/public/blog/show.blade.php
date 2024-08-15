@@ -14,6 +14,7 @@
                 <h1 class="text-center text-uppercase fw-bold">{{ $posts->title }}</h1>
                 <div class="is-diviner mx-auto"></div>
                 <p>{!! $posts['content'] !!}</p>
+                <p>{{ __('Ngày đăng: ') . ' ' . $posts['created_at'] }}</p>
                 <p class="text-center">- - -</p>
                 @include('public.blog.include.lien-he')
             </div>

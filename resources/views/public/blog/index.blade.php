@@ -9,24 +9,34 @@
             <div class="row justify-content-center">
                 <div class="col-md-10 col-12">
                     <div class="row">
-                        @foreach ($posts as $item)
+                        @forelse ($posts as $item)
                             <x-link :href="route('blog.show', $item->slug)"
-                                class="col-lg-4 col-12 text-center animate__animated animate__fadeInLeft animate__slow text-decoration-none">
-                                <img src="{{ asset($item->image) }}" class="object-cover card-img-start img-fluid rounded-3"
-                                    alt="{{ $item->title }}" width="252" height="252">
-                                <p class="text-uppercase fw-bold text-center px-3 pt-3 text-dark">
-                                    {{ $item->title }}
-                                </p>
-
-                                <h5>
-                                    @foreach ($item->categories as $category)
-                                        <span class="badge">{{ $category->name }}</span>
-                                    @endforeach
-                                </h5>
-
-                                <div class="is-diviner mx-auto my-1"></div>
+                                class="col-lg-4 col-12 text-center animate__animated animate__fadeInLeft animate__slow text-decoration-none mb-3">
+                                <div class="card h-100">
+                                    <div class="card-header p-1">
+                                        <img src="{{ asset($item->image) }}"
+                                            class="img-fluid"
+                                            alt="{{ $item->title }}" width="100%">
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="text-uppercase fw-bold text-center px-3 pt-3 text-dark">
+                                            {{ $item->title }}
+                                        </p>
+                                        <p class="line-clamp">
+                                            {{ $item->description }}
+                                        </p>
+                                        <h5>
+                                            @foreach ($item->categories as $category)
+                                                <span class="badge">{{ $category->name }}</span>
+                                            @endforeach
+                                        </h5>
+                                        <div class="is-diviner mx-auto my-1"></div>
+                                    </div>
+                                </div>
                             </x-link>
-                        @endforeach
+                        @empty
+                            <p class="text-center">Chưa có tin tức nào được đăng!</p>
+                        @endforelse
                     </div>
                     {{ $posts->appends(request()->all())->links() }}
                 </div>
@@ -34,3 +44,5 @@
         </div>
     </section>
 @endsection
+
+

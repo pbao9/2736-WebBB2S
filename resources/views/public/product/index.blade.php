@@ -51,7 +51,7 @@
                                 class="col-lg-4 col-12 text-center animate__animated animate__fadeInLeft animate__slow text-decoration-none mb-3">
                                 <img src="{{ asset($item->image) }}" class="object-cover card-img-start img-fluid "
                                     alt="{{ $item->title }}" width="252" height="252">
-                                <p class="text-uppercase fw-bold text-center py-3 text-dark">
+                                <p class="text-uppercase fw-bold text-center pt-3 text-dark mb-1">
                                     {{ $item->title }}
                                 </p>
                                 <div class="is-diviner mx-auto my-1"></div>

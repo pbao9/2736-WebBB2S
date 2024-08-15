@@ -106,7 +106,7 @@ class SettingSeeder extends Seeder
             [
                 'setting_key' => 'facebook',
                 'setting_name' => 'Facebook',
-                'plain_value' => 'https://www.facebook.com/profile.php?id=61557847006591',
+                'plain_value' => 'https://www.facebook.com/BabiToSchool/',
                 'type_input' => SettingTypeInput::Text,
                 'group' => 1
             ],
