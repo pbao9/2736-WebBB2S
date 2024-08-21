@@ -30,12 +30,18 @@ class SinglePageController extends Controller
     {
         return [
             'contact' => 'public.contact.index',
-            'findcar' => 'public.car.index'
+            'findcar' => 'public.car.index',
+            'policy' => 'public.policy.index'
         ];
     }
     public function contact()
     {
         return view($this->view['contact']);
+    }
+
+    public function policy()
+    {
+        return view($this->view['policy']);
     }
     public function findcar()
     {

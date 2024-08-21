@@ -68,6 +68,7 @@ Route::controller(App\Http\Controllers\SinglePage\SinglePageController::class)
     ->group(function () {
         Route::get('/lien-he', 'contact')->name('contact');
         Route::get('/tim-xe', 'findcar')->name('findcar');
+        Route::get('/chinh-sach', 'policy')->name('policy');
     });
 
 
