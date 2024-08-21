@@ -124,6 +124,20 @@ class SettingSeeder extends Seeder
                 'type_input' => SettingTypeInput::Textarea,
                 'group' => 2
             ],
+            [
+                'setting_key' => 'ch_play_link',
+                'setting_name' => 'CH Link Download',
+                'plain_value' => 'https://play.google.com/store/apps?hl=vi',
+                'type_input' => SettingTypeInput::Text,
+                'group' => 1
+            ],
+            [
+                'setting_key' => 'app_store_link',
+                'setting_name' => 'App Store Download',
+                'plain_value' => 'https://www.apple.com/app-store/',
+                'type_input' => SettingTypeInput::Text,
+                'group' => 1
+            ],
         ]);
     }
 }

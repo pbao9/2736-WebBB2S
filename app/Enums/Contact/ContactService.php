@@ -18,7 +18,7 @@ enum ContactService: int
         return match ($this) {
             ContactService::PickUpOnly => __('Chỉ đón đi'),
             ContactService::DropOffOnly => __('Chỉ đón về'),
-            ContactService::Both => __('Cả hai'),
+            ContactService::Both => __('Hai chiều'),
         };
     }
 

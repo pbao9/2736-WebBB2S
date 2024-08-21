@@ -40,6 +40,28 @@ Route::group(['middleware' => 'admin.auth.admin:admin'], function () {
             });
         });
 
+    // Province
+    Route::controller(App\Admin\Http\Controllers\Address\Address\Province\ProvinceController::class)
+        ->prefix('/province')
+        ->as('province.')
+        ->group(function () {
+            Route::group(['middleware' => ['permission:createProvince', 'auth:admin']], function () {
+                Route::get('/add', 'create')->name('create');
+                Route::post('/add', 'store')->name('store');
+            });
+            Route::group(['middleware' => ['permission:viewProvince', 'auth:admin']], function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+            });
+
+            Route::group(['middleware' => ['permission:updateProvince', 'auth:admin']], function () {
+                Route::put('/edit', 'update')->name('update');
+            });
+
+            Route::group(['middleware' => ['permission:deleteProvince', 'auth:admin']], function () {
+                Route::delete('/delete/{id}', 'delete')->name('delete');
+            });
+        });
 
     //Notification
     Route::controller(App\Admin\Http\Controllers\Notification\NotificationController::class)

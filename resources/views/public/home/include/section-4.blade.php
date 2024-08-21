@@ -15,10 +15,10 @@
 
         <div class="row mt-5">
             <div class="col-lg-6 col-md-6 mb-4 col-12 d-flex flex-column align-items-end">
-                <x-link :href="route('home.index')">
+                <x-link :href="$settings['ch_play_link']" target="_blank">
                     <img src="{{ asset('public/assets/images/images-2.png') }}" height="128" width="372">
                 </x-link>
-                <x-link :href="route('home.index')">
+                <x-link :href="$settings['app_store_link']" target="_blank">
                     <img src="{{ asset('public/assets/images/406f0f_c4ccc5a8f5d445408caf12050e202a82mv2.png') }}"
                         height="128" width="372">
                 </x-link>

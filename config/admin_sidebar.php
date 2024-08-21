@@ -48,6 +48,20 @@ return [
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
                 'permissions' => ['viewSchool'],
+            ],
+            [
+                'title' => 'DS Tỉnh Thành',
+                'routeName' => 'admin.school.index',
+                'icon' => '<i class="ti ti-list"></i>',
+                'roles' => [],
+                'permissions' => ['viewProvince'],
+            ],
+            [
+                'title' => 'DS Quận Huyện',
+                'routeName' => 'admin.school.index',
+                'icon' => '<i class="ti ti-list"></i>',
+                'roles' => [],
+                'permissions' => ['viewDistrict'],
             ]
         ]
     ],
@@ -57,15 +71,15 @@ return [
         'icon' => '<i class="ti ti-pin"></i>',
         'roles' => [],
         'permissions' =>
-        [
-            'createPost',
-            'viewPost',
-            'updatePost',
-            'deletePost',
-            'viewPostCategory',
-            'createPostCategory',
-            'updatePostCategory'
-        ],
+            [
+                'createPost',
+                'viewPost',
+                'updatePost',
+                'deletePost',
+                'viewPostCategory',
+                'createPostCategory',
+                'updatePostCategory'
+            ],
         'sub' => [
             [
                 'title' => 'Thêm bài viết',
@@ -96,12 +110,12 @@ return [
         'icon' => '<i class="ti ti-pin"></i>',
         'roles' => [],
         'permissions' =>
-        [
-            'createProduct',
-            'viewProduct',
-            'updateProduct',
-            'deleteProduct',
-        ],
+            [
+                'createProduct',
+                'viewProduct',
+                'updateProduct',
+                'deleteProduct',
+            ],
         'sub' => [
             [
                 'title' => 'Thêm sản phẩm',

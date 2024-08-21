@@ -86,7 +86,7 @@ class PermissionSeeder extends Seeder
             'created_at' => DB::raw('NOW()'),
             'updated_at' => DB::raw('NOW()')
         ]);
-        
+
         //Module Contact
         DB::table('modules')->insert([
             'id' => 8,
@@ -102,6 +102,26 @@ class PermissionSeeder extends Seeder
             'id' => 9,
             'name' => 'Quản lý Sản phẩm',
             'description' => '<p>Quản lý Sản phẩm</p>',
+            'status' => 2,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+
+        // Module Province
+        DB::table('modules')->insert([
+            'id' => 10,
+            'name' => 'Quản lý Tỉnh Thành',
+            'description' => '<p>Quản lý Tỉnh thành</p>',
+            'status' => 2,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+
+        // Module District
+        DB::table('modules')->insert([
+            'id' => 11,
+            'name' => 'Quản lý Quận Huyện',
+            'description' => '<p>Quản lý Quận Huyện</p>',
             'status' => 2,
             'created_at' => DB::raw('NOW()'),
             'updated_at' => DB::raw('NOW()')
@@ -183,7 +203,7 @@ class PermissionSeeder extends Seeder
             'created_at' => DB::raw('NOW()'),
             'updated_at' => DB::raw('NOW()')
         ]);
-        
+
 
         DB::table('permissions')->insert([
             'id' => 9,
@@ -413,9 +433,9 @@ class PermissionSeeder extends Seeder
         ]);
         /** End Permission School */
 
-         /** Start Permission Contact */
+        /** Start Permission Contact */
 
-         DB::table('permissions')->insert([
+        DB::table('permissions')->insert([
             'id' => 32,
             'title' => 'Xem Đơn Liên Hệ',
             'name' => 'viewContact',
@@ -453,9 +473,9 @@ class PermissionSeeder extends Seeder
         ]);
         /** End Permission Contact */
 
-         /** Start Permission Products */
+        /** Start Permission Products */
 
-         DB::table('permissions')->insert([
+        DB::table('permissions')->insert([
             'id' => 36,
             'title' => 'Xem Sản phẩm',
             'name' => 'viewProduct',
@@ -493,6 +513,86 @@ class PermissionSeeder extends Seeder
         ]);
         /** End Permission Product */
 
+        /** Start Permission Province */
+
+        DB::table('permissions')->insert([
+            'id' => 40,
+            'title' => 'Xem Tỉnh Thành',
+            'name' => 'viewProvince',
+            'guard_name' => 'admin',
+            'module_id' => 10,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 41,
+            'title' => 'Thêm Tỉnh Thành',
+            'name' => 'createProvince',
+            'guard_name' => 'admin',
+            'module_id' => 10,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 42,
+            'title' => 'Sửa Tỉnh Thành',
+            'name' => 'updateProvince',
+            'guard_name' => 'admin',
+            'module_id' => 10,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 43,
+            'title' => 'Xóa Tỉnh Thành',
+            'name' => 'deleteProvince',
+            'guard_name' => 'admin',
+            'module_id' => 10,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        /** End Permission Province */
+
+        /** Start Permission District */
+
+        DB::table('permissions')->insert([
+            'id' => 44,
+            'title' => 'Xem Quận Huyện',
+            'name' => 'viewDistrict',
+            'guard_name' => 'admin',
+            'module_id' => 11,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 45,
+            'title' => 'Thêm Quận Huyện',
+            'name' => 'createDistrict',
+            'guard_name' => 'admin',
+            'module_id' => 11,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 46,
+            'title' => 'Sửa Quận Huyện',
+            'name' => 'updateDistrict',
+            'guard_name' => 'admin',
+            'module_id' => 11,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        DB::table('permissions')->insert([
+            'id' => 47,
+            'title' => 'Xóa Quận Huyện',
+            'name' => 'deleteDistrict',
+            'guard_name' => 'admin',
+            'module_id' => 11,
+            'created_at' => DB::raw('NOW()'),
+            'updated_at' => DB::raw('NOW()')
+        ]);
+        /** End Permission District */
+
         //seeding model_has_roles
         DB::table('model_has_roles')->insert([
             'role_id' => 1,
@@ -504,52 +604,52 @@ class PermissionSeeder extends Seeder
             'permission_id' => 1,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 2,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 3,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 4,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 5,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 6,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 7,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 8,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 9,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 10,
             'role_id' => 1
         ]);
-       
+
         DB::table('role_has_permissions')->insert([
             'permission_id' => 11,
             'role_id' => 1
@@ -664,6 +764,38 @@ class PermissionSeeder extends Seeder
         ]);
         DB::table('role_has_permissions')->insert([
             'permission_id' => 39,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 40,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 41,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 42,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 43,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 44,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 45,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 46,
+            'role_id' => 1
+        ]);
+        DB::table('role_has_permissions')->insert([
+            'permission_id' => 47,
             'role_id' => 1
         ]);
 

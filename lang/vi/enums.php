@@ -70,7 +70,7 @@ return [
         ContactStatus::notContacted->value => 'Chưa liên hệ',
     ],
     ContactService::class => [
-        ContactService::Both->value => 'Cả hai',
+        ContactService::Both->value => 'Hai chiều',
         ContactService::PickUpOnly->value => 'Chỉ đón đi',
         ContactService::DropOffOnly->value => 'Chỉ đón về',
     ],

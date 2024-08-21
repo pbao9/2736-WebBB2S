@@ -51,7 +51,8 @@ class ViewServiceProvider extends ServiceProvider
             'public.blog.blog-3',
             'mails.contact-form',
             'public.home.include.section-2',
-            'public.process.index'
+            'public.process.index',
+            'public.home.index'
         ], SettingComposer::class);
 
         View::composer([
