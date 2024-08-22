@@ -51,7 +51,7 @@ return [
             ],
             [
                 'title' => 'DS Tỉnh Thành',
-                'routeName' => 'admin.school.index',
+                'routeName' => 'admin.province.index',
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
                 'permissions' => ['viewProvince'],

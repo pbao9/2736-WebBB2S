@@ -36,6 +36,7 @@ class SettingRequest extends BaseRequest
             'company' => ['nullable', 'string'],
             'introduce' => ['nullable', 'string'],
             'video' => ['nullable', 'max:102400'], // max 100MB
+            'slogan' => ['nullable', 'string'],
         ];
     }
 }

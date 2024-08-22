@@ -2,7 +2,7 @@
     <!-- Tại sao chọn Babi2School -->
     <h2 class="fancy-underline"> Tại sao chọn Babi2School </h2>
     <div class="container">
-        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" height="570" controls autoplay muted>
+        <video id="myVideo" class="d-block mx-auto mt-3" width="100%" controls autoplay muted>
             <source src="{{ asset($settings['video']) }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>

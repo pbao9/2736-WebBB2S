@@ -10,6 +10,8 @@ use App\Enums\Module\ModuleStatus;
 use App\Enums\Notification\NotificationType;
 use App\Enums\Notification\NotificationStatus;
 use App\Enums\Product\ProductStatus;
+use App\Enums\Province\DivisonType;
+use App\Enums\Province\ProvinceActive;
 use App\Enums\School\SchoolStatus;
 use App\Enums\Slider\SliderType;
 use App\Enums\Session\Session;
@@ -89,5 +91,13 @@ return [
     ProductStatus::class => [
         ProductStatus::Published->value => 'Đã xuất bản',
         ProductStatus::Draft->value => 'Bản nháp'
+    ],
+    ProvinceActive::class => [
+        ProvinceActive::Active->value => 'Hoạt động',
+        ProvinceActive::InActive->value => 'Không hoạt động'
+    ],
+    DivisonType::class => [
+        DivisonType::province->value => 'tỉnh',
+        DivisonType::central_city->value => 'thành phố trung ương'
     ],
 ];

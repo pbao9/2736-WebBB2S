@@ -12,8 +12,11 @@
 
         <div class="d-lg-none d-block col-4 text-end pe-3">
             {{-- <i class="ti ti-car"></i> --}}
-            <x-link :href="route('form.findcar')" class="text-decoration-none fs-3 text-white bg-danger rounded-5 p-2">
+            <x-link :href="route('form.findcar')" class="text-decoration-none fs-3 text-white bg-danger rounded-5 p-2 shadow-lg">
                 <img alt="Findcar" src="{{ asset('public/assets/images/car-svgrepo-com.svg') }}" width="15%">
+                <span class="ms-2">
+                    {{ __('Tìm xe') }}
+                </span>
             </x-link>
         </div>
         <div class="col-lg-8 col-md-6">
@@ -56,13 +59,13 @@
                 <x-link :href="route('product.index')" :title="__('Sản phẩm')" class="nav-item nav-link text-uppercase mb-3" />
             </li>
             <li>
-                <x-link :href="route('blog.index')" :title="__('Tin tức')" class="nav-item nav-link text-uppercase mb-3" />
-            </li>
-            <li>
                 <x-link :href="route('process.index')" :title="__('Quy trình đón đưa')" class="nav-item nav-link text-uppercase mb-3" />
             </li>
             <li>
                 <x-link :href="route('form.contact')" :title="__('Liên hệ')" class="nav-item nav-link text-uppercase mb-3" />
+            </li>
+            <li>
+                <x-link :href="route('blog.index')" :title="__('Tin tức')" class="nav-item nav-link text-uppercase mb-3" />
             </li>
         </ul>
     </div>

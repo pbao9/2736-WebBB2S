@@ -20,6 +20,7 @@ return new class extends Migration
             $table->char('division_type');
             $table->char('codename')->unique();
             $table->integer('phone_code');
+            $table->boolean('active')->default(false);
         });
     }
 

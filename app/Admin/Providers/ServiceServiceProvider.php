@@ -24,6 +24,7 @@ class ServiceServiceProvider extends ServiceProvider
         'App\Admin\Services\Notification\NotificationServiceInterface' => 'App\Admin\Services\Notification\NotificationService',
         'App\Admin\Services\School\SchoolServiceInterface' => 'App\Admin\Services\School\SchoolService',
         'App\Admin\Services\Contact\ContactServiceInterface' => 'App\Admin\Services\Contact\ContactService',
+        'App\Admin\Services\Provice\ProvinceServiceInterface' => 'App\Admin\Services\Province\ProvinceService',
     ];
     /**
      * Register services.

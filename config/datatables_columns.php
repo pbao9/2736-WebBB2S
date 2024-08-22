@@ -463,4 +463,40 @@ return [
             'addClass' => 'text-center align-middle'
         ],
     ],
+
+    'province' => [
+        'name' => [
+            'title' => 'Tỉnh thành',
+            'orderable' => false,
+            'width' => '120px',
+            'addClass' => 'align-middle'
+        ],
+        'code' => [
+            'title' => 'Mã tỉnh thành',
+            'orderable' => false,
+            'width' => '40px',
+            'addClass' => 'align-middle'
+        ],
+        'action' => [
+            'title' => 'action',
+            'orderable' => false,
+            'exportable' => false,
+            'printable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
+    ],
+    'district' => [
+        'name' => [
+            'title' => 'name',
+            'orderable' => false,
+            'addClass' => 'align-middle'
+        ],
+        'action' => [
+            'title' => 'action',
+            'orderable' => false,
+            'exportable' => false,
+            'printable' => false,
+            'addClass' => 'text-center align-middle'
+        ],
+    ],
 ];

@@ -383,7 +383,13 @@ footer .col-service {
     padding-left: 90px;
   }
 }
-@media (min-width:425px) and (max-width:1024px) {
+@media (max-width:425px) {
+  footer .col-service {
+    padding-left: 0;
+  }
+}
+
+@media (max-width:768px) {
   footer .col-service {
     padding-left: 0;
   }
@@ -392,8 +398,8 @@ footer .col-service {
 
 
 
+
 footer h2 {
-  /* font-family: "Patrick Hand", cursive; */
   font-size: 1.5em;
 }
 
@@ -439,6 +445,14 @@ h2.fancy-underline {
   font-size: 2rem !important;
   margin: 0 40px;
 }
+
+@media (max-width: 768px) {  
+  h2.fancy-underline {
+    font-size: 1.5rem !important;
+    margin: 0 40px;
+  }
+}
+
 
 .fancy-underline:after {
   background: url(../images/underline.png) 50% top no-repeat;
@@ -942,3 +956,14 @@ h2#swal2-title {
 }
 
 
+/* Product */
+
+.banner-content h1 b{
+  font-size: 150%;
+}
+
+  @media (max-width: 768px) {
+    .sidebar{
+      border-left: none;
+    }
+  }
