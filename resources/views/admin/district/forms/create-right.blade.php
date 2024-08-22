@@ -12,14 +12,4 @@
             </div>
         </div>
     </div>
-    <div class="card mb-3">
-        <div class="card-header">
-            {{ __('Hiển thị ngoài giao diện Marketing') }}
-        </div>
-        <div class="card-body p-2">
-            <input type="hidden" name="active" value="{{ App\Enums\Province\ProvinceActive::InActive->value }}">
-            <x-input-switch name="active" value="{{ App\Enums\Province\ProvinceActive::Active->value }}"
-                :label="__('Hiển thị ngoài giao diện Marketing')" />
-        </div>
-    </div>
 </div>

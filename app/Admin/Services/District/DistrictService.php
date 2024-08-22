@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Admin\Services\Province;
+namespace App\Admin\Services\District;
 
-use App\Admin\Repositories\Province\ProvinceRepositoryInterface;
+use App\Admin\Repositories\District\DistrictRepositoryInterface;
 use App\Traits\UseLog;
 use Exception;
 use Illuminate\Http\Request;
 
-class ProvinceService implements ProvinceServiceInterface
+class DistrictService implements DistrictServiceInterface
 {
     use UseLog;
     /**
@@ -17,9 +17,9 @@ class ProvinceService implements ProvinceServiceInterface
      */
     protected array $data;
 
-    protected ProvinceRepositoryInterface $repository;
+    protected DistrictRepositoryInterface $repository;
 
-    public function __construct(ProvinceRepositoryInterface $repository)
+    public function __construct(DistrictRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

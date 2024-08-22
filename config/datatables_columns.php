@@ -468,13 +468,16 @@ return [
         'name' => [
             'title' => 'Tỉnh thành',
             'orderable' => false,
-            'width' => '120px',
             'addClass' => 'align-middle'
         ],
         'code' => [
             'title' => 'Mã tỉnh thành',
             'orderable' => false,
-            'width' => '40px',
+            'addClass' => 'align-middle'
+        ],
+        'active' => [
+            'title' => 'Hiển thị',
+            'orderable' => false,
             'addClass' => 'align-middle'
         ],
         'action' => [
@@ -486,8 +489,18 @@ return [
         ],
     ],
     'district' => [
+        'code' => [
+            'title' => 'code',
+            'orderable' => false,
+            'addClass' => 'align-middle'
+        ],
         'name' => [
             'title' => 'name',
+            'orderable' => false,
+            'addClass' => 'align-middle'
+        ],
+        'province_code' => [
+            'title' => 'province',
             'orderable' => false,
             'addClass' => 'align-middle'
         ],

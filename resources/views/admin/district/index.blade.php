@@ -8,11 +8,13 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header justify-content-between">
-                    <h2 class="mb-0">@lang('Danh sách Tỉnh/Thành')</h2>
-                    <x-link :href="route('admin.province.create')" class="btn btn-primary">
-                        <i class="ti ti-plus"></i>
-                        <span class="ms-1">@lang('add')</span>
-                    </x-link>
+                    <h2 class="mb-0">@lang('Danh sách Quận/Huyện')</h2>
+                    <div class="d-flex gap-2">
+                        <x-link :href="route('admin.district.create')" class="btn btn-primary">
+                            <i class="ti ti-plus"></i>
+                            <span class="ms-1">@lang('add')</span>
+                        </x-link>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive position-relative">

@@ -4,14 +4,14 @@ namespace App\Enums\Province;
 
 use App\Admin\Support\Enum;
 
-enum DivisonType: int
+enum DivisonType: string
 {
     use Enum;
 
     //Tỉnh
-    case province = 0;
+    case province = 'tỉnh';
     //Thành phố trung ương
-    case central_city = 1;
+    case central_city = 'thành phố trung ương';
 
 
     public function badge(): string

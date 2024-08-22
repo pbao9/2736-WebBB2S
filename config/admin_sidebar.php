@@ -58,7 +58,7 @@ return [
             ],
             [
                 'title' => 'DS Quận Huyện',
-                'routeName' => 'admin.school.index',
+                'routeName' => 'admin.district.index',
                 'icon' => '<i class="ti ti-list"></i>',
                 'roles' => [],
                 'permissions' => ['viewDistrict'],

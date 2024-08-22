@@ -4,38 +4,35 @@
             <!-- name -->
             <div class="col-12 col-md-6">
                 <div class="mb-3">
-                    <label class="control-label">@lang('name')</label>
-                    <x-input name="name" :value="$school->name" :required="true" :placeholder="__('name')" />
+                    <label class="control-label">@lang('nameProvince')</label>
+                    <x-input name="name" :value="$province->name" :required="true" :placeholder="__('nameProvince')" />
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="mb-3">
-                    <label class="control-label">@lang('address')</label>
-                    <x-input name="address" :value="$school->address" :required="true" :placeholder="__('address')" />
+                    <label class="control-label">@lang('codeProvince')</label>
+                    <x-input name="code" :value="$province->code" :required="true" :placeholder="__('codeProvince')" />
                 </div>
             </div>
-            <div class="col-md-6 col-12 mb-3">
-                <label class="control-label">@lang('Tỉnh/Thành')</label>
-                <x-select name="province_code" :required="true" :selected="$school->province_code">
-                    <x-select-option value="" :title="__('choose')" />
-                    @foreach ($provinces as $province)
-                        <x-select-option :value="$province->code" :title="__($province->name)" :selected="$province->code == $school->province_code" />
-                    @endforeach
-                </x-select>
+            <div class="col-12 col-md-6">
+                <div class="mb-3">
+                    <label class="control-label">@lang('phoneCode')</label>
+                    <x-input name="phone_code" :value="$province->phone_code" :required="true" :placeholder="__('phoneCode')" />
+                </div>
             </div>
-            <div class="col-md-6 col-12 mb-3">
-                <label class="control-label">@lang('Quận/Huyện')</label>
-                <x-select name="district_code" data-district-code="{{ $currentDistrict }}" required>
-                    @if ($districts)
-                        <option value="{{ $districts->code }}" {{ $districts->code == $currentDistrict ? 'selected' : '' }}>
-                            {{ $districts->name }}
-                        </option>
-                    @else
-                        <option value="">No district available</option>
-                    @endif
-                </x-select>
+            <div class="col-12 col-md-6">
+                <div class="mb-3">
+                    <label class="control-label">@lang('divisionType')</label>
+                    <x-select name="division_type" :required="true">
+                        <x-select-option value="" :title="__('choose')" disabled selected />
+                        @foreach ($divisionType as $key => $value)
+                            <x-select-option :value="$key" :title="__($value)" :selected="$province->division_type === $key" />
+                        @endforeach
+                    </x-select>
 
+                </div>
             </div>
+
         </div>
     </div>
 </div>

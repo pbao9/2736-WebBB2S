@@ -45,7 +45,7 @@ class SinglePageController extends Controller
     }
     public function findcar()
     {
-        $provinces = $this->repoProvince->get2Province();
+        $provinces = $this->repoProvince->getActiveProvince();
         return view($this->view['findcar'], [
             'provinces' => $provinces,
             'type' => UserType::asSelectArray(),

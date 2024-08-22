@@ -209,5 +209,11 @@
   "district": "Quận/Huyện",
   "province": "Tỉnh/Thành",
   "location": "Vị trí",
-  "slug": "Đường dẫn bài viết"
+  "slug": "Đường dẫn bài viết",
+  "nameProvince": "Tên tỉnh/thành",
+  "codeProvince": "Mã tỉnh/thành",
+  "nameDistrict": "Tên quận/huyện",
+  "codeDistrict": "Mã quận/huyện",
+  "phoneCode": "Mã vùng điện thoại",
+  "divisionType": "Phân loại"
 }

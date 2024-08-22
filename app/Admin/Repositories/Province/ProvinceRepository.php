@@ -27,8 +27,9 @@ class ProvinceRepository extends EloquentRepository implements ProvinceRepositor
         return $results;
     }
 
-    public function get2Province(){
-        return Province::whereIn('code',[1, 79])->get();
+    public function getActiveProvince()
+    {
+        return $this->model->query()->active()->get();
     }
 
 

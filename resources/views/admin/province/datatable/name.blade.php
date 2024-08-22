@@ -1,2 +1,1 @@
-
-<x-link :href="route('admin.school.edit', $id)" :title="$name"/>
+<x-link :href="route('admin.province.edit', $id)" :title="$name" />

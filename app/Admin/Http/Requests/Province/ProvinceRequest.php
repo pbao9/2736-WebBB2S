@@ -3,8 +3,7 @@
 namespace App\Admin\Http\Requests\Province;
 
 use App\Admin\Http\Requests\BaseRequest;
-use App\Enums\School\ProvinceActive;
-use App\Enums\School\SchoolStatus;
+use App\Enums\Province\ProvinceActive;
 use Illuminate\Validation\Rules\Enum;
 
 
@@ -19,21 +18,20 @@ class ProvinceRequest extends BaseRequest
     {
         return [
             'name' => ['required', 'string'],
-            'code' => ['required'],
-            'codename' => ['nullable'],
-            'phonecode' => ['nullable'],
+            'code' => ['required', 'unique:App\Models\Province,code'],
+            'phone_code' => ['required'],
+            'active' => ['nullable', new Enum(ProvinceActive::class)],
         ];
     }
 
     protected function methodPut(): array
     {
         return [
-            'id' => ['required', 'exists:App\Models\School,id'],
+            'id' => ['required', 'exists:App\Models\Province,id'],
             'name' => ['required', 'string'],
-            'active' => ['nullable',  new Enum(ProvinceActive::class)],
-            'code' => ['required'],
-            'codename' => ['nullable'],
-            'phonecode' => ['nullable'],
+            'active' => ['nullable', new Enum(ProvinceActive::class)],
+            'code' => ['required', 'unique:App\Models\Province,code,' . $this->id],
+            'phone_code' => ['nullable'],
         ];
     }
 }

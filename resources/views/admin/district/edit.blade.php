@@ -6,11 +6,11 @@
 @section('content')
     <div class="page-body">
         <div class="container-fluid">
-            <x-form :action="route('admin.province.update')" type="put" :validate="true">
-                <x-input type="hidden" name="id" :value="$province->id" />
+            <x-form :action="route('admin.district.update')" type="put" :validate="true">
+                <x-input type="hidden" name="id" :value="$district->id" />
                 <div class="row justify-content-center">
-                    @include('admin.province.forms.edit-left')
-                    @include('admin.province.forms.edit-right')
+                    @include('admin.district.forms.edit-left')
+                    @include('admin.district.forms.edit-right')
                 </div>
                 @include('admin.forms.actions-fixed')
             </x-form>
@@ -26,4 +26,5 @@
 @endpush
 
 @push('custom-js')
+    @include('admin.district.scripts.scripts')
 @endpush

@@ -3,27 +3,23 @@
         <div class="card-header">
             @lang('action')
         </div>
-        <div class="card-body p-2 d-flex justify-content-between">
+        <div class="card-body p-2">
             <div class="d-flex align-items-center h-100 gap-2">
                 <x-button.submit :title="__('save')" name="submitter" value="save" />
                 <x-button type="submit" name="submitter" value="saveAndExit">
                     @lang('save&exit')
                 </x-button>
             </div>
-            <x-button.modal-delete data-route="{{ route('admin.school.delete', $school->id) }}" :title="__('delete')" />
         </div>
     </div>
-
     <div class="card mb-3">
         <div class="card-header">
-            @lang('status')
+            {{ __('Hiển thị ngoài giao diện Marketing') }}
         </div>
         <div class="card-body p-2">
-            <x-select name="status" :required="true">
-                @foreach ($status as $key => $value)
-                    <x-select-option :option="$school->status->value" :value="$key" :title="$value" />
-                @endforeach
-            </x-select>
+            <input type="hidden" name="active" value="{{ App\Enums\Province\ProvinceActive::InActive->value }}">
+            <x-input-switch name="active" value="{{ App\Enums\Province\ProvinceActive::Active->value }}"
+                :label="__('Hiển thị ngoài giao diện Marketing')" :checked="$province->active == App\Enums\Province\ProvinceActive::Active->value" />
         </div>
     </div>
 </div>

@@ -4,6 +4,7 @@ use App\Enums\Contact\ContactStatus;
 use App\Enums\Contact\ContactType;
 use App\Enums\Contact\UserType;
 use App\Enums\Contact\ContactService;
+use App\Enums\District\DivisonTypeDistrict;
 use App\Enums\Post\PostStatus;
 use App\Enums\PostCategory\PostCategoryStatus;
 use App\Enums\Module\ModuleStatus;
@@ -93,11 +94,17 @@ return [
         ProductStatus::Draft->value => 'Bản nháp'
     ],
     ProvinceActive::class => [
-        ProvinceActive::Active->value => 'Hoạt động',
-        ProvinceActive::InActive->value => 'Không hoạt động'
+        ProvinceActive::Active->value => 'Đang hiển thị',
+        ProvinceActive::InActive->value => 'Không hiển thị'
     ],
     DivisonType::class => [
-        DivisonType::province->value => 'tỉnh',
-        DivisonType::central_city->value => 'thành phố trung ương'
+        DivisonType::province->value => 'Tỉnh',
+        DivisonType::central_city->value => 'Thành phố trung ương'
+    ],
+    DivisonTypeDistrict::class => [
+        DivisonTypeDistrict::districts->value => 'Quận',
+        DivisonTypeDistrict::county->value => 'Huyện',
+        DivisonTypeDistrict::town->value => 'Thị xã',
+        DivisonTypeDistrict::city->value => 'Thành phố',
     ],
 ];

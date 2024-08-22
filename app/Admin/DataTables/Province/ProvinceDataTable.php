@@ -4,6 +4,7 @@ namespace App\Admin\DataTables\Province;
 
 use App\Admin\DataTables\BaseDataTable;
 use App\Admin\Repositories\Province\ProvinceRepositoryInterface;
+use App\Enums\Province\ProvinceActive;
 use App\Enums\School\SchoolStatus;
 
 
@@ -36,17 +37,14 @@ class ProvinceDataTable extends BaseDataTable
     public function setColumnSearch(): void
     {
 
-        $this->columnAllSearch = [0];
+        $this->columnAllSearch = [0, 1, 2];
 
-        // $this->columnSearchDate = [4];
-
-        // $this->columnSearchSelect = [
-
-        //     [
-        //         'column' => 5,
-        //         'data' => SchoolStatus::asSelectArray()
-        //     ],
-        // ];
+        $this->columnSearchSelect = [
+            [
+                'column' => 2,
+                'data' => ProvinceActive::asSelectArray()
+            ],
+        ];
     }
 
     public function query()
@@ -76,22 +74,8 @@ class ProvinceDataTable extends BaseDataTable
 
     protected function setCustomRawColumns(): void
     {
-        $this->customRawColumns = ['name', 'action'];
+        $this->customRawColumns = ['name', 'action', 'active'];
     }
 
-    // public function setCustomFilterColumns(): void
-    // {
-    //     $this->customFilterColumns = [
-    //         'province_code' => function ($query, $keyword) {
-    //             $query->whereHas('province', function ($subQuery) use ($keyword) {
-    //                 $subQuery->where('name', 'like', '%' . $keyword . '%');
-    //             });
-    //         },
-    //         'district_code' => function ($query, $keyword) {
-    //             $query->whereHas('district', function ($subQuery) use ($keyword) {
-    //                 $subQuery->where('name', 'like', '%' . $keyword . '%');
-    //             });
-    //         },
-    //     ];
-    // }
+
 }

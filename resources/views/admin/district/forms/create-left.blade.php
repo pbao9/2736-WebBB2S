@@ -4,20 +4,21 @@
             <!-- name -->
             <div class="col-12 col-md-6">
                 <div class="mb-3">
-                    <label class="control-label">@lang('nameProvince')</label>
-                    <x-input name="name" :value="old('nameProvince')" :required="true" :placeholder="__('nameProvince')" />
+                    <label class="control-label">@lang('nameDistrict')</label>
+                    <x-input name="name" :value="old('nameDistrict')" :required="true" :placeholder="__('nameDistrict')" />
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="mb-3">
-                    <label class="control-label">@lang('codeProvince')</label>
-                    <x-input name="code" :value="old('codeProvince')" :required="true" :placeholder="__('codeProvince')" />
+                    <label class="control-label">@lang('codeDistrict')</label>
+                    <x-input name="code" :value="old('codeDistrict')" :required="true" :placeholder="__('codeDistrict')" />
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-md-6 col-12">
                 <div class="mb-3">
-                    <label class="control-label">@lang('phoneCode')</label>
-                    <x-input name="phone_code" :value="old('phone_code')" :required="true" :placeholder="__('phoneCode')" />
+                    <label class="control-label">{{ __('province') }} :</label>
+                    <x-select id="province_code" class="select2-bs5-ajax" name="province_code"
+                        :data-url="route('admin.search.select.province')"></x-select>
                 </div>
             </div>
             <div class="col-12 col-md-6">
@@ -29,10 +30,8 @@
                             <x-select-option :value="$key" :title="__($value)" />
                         @endforeach
                     </x-select>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>

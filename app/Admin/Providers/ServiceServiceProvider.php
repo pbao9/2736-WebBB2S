@@ -7,9 +7,9 @@ use Illuminate\Support\ServiceProvider;
 class ServiceServiceProvider extends ServiceProvider
 {
     protected array $services = [
-		'App\Admin\Services\Module\ModuleServiceInterface' => 'App\Admin\Services\Module\ModuleService',
-		'App\Admin\Services\Permission\PermissionServiceInterface' => 'App\Admin\Services\Permission\PermissionService',
-		'App\Admin\Services\Role\RoleServiceInterface' => 'App\Admin\Services\Role\RoleService',
+        'App\Admin\Services\Module\ModuleServiceInterface' => 'App\Admin\Services\Module\ModuleService',
+        'App\Admin\Services\Permission\PermissionServiceInterface' => 'App\Admin\Services\Permission\PermissionService',
+        'App\Admin\Services\Role\RoleServiceInterface' => 'App\Admin\Services\Role\RoleService',
         'App\Admin\Services\Admin\AdminServiceInterface' => 'App\Admin\Services\Admin\AdminService',
         'App\Admin\Services\User\UserServiceInterface' => 'App\Admin\Services\User\UserService',
         'App\Admin\Services\Category\CategoryServiceInterface' => 'App\Admin\Services\Category\CategoryService',
@@ -24,7 +24,8 @@ class ServiceServiceProvider extends ServiceProvider
         'App\Admin\Services\Notification\NotificationServiceInterface' => 'App\Admin\Services\Notification\NotificationService',
         'App\Admin\Services\School\SchoolServiceInterface' => 'App\Admin\Services\School\SchoolService',
         'App\Admin\Services\Contact\ContactServiceInterface' => 'App\Admin\Services\Contact\ContactService',
-        'App\Admin\Services\Provice\ProvinceServiceInterface' => 'App\Admin\Services\Province\ProvinceService',
+        'App\Admin\Services\Province\ProvinceServiceInterface' => 'App\Admin\Services\Province\ProvinceService',
+        'App\Admin\Services\District\DistrictServiceInterface' => 'App\Admin\Services\District\DistrictService',
     ];
     /**
      * Register services.

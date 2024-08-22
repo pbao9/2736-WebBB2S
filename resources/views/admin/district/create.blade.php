@@ -3,14 +3,20 @@
     <link rel="stylesheet" href="{{ asset('/public/libs/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/public/libs/select2/dist/css/select2-bootstrap-5-theme.min.css') }}">
 @endpush
+@push('custom-css')
+    <style>
+        .pac-container {
+            z-index: 99999999 !important;
+        }
+    </style>
+@endpush
 @section('content')
     <div class="page-body">
         <div class="container-fluid">
-            <x-form :action="route('admin.province.update')" type="put" :validate="true">
-                <x-input type="hidden" name="id" :value="$province->id" />
+            <x-form :action="route('admin.district.store')" type="post" :validate="true">
                 <div class="row justify-content-center">
-                    @include('admin.province.forms.edit-left')
-                    @include('admin.province.forms.edit-right')
+                    @include('admin.district.forms.create-left')
+                    @include('admin.district.forms.create-right')
                 </div>
                 @include('admin.forms.actions-fixed')
             </x-form>
@@ -21,9 +27,10 @@
 @push('libs-js')
     <script src="{{ asset('public/libs/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('public/libs/ckeditor/adapters/jquery.js') }}"></script>
-    <script src="{{ asset('/public/libs/select2/dist/js/select2.min.js') }}"></script>
     <script src="{{ asset('/public/libs/select2/dist/js/i18n/vi.js') }}"></script>
+    <script src="{{ asset('/public/libs/select2/dist/js/select2.min.js') }}"></script>
 @endpush
 
 @push('custom-js')
+    @include('admin.district.scripts.scripts')
 @endpush
