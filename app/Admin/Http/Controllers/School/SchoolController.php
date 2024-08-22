@@ -71,7 +71,7 @@ class SchoolController extends Controller
 
     public function create(): Factory|View|Application
     {
-        $provinces = $this->repoProvince->get2Province();
+        $provinces = $this->repoProvince->getActiveProvince();
         return view($this->view['create'], [
             'breadcrumbs' => $this->crums->add(
                 __('school'),
@@ -101,7 +101,7 @@ class SchoolController extends Controller
     public function edit($id): Factory|View|Application
     {
         $instance = $this->repository->findOrFail($id);
-        $provinces = $this->repoProvince->get2Province();
+        $provinces = $this->repoProvince->getActiveProvince();
         $district = $this->repoDistrict->findBy(['code' => $instance->district_code]);
         return view(
             $this->view['edit'],
