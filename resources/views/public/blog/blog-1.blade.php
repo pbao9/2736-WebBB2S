@@ -115,7 +115,7 @@
                 @include('public.blog.include.lien-he')
             </div>
             <div class="col-md-3 col-12 sidebar">
-                @include('public.components.sidebar')
+                {{-- @include('public.components.sidebar') --}}
             </div>
         </div>
     </div>

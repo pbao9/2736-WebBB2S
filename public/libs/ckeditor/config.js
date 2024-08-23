@@ -2,7 +2,7 @@
  * @license Copyright (c) 2003-2022, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see https://ckeditor.com/legal/ckeditor-oss-license
  */
-var domain = window.location.protocol +'//'+ window.location.hostname +'/frameworkcty10';
+var domain = window.location.protocol +'//'+ window.location.hostname +'/2736-WebBB2S';
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';

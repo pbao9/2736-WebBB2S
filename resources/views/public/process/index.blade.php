@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <h1 class="text-center" style="font-size: 250% !important">QUY TRÌNH ĐÓN HỌC SINH CỦA BABI2SCHOOL</h1>
-        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" height="570" controls autoplay>
+        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" controls autoplay>
             <source src="{{ asset($settings['video']) }}" type="video/mp4">
         </video>
 

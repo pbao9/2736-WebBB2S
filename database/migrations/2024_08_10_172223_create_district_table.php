@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('code')->unique();
             $table->char('name');
             $table->char('division_type');
-            $table->char('codename');
+            $table->char('slug')->unique();
             $table->index('province_code');
         });
     }

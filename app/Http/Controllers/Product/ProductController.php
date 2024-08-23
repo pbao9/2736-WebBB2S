@@ -22,7 +22,10 @@ class ProductController extends Controller
     {
         return [
             'index' => 'public.product.index',
-            'show' => 'public.product.show'
+            'show' => 'public.product.show',
+            'blog1' => 'public.blog.blog-1',
+            'blog2' => 'public.blog.blog-2',
+            'blog3' => 'public.blog.blog-3'
         ];
     }
 
@@ -76,5 +79,10 @@ class ProductController extends Controller
             'allproduct' => $allProduct,
             'breadcrums' => $breadcrums,
         ]);
+    }
+
+
+    public function blog1(){
+        return view('public.blog.blog-1');
     }
 }

@@ -18,7 +18,7 @@ class ProductRepository extends EloquentRepository implements ProductRepositoryI
     }
 
 
-    public function paginate(array $filter, array $relationCondition = [], array $relations = [], int $paginate = 10)
+    public function paginate(array $filter, array $relationCondition = [], array $relations = [], int $paginate = 12)
     {
 
         $this->getQueryBuilder();

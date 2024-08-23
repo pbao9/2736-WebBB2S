@@ -105,5 +105,8 @@ Route::prefix('/search')->as('search.')->group(function () {
 
 
 
+Route::get('/test', function () {
+    return view('public.blog.blog-1');
+});
 
 
