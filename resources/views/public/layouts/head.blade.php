@@ -13,6 +13,9 @@
     <link href="{{ asset('public/libs/tabler/plugins/tabler-icon/webfont/tabler-icons.min.css') }}" rel="stylesheet"
         type="text/css" />
     <link href="{{ asset('public/libs/jquery-toast-plugin/jquery.toast.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/libs/owl-carousel/css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/libs/owl-carousel/css/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('public/libs/flickity/css/flickity.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('public/libs/Parsley.js-2.9.2/style.css') }}" rel="stylesheet" />
 
     <link href="{{ asset('public/assets/css/style.css') }}" rel="stylesheet" />

@@ -9,11 +9,12 @@
 
 
 @section('content')
-    <main class="container py-5">
+    <div class="py-3 d-md-block d-none"></div>
+    <main class="container pt-3 pb-5">
         <div class="row">
             <div class="col-lg-9 col-12 pe-lg-3 pe-0">
                 <h1 class="text-center text-uppercase fw-bold">{{ $product->title }}</h1>
-                <div class="is-diviner mx-auto"></div>
+                <div class="is-diviner mx-auto d-md-block d-none"></div>
                 @if ($product['show_banner'] == true)
                     <div class="banner has-hover" id="banner-animation">
                         <div class="banner-bg fill">
@@ -22,20 +23,17 @@
                             <div class="bg-effect fill"></div>
                             <div
                                 class="banner-content position-absolute top-50 start-50 translate-middle text-center w-100">
-                                <div class="content-banner mx-5 px-5  animate__animated animate__flipInY animate__slow">
-                                    <div class="is-diviner mx-auto"></div>
-                                    <h1 class="text-white mb-3 text-uppercase">
+                                <div class="content-banner animate__animated animate__flipInY animate__slow">
+                                    <div class="is-diviner mx-auto d-md-block d-none"></div>
+                                    <h2 class="text-white mb-3 text-uppercase mx-auto">
                                         <b>{!! $product['banner_title'] !!}</b>
-                                    </h1>
-
-                                    <div class="is-diviner mx-auto"></div>
+                                    </h2>
+                                    <div class="is-diviner mx-auto d-md-block d-none"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endif
-
-
                 <p>{!! $product['content'] !!}</p>
                 <p class="text-center">- - -</p>
                 @include('public.blog.include.lien-he')

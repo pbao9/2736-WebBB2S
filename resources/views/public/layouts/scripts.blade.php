@@ -1,6 +1,7 @@
 <script src="{{ asset('/public/libs/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('public/libs/tabler/dist/js/tabler.min.js') }}"></script>
-{{-- <script defer src="{{ asset('public/libs/tabler/dist/litepicker/dist/litepicker.js') }}"></script> --}}
+<script defer src="{{ asset('/public/libs/flickity/js/flickity.pkgd.min.js') }}"></script>
+<script defer src="{{ asset('/public/libs/owl-carousel/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/public/libs/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('/public/libs/datatables/plugins/bs5/js/dataTables.bootstrap5.min.js') }}"></script>
 <script src="{{ asset('/public/libs/datatables/plugins/buttons/js/dataTables.buttons.min.js') }}"></script>
@@ -22,6 +23,41 @@
 <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
 @stack('custom-js')
 
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0"
-    nonce="jaMOfkWb"></script>
+<script>
+    $(document).ready(function() {
+        // Khởi tạo owl-carousel
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
+            }
+        });
+
+        // Khởi tạo flickity
+        $('.main-carousel').flickity({
+            pageDots: false,
+            contain: true,
+            wrapAround: true,
+            autoPlay: true,
+            pauseAutoPlayOnHover: true,
+            prevNextButtons: false,
+        });
+    });
+</script>
