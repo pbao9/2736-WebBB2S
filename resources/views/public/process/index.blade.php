@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h1 class="text-center" style="font-size: 250% !important">QUY TRÌNH ĐÓN HỌC SINH CỦA BABI2SCHOOL</h1>
+        <h1 class="text-center">QUY TRÌNH ĐƯA ĐÓN HỌC SINH CỦA BABI2SCHOOL</h1>
         <video id="myVideo" class="d-block mx-auto mt-5" width="100%" controls autoplay>
             <source src="{{ asset($settings['video']) }}" type="video/mp4">
         </video>
@@ -79,7 +79,7 @@
                 </div>
                 <p class="mb-0 text-center">Khi xe đến trường, giám sinh đưa bé đến trường, chụp hình điểm danh, cập nhật
                     lên
-                    App. Phụ huynh sẽ nhận được thông báo trạng thái kèm hình ảnh, an tâm bé đã vào trườn</p>
+                    App. Phụ huynh sẽ nhận được thông báo trạng thái kèm hình ảnh, an tâm bé đã vào trường</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">
                 <img class="" width="167" height="337"

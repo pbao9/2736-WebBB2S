@@ -52,7 +52,7 @@ class ContactForm extends Mailable
     public function content()
     {
         $school = School::all();
-        $province = Province::whereIn('code', [1, 79])->get();
+        $province = Province::all();
         $district = District::all();
         return new Content(
             view: 'mails.contact-form',

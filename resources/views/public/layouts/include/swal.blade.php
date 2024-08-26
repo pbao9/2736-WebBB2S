@@ -15,9 +15,9 @@
                             text: response.message,
                             timer: 2500,
                         }).then(() => {
-                            // window.location.reload();
+                            location.reload();
                             // sau 2,5s return về trang chủ
-                            window.location.href = "{{ route('home.index') }}";
+                            // window.location.href = "{{ route('home.index') }}";
                         });
                     } else {
                         Swal.fire({
@@ -26,7 +26,7 @@
                             text: response.message,
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                window.location.reload();
+                                location.reload();
                             }
                         });;
                     }

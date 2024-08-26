@@ -197,7 +197,7 @@
             </tr>
             <tr>
                 <td>Địa chỉ trường học</td>
-                <td>@lang(':school_address', ['school_address' => $data['school_address'] ?? ''])</td>
+                <td>@lang(':address', ['address' => $data['address'] ?? ''])</td>
             </tr>
         </table>
         <hr>

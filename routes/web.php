@@ -88,25 +88,12 @@ Route::controller(App\Http\Controllers\Product\ProductController::class)
     ->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/{slug}', 'show')->name('show');
-        // Route::get('/review-nhanh-ung-dung-anta-bao-mau-va-website-danh-cho-nha-truong', 'blog1')->name('blog1');
-        // Route::get('/dich-vu-dua-don-hoc-sinh-tien-loi-va-linh-hoat', 'blog2')->name('blog2');
-        // Route::get('/thue-xe-dua-don-hoc-sinh-cho-con-dich-vu-hay-di-xe-ghep', 'blog3')->name('blog3');
     });
-
 
 Route::prefix('/search')->as('search.')->group(function () {
     Route::prefix('/select')->as('select.')->group(function () {
         Route::get('/province', [App\Admin\Http\Controllers\Address\Address\Province\ProvinceSearchController::class, 'selectSearch'])->name('province');
         Route::get('/district', [App\Admin\Http\Controllers\Address\Address\District\DistrictSearchController::class, 'selectSearch'])->name('district');
         Route::get('/ward', [App\Admin\Http\Controllers\Address\Address\Ward\WardSearchController::class, 'selectSearch'])->name('ward');
-        // Route::get('/school', [App\Http\Controllers\School\SchoolSearchSelectController::class, 'selectSearch'])->name('school');
     });
 });
-
-
-
-Route::get('/test', function () {
-    return view('public.blog.blog-1');
-});
-
-
