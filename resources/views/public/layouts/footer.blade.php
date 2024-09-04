@@ -25,14 +25,12 @@
                 <div class="col-service">
                     <h2 class="text-black fw-bold text-uppercase mb-3">{{ __('Sản phẩm') }}</h2>
                     <ul class="list-unstyled">
-                        {{-- @foreach ($products as $item)
+                        @foreach ($products as $item)
                             <li class="mb-2">
                                 <x-link :href="route('product.show', $item['slug'])" :title="__($item['title'])"
                                     class="text-decoration-none nav-link fs-3 nav-link" />
                             </li>
-                        @endforeach --}}
-
-
+                        @endforeach
                     </ul>
                 </div>
 

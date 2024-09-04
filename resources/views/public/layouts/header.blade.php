@@ -28,10 +28,11 @@
                         class="nav-item nav-link fw-bold {{ Request::routeIs('product.index') ? 'active' : '' }}" />
                     <x-link :href="route('process.index')" :title="__('Quy trình đưa đón')"
                         class="nav-item nav-link fw-bold {{ Request::routeIs('process.index') ? 'active' : '' }}" />
-                    <x-link :href="route('form.contact')" :title="__('Liên hệ')"
-                        class="nav-item nav-link fw-bold {{ Request::routeIs('form.contact') ? 'active' : '' }}" />
                     <x-link :href="route('blog.index')" :title="__('Tin tức')"
                         class="nav-item nav-link fw-bold {{ Request::routeIs('blog.index') ? 'active' : '' }}" />
+                    <x-link :href="route('form.contact')" :title="__('Liên hệ')"
+                        class="nav-item nav-link fw-bold {{ Request::routeIs('form.contact') ? 'active' : '' }}" />
+
                 </div>
             </div>
         </div>
@@ -62,10 +63,10 @@
                 <x-link :href="route('process.index')" :title="__('Quy trình đưa đón')" class="nav-item nav-link text-uppercase mb-3" />
             </li>
             <li>
-                <x-link :href="route('form.contact')" :title="__('Liên hệ')" class="nav-item nav-link text-uppercase mb-3" />
+                <x-link :href="route('blog.index')" :title="__('Tin tức')" class="nav-item nav-link text-uppercase mb-3" />
             </li>
             <li>
-                <x-link :href="route('blog.index')" :title="__('Tin tức')" class="nav-item nav-link text-uppercase mb-3" />
+                <x-link :href="route('form.contact')" :title="__('Liên hệ')" class="nav-item nav-link text-uppercase mb-3" />
             </li>
         </ul>
     </div>

@@ -7,11 +7,6 @@ return [
             'orderable' => false,
             'addClass' => 'align-middle'
         ],
-        'address' => [
-            'title' => 'address',
-            'orderable' => false,
-            'addClass' => 'align-middle'
-        ],
         'province_code' => [
             'title' => 'province',
             'orderable' => false,

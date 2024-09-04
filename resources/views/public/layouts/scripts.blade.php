@@ -57,7 +57,7 @@
             wrapAround: true,
             autoPlay: true,
             pauseAutoPlayOnHover: true,
-            prevNextButtons: false,
+            prevNextButtons: true,
         });
     });
 </script>

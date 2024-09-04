@@ -13,13 +13,12 @@ class SchoolImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     use Importable;
 
-    private $requiredHeaders = ['name', 'address', 'province_code', 'district_code'];
+    private $requiredHeaders = ['name', 'province_code', 'district_code'];
 
     public function model(array $row)
     {
         return new School([
             'name' => $row['name'],
-            'address' => $row['address'],
             'province_code' => $row['province_code'],
             'district_code' => $row['district_code'],
         ]);

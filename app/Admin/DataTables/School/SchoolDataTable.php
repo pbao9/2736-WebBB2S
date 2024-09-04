@@ -21,7 +21,6 @@ class SchoolDataTable extends BaseDataTable
         $this->repository = $repository;
 
         parent::__construct();
-
     }
 
     public function setView(): void
@@ -40,12 +39,12 @@ class SchoolDataTable extends BaseDataTable
 
         $this->columnAllSearch = [0, 1, 2, 3, 4];
 
-        $this->columnSearchDate = [4];
+        $this->columnSearchDate = [3];
 
         $this->columnSearchSelect = [
 
             [
-                'column' => 5,
+                'column' => 4,
                 'data' => SchoolStatus::asSelectArray()
             ],
         ];

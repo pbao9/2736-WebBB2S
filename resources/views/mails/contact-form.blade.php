@@ -196,8 +196,12 @@
                 <td>@lang(':phone', ['phone' => $data['phone']])</td>
             </tr>
             <tr>
+                <td>Tên trường học</td>
+                <td>@lang(':school_name', ['school_name' => $data['school_name'] ?? ''])</td>
+            </tr>
+            <tr>
                 <td>Địa chỉ trường học</td>
-                <td>@lang(':address', ['address' => $data['address'] ?? ''])</td>
+                <td>@lang(':school_address', ['school_address' => $data['school_address'] ?? ''])</td>
             </tr>
         </table>
         <hr>

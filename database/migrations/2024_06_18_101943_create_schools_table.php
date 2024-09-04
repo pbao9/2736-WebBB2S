@@ -16,7 +16,6 @@ return new class extends Migration {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('address')->nullable();
             $table->string('province_code')->nullable();
             $table->string('district_code')->nullable();
             $table->string('status')->default(SchoolStatus::Active->value);

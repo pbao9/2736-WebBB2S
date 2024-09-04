@@ -1016,7 +1016,7 @@ h2#swal2-title {
     position: relative;
   }
   .banner-content h2 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -1040,4 +1040,12 @@ h2#swal2-title {
 .carousel-caption strong,
 .carousel-caption p {
   font-size: 2rem;
+}
+
+.flickity-prev-next-button.previous {
+  left: 30px;
+}
+
+.flickity-prev-next-button.next {
+  right: 30px;
 }
