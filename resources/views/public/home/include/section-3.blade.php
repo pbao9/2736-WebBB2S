@@ -26,9 +26,8 @@
                     trung công việc tại công ty.</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
-                <img class="d-block mx-auto"
-                    src="{{ asset('public/assets/images/z5416553416958_cb357f987a1b465d793d17244524b287-1.jpg') }}"
-                    width="auto" height="450">
+                <img class="d-block mx-auto" src="{{ asset('public/assets/images/IP13-Mockup-2.png') }}" width="auto"
+                    height="450">
                 <p class="mt-2 text-center fw-bold">Theo dõi vị trí xe theo thời gian thực, giúp phụ huynh cập nhật liên
                     tục trong quá trình đưa đón, luôn an tâm dù đang ở chỗ làm.</p>
             </div>
