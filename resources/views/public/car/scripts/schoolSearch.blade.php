@@ -22,10 +22,12 @@
             $(select).on('change', function() {
                 let selectedValue = virtualSelect.getValue();
                 $('#school_id_input').val(selectedValue);
-            
+
                 if (selectedValue) {
                     $('#find-car').fadeIn();
                     $('#car').removeClass('d-none').addClass('d-block').fadeIn();
+                    $('#school_address').removeClass('d-none').addClass('d-block').fadeIn();
+
 
                     const slotSetting = '{{ $settings['slot_seat'] }}';
                     const slotSeat = parseInt(slotSetting, 10);

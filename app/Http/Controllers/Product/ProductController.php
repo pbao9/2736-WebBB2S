@@ -82,7 +82,8 @@ class ProductController extends Controller
     }
 
 
-    public function blog1(){
+    public function blog1()
+    {
         return view('public.blog.blog-1');
     }
 }

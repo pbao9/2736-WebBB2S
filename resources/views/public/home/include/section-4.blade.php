@@ -1,8 +1,8 @@
 <div class="section-4">
     <!-- Ứng dụng Babi2School -->
     <div class="container">
-        <h2 class="fancy-underline"> Dịch vụ Babi2School </h2>
-        <div class="row py-5">
+        <h2 class="fancy-underline mx-0"> Dịch vụ Babi2School </h2>
+        <div class="row pt-4 pb-5">
             <div class="col-md-6 col-12">
                 <p class="text-dark"><b>Babi2School</b> là một dự án phát triển <b>ứng dụng</b> trên <b>thiết bị di động,
                         kết hợp với hệ thống xe 7 chỗ và giám sinh</b>, tạo thành một nền tảng hỗ trợ <b>phụ huynh, nhà

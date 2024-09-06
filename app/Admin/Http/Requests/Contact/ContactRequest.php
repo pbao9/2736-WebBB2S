@@ -21,6 +21,7 @@ class ContactRequest extends BaseRequest
             'district_code' => ['nullable'],
             'school_name' => ['nullable'],
             'school_address' => ['nullable'],
+            'school_address_other' => ['nullable'],
             'school_id' => ['nullable'],
             'school_other' => ['nullable'],
             'location' => ['nullable'],

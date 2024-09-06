@@ -78,7 +78,9 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label class="form-label">Quận/Huyện</label>
+                                            <label
+                                                class=
+                                            "form-label">Quận/Huyện</label>
                                             <select name="district_code" class="form-select shadow-none" required
                                                 id="district-select">
                                                 <option value="">— Chọn Quận/Huyện —</option>
@@ -90,6 +92,11 @@
                                     <div class="form-label required">Trường học</div>
                                     <div id="school-select"></div>
                                     <input type="hidden" name="school_id" id="school_id_input">
+                                </div>
+                                <div id="school_address" class="d-none">
+                                    <div class="form-label required">Địa chỉ trường học</div>
+                                    <input type="text" class="form-control" name="school_address"
+                                        placeholder="Địa chỉ trường học">
                                 </div>
                                 <hr>
                                 <div class="mb-3">
@@ -121,7 +128,7 @@
                                     <div class="col-md-6 col-12">
                                         <label for="school_address_other"
                                             class="form-label">{{ __('Địa chỉ trường khác') }}</label>
-                                        <x-input type="text" class="form-control shadow-none" name="school_address"
+                                        <x-input type="text" class="form-control shadow-none" name="school_address_other"
                                             :value="old('school_address')" placeholder="Địa chỉ trường học"></x-input>
                                     </div>
                                 </div>

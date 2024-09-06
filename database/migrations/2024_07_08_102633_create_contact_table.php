@@ -24,6 +24,7 @@ return new class extends Migration {
             $table->string('district_code')->nullable();
             $table->string('school_name')->nullable();
             $table->string('school_address')->nullable();
+            $table->string('school_address_other')->nullable();
             $table->unsignedBigInteger('school_id')->nullable();
             $table->string('location', 255)->nullable();
             $table->boolean('school_other')->nullable()->default(0);

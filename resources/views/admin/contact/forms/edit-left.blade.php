@@ -16,12 +16,12 @@
                     ])>{{ __('Đối tượng: ') . ' ' . \App\Enums\Contact\UserType::getDescription($contact->type) }}</span>
             </div>
             <div class="text-uppercase">
-                @if($contact->service)
+                @if ($contact->service)
                     <span
-                    @class([
-                        'badge',
-                        App\Enums\Contact\ContactService::from($contact->service)->badge(),
-                    ])>{{ __('Dịch vụ: ') . ' ' . \App\Enums\Contact\ContactService::getDescription($contact->service) }}</span>
+                        @class([
+                            'badge',
+                            App\Enums\Contact\ContactService::from($contact->service)->badge(),
+                        ])>{{ __('Dịch vụ: ') . ' ' . \App\Enums\Contact\ContactService::getDescription($contact->service) }}</span>
                 @endif
             </div>
         </div>
@@ -41,9 +41,13 @@
             </div>
             @if ($contact->form_type == 0)
                 @if ($contact->school_other == 0)
-                    <div class="mb-3">
+                    <div class="col-md-6 mb-3">
                         <label for="" class="control-label fw-bold">{{ __('Trường học') }}:</label>
-                        <span>{{ __($school->name) }} - {{ __($school->address) }}</span>
+                        <span>{{ __($school->name) }}</span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="" class="control-label fw-bold">{{ __('Địa chỉ trường học') }}:</label>
+                        <span>{{ __($school->school_address) }}</span>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="control-label fw-bold">@lang('Tỉnh/Thành')</label>
@@ -121,8 +125,14 @@
             @else
                 <div class="col-md-12 col-12">
                     <div class="mb-3">
+                        <label class="control-label fw-bold">@lang('Tên trường học: ')</label>
+                        <span>{{ __($contact->school_name) }}</span>
+                    </div>
+                </div>
+                <div class="col-md-12 col-12">
+                    <div class="mb-3">
                         <label class="control-label fw-bold">@lang('Địa chỉ trường học: ')</label>
-                        <span>{{ __($contact->address) }}</span>
+                        <span>{{ __($contact->school_address) }}</span>
                     </div>
                 </div>
             @endif

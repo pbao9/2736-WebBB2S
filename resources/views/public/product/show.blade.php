@@ -11,8 +11,8 @@
 @section('content')
     <div class="py-3 d-md-block d-none"></div>
     <main class="container pt-3 pb-5">
-        <div class="row">
-            <div class="col-lg-9 col-12 pe-lg-3 pe-0">
+        <div class="row justify-content-center">
+            <div class="col-12">
                 <h1 class="text-center text-uppercase fw-bold">{{ $product->title }}</h1>
                 <div class="is-diviner mx-auto d-md-block d-none"></div>
                 @if ($product['show_banner'] == true)
@@ -38,12 +38,11 @@
                 <p class="text-center">- - -</p>
                 @include('public.blog.include.lien-he')
             </div>
-            <aside class="col-lg-3 col-12 sidebar">
+            <div class="col-12">
                 <div class="py-1">
                     @include('public.product.include.sidebar')
-
                 </div>
-            </aside>
+            </div>
         </div>
     </main>
 @endsection

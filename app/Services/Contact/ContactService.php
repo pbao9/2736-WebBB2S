@@ -21,8 +21,9 @@ class ContactService implements ContactServiceInterface
 
     public function store(Request $request)
     {
+        // dd($request);
         $data = $request->validated();
-        if ($data['form_type'] == 0 && $data['school_other'] != 0){
+        if ($data['form_type'] == 0 && $data['school_other'] != 0) {
             unset($data['school_id']);
         }
         return $this->repository->create($data);

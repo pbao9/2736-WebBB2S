@@ -95,11 +95,13 @@
                     @if ($data['school_other'] == 0)
                         @foreach ($school as $item)
                             @if ($item->id == $data['school_id'])
-                                {{ $item->name }} - {{ $item->address }}
+                                {{ $item->name }}
                             @endif
                         @endforeach
+                        | <span>Địa chỉ trường học: @lang(':school_address', ['school_address' => $data['school_address']])</span>
                     @else
                         @lang(':school_name', ['school_name' => $data['school_name']])
+                        @lang(':school_address_other', ['school_address_other' => $data['school_address_other']])
                     @endif
                 </td>
             </tr>

@@ -26,7 +26,7 @@
 <script>
     $(document).ready(function() {
         // Khởi tạo owl-carousel
-        $('.owl-carousel').owlCarousel({
+        $('.owl-carousel-1').owlCarousel({
             loop: true,
             margin: 10,
             responsiveClass: true,
@@ -58,6 +58,30 @@
             autoPlay: true,
             pauseAutoPlayOnHover: true,
             prevNextButtons: true,
+        });
+
+        $('.owl-carousel-2').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplaySpeed: 1000,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
+            }
         });
     });
 </script>

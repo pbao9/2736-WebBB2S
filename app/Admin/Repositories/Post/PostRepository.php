@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Admin\Repositories\Post;
+
 use App\Admin\Repositories\EloquentRepository;
 use App\Admin\Repositories\Post\PostRepositoryInterface;
 use App\Models\Post;
@@ -10,40 +11,45 @@ class PostRepository extends EloquentRepository implements PostRepositoryInterfa
 
     protected $select = [];
 
-    public function getModel(){
+    public function getModel()
+    {
         return Post::class;
     }
 
-    
+
     public function paginate(array $filter, array $relationCondition = [], array $relations = ['categories'], int $paginate = 10)
     {
 
-        $this->getQueryBuilder();
+        $this->getQueryBuilderOrderBy('id', 'DESC');
 
         $this->applyFilters($filter);
 
-        foreach($relationCondition as $relation => $condition){
+        foreach ($relationCondition as $relation => $condition) {
             $this->instance = $this->instance->whereHas($relation, $condition);
         }
 
         return $this->instance->published()->with($relations)->paginate($paginate);
     }
 
-    public function findOrFailWithRelations($id, array $relations = ['categories']){
+    public function findOrFailWithRelations($id, array $relations = ['categories'])
+    {
         $this->findOrFail($id);
         $this->instance = $this->instance->load($relations);
         return $this->instance;
     }
-    
-    public function attachCategories(Post $post, array $categoriesId){
+
+    public function attachCategories(Post $post, array $categoriesId)
+    {
         return $post->categories()->attach($categoriesId);
     }
 
-    public function syncCategories(Post $post, array $categoriesId){
+    public function syncCategories(Post $post, array $categoriesId)
+    {
         return $post->categories()->sync($categoriesId);
     }
 
-    public function getQueryBuilderOrderBy($column = 'id', $sort = 'DESC'){
+    public function getQueryBuilderOrderBy($column = 'id', $sort = 'DESC')
+    {
         $this->getQueryBuilder();
         $this->instance = $this->instance->orderBy($column, $sort);
         return $this->instance;

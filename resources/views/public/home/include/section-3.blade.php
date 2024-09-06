@@ -1,7 +1,7 @@
 <div class="section-3">
     <!-- Nguyên nhân ra đời -->
-    <h2 class="fancy-underline"> Nguyên nhân ra đời</h2>
     <div class="container">
+        <h2 class="fancy-underline mx-0"> Nguyên nhân ra đời</h2>
         <div class="row mt-5">
             <div class="col-lg-4 col-md-6 mb-4">
                 <img class="d-block mx-auto" src="{{ asset('public/assets/images/his4.png') }}" width="335"

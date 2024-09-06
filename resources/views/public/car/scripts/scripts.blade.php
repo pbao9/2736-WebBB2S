@@ -4,9 +4,11 @@
             if ($(this).attr('id') === 'radio_yes') {
                 $('#school_other_frm').removeClass('d-none').addClass('d-flex');
                 $('#school_select').removeClass('d-block').addClass('d-none');
+                $('#school_address').removeClass('d-block').addClass('d-none').fadeIn();
             } else {
                 $('#school_other_frm').removeClass('d-flex').addClass('d-none');
                 $('#school_select').removeClass('d-none').addClass('d-block');
+                $('#school_address').removeClass('d-none').addClass('d-block').fadeIn();
             }
         });
 

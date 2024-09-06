@@ -10,6 +10,7 @@
                     enctype="multipart/form-data">
                     <x-input type="hidden" name="form_type" value="2" />
                     <x-input type="hidden" name="school_other" value="0" />
+                    <x-input type="hidden" name="type" value="1" />
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="form-floating">
