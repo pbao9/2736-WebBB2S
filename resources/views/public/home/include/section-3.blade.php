@@ -2,8 +2,8 @@
     <!-- Nguyên nhân ra đời -->
     <div class="container">
         <h2 class="fancy-underline mx-0 mb-3"> Nguyên nhân ra đời</h2>
-        <div class="row align-items-stretch justify-content-between gap-2">
-            <div class="card col-xl-3 col-lg-12 col-md-12 mb-3">
+        <div class="row align-items-stretch justify-content-between">
+            <div class="card col-xl-4 col-lg-12 col-md-12 mb-3">
                 <div class="card-header">
                     <img src="{{ asset('public/assets/images/his4.png') }}" alt="Ảnh giới thiệu" width="270px">
                 </div>
@@ -16,7 +16,7 @@
                         công việc và sắp xếp việc đưa đón con.</p>
                 </div>
             </div>
-            <div class="card col-xl-3 col-lg-12 col-md-12 mb-3">
+            <div class="card col-xl-4 col-lg-12 col-md-12 mb-3">
                 <div class="bg-white">
                     <div class="card-header">
                         <img src="{{ asset('public/assets/images/bao-mau4.jpg') }}" alt="Ảnh giới thiệu">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card col-xl-3 col-lg-12 col-md-12 mb-3">
+            <div class="card col-xl-4 col-lg-12 col-md-12 mb-3">
                 <div class="card-header">
                     <img src="{{ asset('public/assets/images/IP13-Mockup.png') }}" alt="Ảnh giới thiệu">
                 </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="card col-xl-3 col-lg-12 col-md-12 mb-3">
+            <div class="card col-xl-4 col-lg-12 col-md-12 mb-3">
                 <div class="card-header">
                     <img class="d-block mx-auto" src="{{ asset('public/assets/images/IP13-Mockup-2.png') }}"
                         width="auto" height="450" alt="ảnh giới thiệu">
@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="card col-xl-3 col-lg-12 col-md-12 mb-3">
+            <div class="card col-xl-4 col-lg-12 col-md-12 mb-3">
                 <div class="card-header">
                     <img src="{{ asset('public/assets/images/app-anh-chup-checkin-luc-ve-2.png') }}"
                         alt="Ảnh giới thiệu">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="card col-md-12 col-xl-3 col-lg-12 mb-3">
+            <div class="card col-md-12 col-xl-4 col-lg-12 mb-3">
                 <div class="card-header">
                     <img class="d-block mx-auto" src="{{ asset('public/assets/images/IP13-Mockup-2 (1).png') }}"
                         width="auto" height="450">
