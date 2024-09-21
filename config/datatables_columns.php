@@ -2,6 +2,11 @@
 
 return [
     'school' => [
+        'id' => [
+            'title' => 'ID',
+            'orderable' => false,
+            'addClass' => 'align-middle',
+        ],
         'name' => [
             'title' => 'name',
             'orderable' => false,
@@ -10,22 +15,26 @@ return [
         'province_code' => [
             'title' => 'province',
             'orderable' => false,
-            'addClass' => 'align-middle'
+            'addClass' => 'align-middle',
+            'visible' => false
         ],
         'district_code' => [
             'title' => 'district',
             'orderable' => false,
-            'addClass' => 'align-middle'
+            'addClass' => 'align-middle',
+            'visible' => false
         ],
         'created_at' => [
             'title' => 'createdAt',
             'orderable' => false,
+            'exportable' => false,
             'addClass' => 'text-center align-middle',
             'visible' => true
         ],
         'status' => [
             'title' => 'status',
             'orderable' => false,
+            'exportable' => false,
             'addClass' => 'text-center align-middle',
         ],
         'action' => [

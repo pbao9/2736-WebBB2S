@@ -1,13 +1,14 @@
 <footer class="container-fluid">
     <div class="container-fluid">
         <div class="row justify-content-center py-5 ">
-            <div class="col-12 col-lg-3 mb-3">
-                <img class="d-block mx-auto" width="125px" height="125px" style="margin-bottom: 20px"
+            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3 text-center">
+                <img class="" width="125px" height="125px" style="margin-bottom: 20px"
                     src="{{ asset($settings['logo_footer']) }}">
-                <h2 class="mb-2 mx-auto text-uppercase text-center">{!! $settings['introduce'] !!}</h2>
+                <h2 class="mx-auto">{!! $settings['introduce'] !!}
+                </h2>
             </div>
-            <div class="col-12 col-lg-3 mb-3">
-                <h2 class="m-0 mb-3">{{ $settings['slogan'] }}</h2>
+            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3 mx-lg-0 mx-auto text-xl-start text-center">
+                <h2 class="m-0 mb-3 mx-auto mx-xl-0">{{ $settings['slogan'] }}</h2>
                 <p class="mb-2 fw-bold">{{ $settings['company'] }}</p>
                 <p class="mb-2 fw-bold">
                     {{ __('Địa chỉ: ') }}
@@ -21,10 +22,10 @@
                         class="fw-normal">{{ $settings['hotline'] . ' - ' . $settings['hotline-1'] }}</span></p>
                 <p class="mb-2 fw-bold">{{ __('Email:') }} <span class="fw-normal">{{ $settings['email'] }}</span></p>
             </div>
-            <div class="col-12 col-lg-3 col-md-6 mb-3">
-                <div class="col-service">
-                    <h2 class="text-black fw-bold text-uppercase mb-3">{{ __('Sản phẩm') }}</h2>
-                    <ul class="list-unstyled">
+            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3">
+                <div class="col-service text-center">
+                    <h2 class="text-black fw-bold text-uppercase mb-3 mx-auto">{{ __('Sản phẩm') }}</h2>
+                    <ul class="list-unstyled d-flex align-items-center flex-column">
                         @foreach ($products as $item)
                             <li class="mb-2">
                                 <x-link :href="route('product.show', $item['slug'])" :title="__($item['title'])"
@@ -35,12 +36,15 @@
                 </div>
 
             </div>
-            <div class="col-12 col-lg-3 col-md-6 mb-3">
-                <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FBabiToSchool%2F&tabs=timeline&width=340&height=271&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=false&appId"
-                    width="340" height="271" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-                    allowfullscreen="true"
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3 text-center">
+                <div class="fb-page" data-href="https://www.facebook.com/BabiToSchool" data-tabs="" data-width="500"
+                    data-height="200" data-small-header="false" data-adapt-container-width="true"
+                    data-hide-cover="false" data-show-facepile="false">
+                    <blockquote cite="https://www.facebook.com/BabiToSchool" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/BabiToSchool">Babi2School</a>
+                    </blockquote>
+                </div>
+
             </div>
         </div>
     </div>

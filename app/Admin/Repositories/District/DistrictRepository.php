@@ -17,6 +17,13 @@ class DistrictRepository extends EloquentRepository implements DistrictRepositor
         return District::class;
     }
 
+    public function getQueryBuilderOrderBy($column = 'name', $sort = 'DESC')
+    {
+        $this->getQueryBuilder();
+        $this->instance = $this->instance->orderBy($column, $sort);
+        return $this->instance;
+    }
+
     public function searchAllLimit($provinceCode, $keySearch = '', $meta = [], $limit = 30)
     {
 

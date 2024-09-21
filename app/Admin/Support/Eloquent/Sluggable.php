@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Admin\Support\Eloquent;
 
 use Illuminate\Support\Str;
 
-trait Sluggable {
+trait Sluggable
+{
 
     /**
      * Boot the trait.
@@ -23,14 +25,14 @@ trait Sluggable {
 
         $slug = Str::slug($this->$columnSlug);
         $allSlugs = $this->getRelatedSlugs($slug, $this->id);
-        if (! $allSlugs->contains('slug', $slug)){
+        if (! $allSlugs->contains('slug', $slug)) {
             $this->slug = $slug;
             return $slug;
         }
         $i = 1;
         $is_contain = true;
         do {
-            $newSlug = $slug . '-' . $i;
+            $newSlug = $slug . '_' . $i;
             if (!$allSlugs->contains('slug', $newSlug)) {
                 $is_contain = false;
                 $this->slug = $newSlug;
@@ -39,11 +41,11 @@ trait Sluggable {
             $i++;
         } while ($is_contain);
     }
-    
+
     protected function getRelatedSlugs($slug, $id = 0)
     {
-        return Self::select('slug')->where('slug', 'like', $slug.'%')
-        ->where('id', '<>', $id)
-        ->get();
+        return Self::select('slug')->where('slug', 'like', $slug . '%')
+            ->where('id', '<>', $id)
+            ->get();
     }
 }

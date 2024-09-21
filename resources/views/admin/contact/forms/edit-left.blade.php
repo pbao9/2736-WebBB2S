@@ -14,7 +14,7 @@
                         'badge',
                         App\Enums\Contact\UserType::from($contact->type)->badge(),
                     ])>{{ __('Đối tượng: ') . ' ' . \App\Enums\Contact\UserType::getDescription($contact->type) }}</span>
-            </div>
+            </div>{{ __('Loại đơn: ') . ' ' . \App\Enums\Contact\ContactType::getDescription($contact->form_type) }}
             <div class="text-uppercase">
                 @if ($contact->service)
                     <span

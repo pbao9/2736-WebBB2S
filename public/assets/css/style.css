@@ -376,7 +376,7 @@ footer a.nav-link:hover {
   padding-left: 10px;
 }
 
-footer .col-service {
+/* footer .col-service {
   padding-left: 120px;
 }
 
@@ -395,6 +395,11 @@ footer .col-service {
   footer .col-service {
     padding-left: 0;
   }
+} */
+
+.fb-page {
+  width: 100% !important;
+  max-width: 100%;
 }
 
 footer h2 {
@@ -482,6 +487,12 @@ h2 {
   margin: auto;
 }
 
+@media (max-width: 768px) {
+  .section-2 p {
+    font-size: 0.65rem !important;
+  }
+}
+
 .text_howitwork {
   padding: 20px;
   background: #91ebeb;
@@ -537,9 +548,15 @@ h2 {
 /* Section 3 */
 .section-3 img {
   object-fit: cover !important;
+  height: 500px;
+  margin: 0 auto;
   border-radius: 10px;
-  border: 3px solid #3f3f3f;
-  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, 0.16));
+}
+
+.section-3 .card {
+  border: none;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 /* Section 4 */
