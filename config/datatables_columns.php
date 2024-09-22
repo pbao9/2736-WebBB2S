@@ -2,11 +2,6 @@
 
 return [
     'school' => [
-        'id' => [
-            'title' => 'ID',
-            'orderable' => false,
-            'addClass' => 'align-middle',
-        ],
         'name' => [
             'title' => 'name',
             'orderable' => false,

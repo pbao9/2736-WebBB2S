@@ -13,7 +13,7 @@
                             <div
                                 class="col-xl-4 col-lg-6 col-12 text-center animate__animated animate__fadeInLeft animate__slow text-decoration-none mb-3">
                                 <x-link :href="route('blog.show', $item->slug)">
-                                    <div class="card">
+                                    <div class="card d-flex flex-column h-100">
                                         <!-- Photo -->
                                         <div class="img-responsive img-responsive-1x1 card-img-top"
                                             style="background-image: url({{ asset($item->image) }})">
