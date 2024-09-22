@@ -19,8 +19,7 @@
                                             style="background-image: url({{ asset($item->image) }})">
                                         </div>
                                         <div class="card-body">
-                                            <h3 class="card-title text-dark">{{ $item->title }}</h3>
-                                            <p class="text-dark">{{ $item->description }} </p>
+                                            <h3 class="card-title text-dark clamped-text">{{ $item->title }}</h3>
                                         </div>
                                         <div class="card-footer">
                                             @foreach ($item->categories as $category)
