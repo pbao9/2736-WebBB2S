@@ -39,46 +39,95 @@
                     <span>{{ __($contact->phone) }}</span>
                 </div>
             </div>
-            @if ($contact->form_type == 0)
-                @if ($contact->school_other == 0)
-                    <div class="col-md-6 mb-3">
-                        <label for="" class="control-label fw-bold">{{ __('Trường học') }}:</label>
-                        <span>{{ __($school->name) }}</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="" class="control-label fw-bold">{{ __('Địa chỉ trường học') }}:</label>
-                        <span>{{ __($school->school_address) }}</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="control-label fw-bold">@lang('Tỉnh/Thành')</label>
-                        <span>{{ __($province->name) }}</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="control-label fw-bold">@lang('Quận/Huyện: ')</label>
-                        <span>{{ __($district->name) }}</span>
-                    </div>
-                    <div class="col-12">
-                        <div class="mb-3">
-                            <label class="control-label fw-bold">@lang('Địa điểm đón/trả: ')</label>
-                            <span>{{ __($contact->location) }}</span>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="mb-3">
-                            <label class="control-label fw-bold">@lang('Thời gian đón: ')</label>
-                            <span>{{ __($contact->time_pickup) }}</span>
-                        </div>
-                    </div>
-                @else
-                    <div class="col-md-6 mb-3">
-                        <label class="control-label fw-bold">@lang('Tỉnh/Thành: ')</label>
-                        <span>{{ __($province->name) }}</span>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label class="control-label fw-bold">@lang('Quận/Huyện: ')</label>
-                        <span>{{ __($district->name) }}</span>
-                    </div>
-                    <div class="col-md-6 col-12">
+            @switch($contact->form_type)
+                @case(0)
+                    @switch($contact->school_other)
+                        @case(0)
+                            <div class="col-md-6 mb-3">
+                                <label for="" class="control-label fw-bold">{{ __('Trường học') }}:</label>
+                                <span>{{ __($school->name) }}</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="" class="control-label fw-bold">{{ __('Địa chỉ trường học') }}:</label>
+                                <span>{{ __($contact->school_address) }}</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="control-label fw-bold">@lang('Tỉnh/Thành')</label>
+                                <span>{{ __($province->name) }}</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="control-label fw-bold">@lang('Quận/Huyện: ')</label>
+                                <span>{{ __($district->name) }}</span>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label fw-bold">@lang('Địa điểm đón/trả: ')</label>
+                                    <span>{{ __($contact->location) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label fw-bold">@lang('Thời gian đón: ')</label>
+                                    @if (isset($contact->session_arrive_school))
+                                        @foreach ($session as $key => $value)
+                                            @if ($key == $contact->session_arrive_school)
+                                                {{ $value }}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                    <span>{{ __($contact->time_arrive_school) }}</span>
+                                    @if (isset($contact->session_off))
+                                        @foreach ($session as $key => $value)
+                                            @if ($key == $contact->session_off)
+                                                {{ $value }}
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                    <span>{{ __($contact->time_off) }}</span>
+                                </div>
+                            </div>
+                        @break
+
+                        @case(1)
+                            <div class="col-md-6 mb-3">
+                                <label class="control-label fw-bold">@lang('Tỉnh/Thành: ')</label>
+                                <span>{{ __($province->name) }}</span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="control-label fw-bold">@lang('Quận/Huyện: ')</label>
+                                <span>{{ __($district->name) }}</span>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="control-label fw-bold">@lang('Tên trường: ')</label>
+                                    <span>{{ __($contact->school_name) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="control-label fw-bold">@lang('Địa chỉ trường: ')</label>
+                                    <span>{{ __($contact->school_address) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="control-label fw-bold">@lang('Địa điểm đón/trả: ')</label>
+                                    <span>{{ __($contact->location) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <label class="control-label fw-bold">@lang('Thời gian đón: ')</label>
+                                    <span>{{ __($contact->time_pickup) }}</span>
+                                </div>
+                            </div>
+                        @break
+
+                    @endswitch
+                @break
+
+                @case(1)
+                    <div class="col-md-12 col-12">
                         <div class="mb-3">
                             <label class="control-label fw-bold">@lang('Tên trường: ')</label>
                             <span>{{ __($contact->school_name) }}</span>
@@ -86,56 +135,32 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="mb-3">
-                            <label class="control-label fw-bold">@lang('Địa chỉ trường: ')</label>
+                            <label class="control-label fw-bold">@lang('Địa chỉ trường học: ')</label>
                             <span>{{ __($contact->school_address) }}</span>
                         </div>
                     </div>
                     <div class="col-md-6 col-12">
                         <div class="mb-3">
-                            <label class="control-label fw-bold">@lang('Địa điểm đón/trả: ')</label>
-                            <span>{{ __($contact->location) }}</span>
+                            <label class="control-label fw-bold">@lang('Địa chỉ nơi ở: ')</label>
+                            <span>{{ __($contact->address) }}</span>
                         </div>
                     </div>
-                    <div class="col-md-6 col-12">
+                @break
+
+                @default
+                    <div class="col-md-12 col-12">
                         <div class="mb-3">
-                            <label class="control-label fw-bold">@lang('Thời gian đón: ')</label>
-                            <span>{{ __($contact->time_pickup) }}</span>
+                            <label class="control-label fw-bold">@lang('Tên trường học: ')</label>
+                            <span>{{ __($contact->school_name) }}</span>
                         </div>
                     </div>
-                @endif
-            @elseif($contact->form_type == 1)
-                <div class="col-md-12 col-12">
-                    <div class="mb-3">
-                        <label class="control-label fw-bold">@lang('Tên trường: ')</label>
-                        <span>{{ __($contact->school_name) }}</span>
+                    <div class="col-md-12 col-12">
+                        <div class="mb-3">
+                            <label class="control-label fw-bold">@lang('Địa chỉ trường học: ')</label>
+                            <span>{{ __($contact->school_address) }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-12">
-                    <div class="mb-3">
-                        <label class="control-label fw-bold">@lang('Địa chỉ trường học: ')</label>
-                        <span>{{ __($contact->school_address) }}</span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12">
-                    <div class="mb-3">
-                        <label class="control-label fw-bold">@lang('Địa chỉ nơi ở: ')</label>
-                        <span>{{ __($contact->address) }}</span>
-                    </div>
-                </div>
-            @else
-                <div class="col-md-12 col-12">
-                    <div class="mb-3">
-                        <label class="control-label fw-bold">@lang('Tên trường học: ')</label>
-                        <span>{{ __($contact->school_name) }}</span>
-                    </div>
-                </div>
-                <div class="col-md-12 col-12">
-                    <div class="mb-3">
-                        <label class="control-label fw-bold">@lang('Địa chỉ trường học: ')</label>
-                        <span>{{ __($contact->school_address) }}</span>
-                    </div>
-                </div>
-            @endif
+            @endswitch
         </div>
     </div>
 </div>

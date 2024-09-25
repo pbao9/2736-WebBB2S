@@ -7,13 +7,6 @@
                 <source src="{{ asset($settings['video']) }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    document.getElementById('myVideo').play();
-                });
-            </script>
-
             <div class="row mt-5">
                 <div class="col-lg-4 col-md-4 col-12 mb-4">
                     <img class="d-block mx-auto" src="{{ asset('public/assets/images/IP13-Mockup-2.png') }}"

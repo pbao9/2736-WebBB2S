@@ -31,7 +31,7 @@
 
                     const slotSetting = '{{ $settings['slot_seat'] }}';
                     const slotSeat = parseInt(slotSetting, 10);
-                    const randomSeat = Math.ceil(Math.random() * (slotSeat + 1));
+                    const randomSeat = Math.ceil(Math.random() * (slotSeat));
                     document.getElementById('slotSeat').innerText = randomSeat;
                 } else {
                     $('#car').fadeOut(function() {

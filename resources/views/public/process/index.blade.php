@@ -3,15 +3,9 @@
 @section('content')
     <div class="container mt-5">
         <h1 class="text-center">QUY TRÌNH ĐƯA ĐÓN HỌC SINH CỦA BABI2SCHOOL</h1>
-        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" controls autoplay>
+        <video id="myVideo" class="d-block mx-auto mt-5" width="100%" controls>
             <source src="{{ asset($settings['video']) }}" type="video/mp4">
         </video>
-
-        <script>
-            document.getElementById('myVideo').play();
-        </script>
-
-
         <div class="row mt-5 justify-content-center align-items-center">
             <div class="col-lg-7 col-md-6 mb-4">
                 <div class="d-flex align-items-center mb-2">

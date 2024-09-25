@@ -14,6 +14,7 @@ use App\Admin\Services\Contact\ContactServiceInterface;
 use App\Enums\Contact\ContactStatus;
 use App\Enums\Contact\ContactType;
 use App\Enums\Contact\UserType;
+use App\Enums\Session\Session;
 use App\Models\Province;
 use App\Models\School;
 
@@ -98,7 +99,6 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-
         $contact = $this->repository->findOrFail($id);
         $school = School::find($contact->school_id);
         $school = $this->schoolRepository->findBy(['id' => $contact->school_id]);
@@ -117,6 +117,7 @@ class ContactController extends Controller
                 'form_type' => ContactType::asSelectArray(),
                 'type' => UserType::asSelectArray(),
                 'status' => ContactStatus::asSelectArray(),
+                'session' => Session::asSelectArray(),
                 'breadcrums' => $this->crums->add(__('contact'), route($this->route['index']))->add(__('edit'))
             ],
         );
