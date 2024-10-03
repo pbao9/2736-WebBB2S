@@ -1,14 +1,13 @@
 <footer class="container-fluid">
     <div class="container-fluid">
         <div class="row justify-content-center py-5 ">
-            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3 text-center">
-                <img class="" width="125px" height="125px" style="margin-bottom: 20px"
-                    src="{{ asset($settings['logo_footer']) }}">
-                <h2 class="mx-auto">{!! $settings['introduce'] !!}
+            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3 text-lg-center text-left">
+                <img class="mb-2" width="125px" height="125px" src="{{ asset($settings['logo_footer']) }}">
+                <h2 class="mx-lg-auto me-auto">{!! $settings['introduce'] !!}
                 </h2>
             </div>
-            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3 mx-lg-0 mx-auto text-xl-start text-center">
-                <h2 class="m-0 mb-3 mx-auto mx-xl-0">{{ $settings['slogan'] }}</h2>
+            <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3">
+                <h2 class="m-0 mb-3">{{ $settings['slogan'] }}</h2>
                 <p class="mb-2 fw-bold">{{ $settings['company'] }}</p>
                 <p class="mb-2 fw-bold">
                     {{ __('Địa chỉ: ') }}

@@ -2,7 +2,7 @@
     <!-- Ứng dụng Babi2School -->
     <div class="container">
         <h2 class="fancy-underline mx-0"> Dịch vụ Babi2School </h2>
-        <div class="row pt-4 pb-5">
+        <div class="row py-3">
             <div class="col-md-6 col-12">
                 <p class="text-dark"><b>Babi2School</b> là một dự án phát triển <b>ứng dụng</b> trên <b>thiết bị di động,
                         kết hợp với hệ thống xe 7 chỗ và giám sinh</b>, tạo thành một nền tảng hỗ trợ <b>phụ huynh, nhà
@@ -13,16 +13,22 @@
             <div class="col-md-6 col-12"></div>
         </div>
 
-        <div class="row mt-5">
-            <div class="col-lg-6 col-md-6 mb-4 col-12 d-flex flex-column align-items-end">
-                <x-link :href="$settings['ch_play_link']" target="_blank">
-                    <img src="{{ asset('public/assets/images/images-2.png') }}" height="128" width="372">
-                </x-link>
-                <x-link :href="$settings['app_store_link']" target="_blank">
-                    <img src="{{ asset('public/assets/images/406f0f_c4ccc5a8f5d445408caf12050e202a82mv2.png') }}"
-                        height="128" width="372">
-                </x-link>
-
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4 col-12">
+                <div class="row align-items-start">
+                    <div class="col-md-6 col-6 d-flex align-items-start">
+                        <x-link :href="$settings['ch_play_link']" target="_blank">
+                            <img src="{{ asset('public/assets/images/google-play.svg') }}" class="img-fluid d-block"
+                                style="width: 400px">
+                        </x-link>
+                    </div>
+                    <div class="col-md-6 col-6 d-flex align-items-start">
+                        <x-link :href="$settings['app_store_link']" target="_blank">
+                            <img src="{{ asset('public/assets/images/app-store.svg') }}" class="img-fluid d-block"
+                                style="width: 400px">
+                        </x-link>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12 mb-4">
                 <img class=""

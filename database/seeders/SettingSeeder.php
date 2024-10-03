@@ -127,7 +127,7 @@ class SettingSeeder extends Seeder
             [
                 'setting_key' => 'ch_play_link',
                 'setting_name' => 'CH Link Download',
-                'plain_value' => 'https://play.google.com/store/apps?hl=vi',
+                'plain_value' => 'https://play.google.com/store/apps/details?id=mevivu.com.babi2schoolvi',
                 'type_input' => SettingTypeInput::Text,
                 'group' => 1
             ],
