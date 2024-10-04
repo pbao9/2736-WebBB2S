@@ -23,9 +23,9 @@
             </div>
             <div class="col-12 col-xl-3 col-lg-12 col-md-12 mb-3">
                 <div class="col-service text-center">
-                    <h2 class="text-black fw-bold text-uppercase mb-3 mx-auto">{{ __('Sản phẩm') }}</h2>
-                    <ul class="list-unstyled d-flex align-items-center flex-column">
-                        @foreach ($products as $item)
+                    <h2 class="text-black fw-bold text-uppercase mb-3">{{ __('Sản phẩm') }}</h2>
+                    <ul class="list-unstyled flex-column">
+                        @foreach ($products->take(3) as $item)
                             <li class="mb-2">
                                 <x-link :href="route('product.show', $item['slug'])" :title="__($item['title'])"
                                     class="text-decoration-none nav-link fs-3 nav-link" />

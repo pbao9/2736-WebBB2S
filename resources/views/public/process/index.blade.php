@@ -13,7 +13,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 6:00</h1>
                 </div>
-                <p class="mb-0 text-center">Babi2School bắt đầu hoạt động khi giám sinh mở app bên trong xe 7 chỗ để khởi
+                <p class="mb-0">Babi2School bắt đầu hoạt động khi giám sinh mở app bên trong xe 7 chỗ để khởi
                     động
                     chuyến xe. Phụ huynh sẽ cập nhật được vị trí xe bắt đầu chuyến hành trình</p>
             </div>
@@ -33,7 +33,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 6:45</h1>
                 </div>
-                <p class="mb-0 text-center">Khi xe còn cách điểm đón 05 phút, Phụ huynh sẽ nhận được thông báo 1 lần nữa để
+                <p class="mb-0">Khi xe còn cách điểm đón 05 phút, Phụ huynh sẽ nhận được thông báo 1 lần nữa để
                     có thể chuẩn bị đưa bé ra cổng.</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">
@@ -42,7 +42,7 @@
             </div>
             <div class="col-lg-7 col-md-6 mb-4 justify-content-center d-flex">
                 <div class="text_howitwork">
-                    <p class="mb-0 text-center">Khi xe đến điểm đón, một thông báo khác sẽ được gửi cho phụ huynh.</p>
+                    <p class="mb-0">Khi xe đến điểm đón, một thông báo khác sẽ được gửi cho phụ huynh.</p>
                 </div>
             </div>
             <div class="col-lg-7 col-md-6 mb-4">
@@ -51,7 +51,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 6:50</h1>
                 </div>
-                <p class="mb-0 text-center">Giám sinh đưa bé lên xe. Giám sinh chụp hình xác nhận tại điểm đón, cập nhật tự
+                <p class="mb-0">Giám sinh đưa bé lên xe. Giám sinh chụp hình xác nhận tại điểm đón, cập nhật tự
                     động
                     lên App</p>
             </div>
@@ -71,7 +71,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi sáng 7:00</h1>
                 </div>
-                <p class="mb-0 text-center">Khi xe đến trường, giám sinh đưa bé đến trường, chụp hình điểm danh, cập nhật
+                <p class="mb-0">Khi xe đến trường, giám sinh đưa bé đến trường, chụp hình điểm danh, cập nhật
                     lên
                     App. Phụ huynh sẽ nhận được thông báo trạng thái kèm hình ảnh, an tâm bé đã vào trường</p>
             </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="col-lg-7 col-md-6 mb-4 justify-content-center d-flex">
                 <div class="text_howitwork">
-                    <p class="mb-0 text-center">Tài xế và giám sinh sẽ kiểm tra lần cuối và báo cáo xác nhận đã hoàn thành
+                    <p class="mb-0">Tài xế và giám sinh sẽ kiểm tra lần cuối và báo cáo xác nhận đã hoàn thành
                         chuyến đi.</p>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi chiều 4:00</h1>
                 </div>
-                <p class="mb-0 text-center">Giám sinh có mặt ở cổng trường trước 15 phút. Vào tận trường/ lớp để đón bé. Bảo
+                <p class="mb-0">Giám sinh có mặt ở cổng trường trước 15 phút. Vào tận trường/ lớp để đón bé. Bảo
                     mẫu điểm danh bằng hình ảnh, xác nhận đã đón bé. App sẽ cập nhật và gửi thông báo đến phụ huynh theo
                     thời gian thực.</p>
             </div>
@@ -105,7 +105,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi chiều 4:30</h1>
                 </div>
-                <p class="mb-0 text-center">Xe bắt đầu hành trình trả các bé về tận nhà. Phụ huynh có thể theo dõi hành
+                <p class="mb-0">Xe bắt đầu hành trình trả các bé về tận nhà. Phụ huynh có thể theo dõi hành
                     trình xe trên App</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">
@@ -118,7 +118,7 @@
                         src="{{ asset('public/assets/images/footer-title.png') }}">
                     <h1 class="fw-bold">Buổi chiều 4:30-5:30</h1>
                 </div>
-                <p class="mb-0 text-center">Xe và giám sinh đưa bé về tận nhà. Giám sinh chụp hình điểm danh trả bé cho phụ
+                <p class="mb-0">Xe và giám sinh đưa bé về tận nhà. Giám sinh chụp hình điểm danh trả bé cho phụ
                     huynh/ ông bà ở nhà. App cập nhật bằng hình ảnh và trạng thái gửi đến phụ huynh</p>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 text-center">
@@ -127,7 +127,7 @@
             </div>
             <div class="col-lg-7 col-md-6 mb-4 justify-content-center d-flex align-items-center">
                 <div class="text_howitwork">
-                    <p class="mb-0 text-center">Tài xế và giám sinh sẽ kiểm tra lần cuối và báo cáo xác nhận đã hoàn thành
+                    <p class="mb-0">Tài xế và giám sinh sẽ kiểm tra lần cuối và báo cáo xác nhận đã hoàn thành
                         chuyến đi.</p>
                 </div>
             </div>
