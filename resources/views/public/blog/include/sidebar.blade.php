@@ -19,12 +19,12 @@
                                 <h3 class="card-title text-dark"> {{ __($item['title']) }}</h3>
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <div class="d-flex text-dark align-items-center">
-                                    {{ $item['viewed'] }}
-                                    <span class="fs-3 px-1">{{ __('Lượt xem') }}</span>
-                                </div>
-                                <div class="text-dark">
-                                    {{ \Carbon\Carbon::parse($item['created_at'])->format('d/m/Y') }}
+                                <div class="d-flex text-dark align-items-center gap-2">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="fs-3">
+                                        {{ $item['viewed'] }}
+                                        <span class="fs-3">{{ __('Lượt xem') }}</span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
