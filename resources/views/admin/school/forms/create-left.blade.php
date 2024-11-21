@@ -2,18 +2,13 @@
     <div class="card">
         <div class="row card-body">
             <!-- name -->
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-12">
                 <div class="mb-3">
                     <label class="control-label">@lang('name')</label>
                     <x-input name="name" :value="old('name')" :required="true" :placeholder="__('name')" />
                 </div>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="mb-3">
-                    <label class="control-label">@lang('address')</label>
-                    <x-input name="address" :value="old('address')" :required="true" :placeholder="__('address')" />
-                </div>
-            </div>
+
             <div class="col-md-6 col-12 mb-3">
                 <label class="control-label">@lang('Tỉnh/Thành'):</label>
                 <x-select name="province_code" :required="true">

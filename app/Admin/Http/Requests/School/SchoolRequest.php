@@ -20,7 +20,6 @@ class SchoolRequest extends BaseRequest
             'name' => ['required', 'string'],
             'province_code' => ['required', 'string'],
             'district_code' => ['required', 'string'],
-            'address' => ['required'],
         ];
     }
 
@@ -31,8 +30,7 @@ class SchoolRequest extends BaseRequest
             'name' => ['required', 'string'],
             'province_code' => ['required', 'string'],
             'district_code' => ['required', 'string'],
-            'address' => ['required'],
-            'status' => ['required',  new Enum(SchoolStatus::class)]
+            'status' => ['required', new Enum(SchoolStatus::class)]
         ];
     }
 }
