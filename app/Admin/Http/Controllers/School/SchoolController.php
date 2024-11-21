@@ -10,6 +10,7 @@ use App\Admin\Repositories\Province\ProvinceRepository;
 use App\Admin\Repositories\School\SchoolRepositoryInterface;
 use App\Admin\Services\School\SchoolServiceInterface;
 use App\Enums\School\SchoolStatus;
+use App\Exports\SchoolExport;
 use App\Imports\SchoolImport;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
@@ -165,5 +166,10 @@ class SchoolController extends Controller
         }
 
         return redirect()->back()->with('error', 'Không tìm thấy file!');
+    }
+
+    public function export()
+    {
+        return Excel::download(new SchoolExport, 'schools.xlsx');
     }
 }

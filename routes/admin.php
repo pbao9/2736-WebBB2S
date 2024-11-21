@@ -38,6 +38,9 @@ Route::group(['middleware' => 'admin.auth.admin:admin'], function () {
             Route::group(['middleware' => ['permission:deleteSchool', 'auth:admin']], function () {
                 Route::delete('/delete/{id}', 'delete')->name('delete');
             });
+            // Import file Truong hoc
+            Route::post('/import', 'import')->name('import');
+            Route::get('/export', 'export')->name('export');
         });
 
     // Province
@@ -395,8 +398,5 @@ Route::group(['middleware' => 'admin.auth.admin:admin'], function () {
             Route::get('/ward', [App\Admin\Http\Controllers\Address\Address\Ward\WardSearchController::class, 'selectSearch'])->name('ward');
         });
     });
-    // Import file Truong hoc
-    Route::post('/import', [App\Admin\Http\Controllers\School\SchoolController::class, 'import'])->name('import');
-
     Route::post('/logout', [App\Admin\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 });

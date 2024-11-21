@@ -13,19 +13,26 @@ class SchoolImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     use Importable;
 
-    private $requiredHeaders = ['name', 'province_code', 'district_code'];
+    private $requiredHeaders = ['id', 'name', 'province_code', 'district_code'];
 
     public function model(array $row)
     {
-        return new School([
-            'name' => $row['name'],
-            'province_code' => $row['province_code'],
-            'district_code' => $row['district_code'],
-        ]);
+        // Nếu không có cột 'id' trong Excel, sẽ để cho Laravel tự động tạo id mới
+        $newId = empty($row['id']) ? null : $row['id']; // Nếu không có id thì sẽ để null
+
+        return School::updateOrCreate(
+            ['id' => $newId], // Tìm bản ghi theo ID hoặc tạo mới
+            [
+                'name' => $row['name'], // Cập nhật tên trường
+                'province_code' => $row['province_code'], // Cập nhật mã tỉnh
+                'district_code' => $row['district_code'], // Cập nhật mã quận/huyện
+            ]
+        );
     }
+
     public function headingRow(): int
     {
-        return 1;
+        return 1; // Dòng đầu tiên là tiêu đề
     }
 
     public function collection($collection)

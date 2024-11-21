@@ -13,11 +13,12 @@
                         <div class="d-flex flex-row gap-2">
                             <div class="d-flex flex-column">
                                 <p class="mb-1">{{ __('Tải lên File trường học') }}</p>
-                                <x-form action="{{ route('admin.import') }}" method="POST" enctype="multipart/form-data">
+                                <x-form action="{{ route('admin.school.import') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="d-flex gap-2">
                                         <input id="school-file" type="file" name="file" class="hidden form-control"
-                                        accept=".xlsx, .xls, .csv, .ods">
+                                            accept=".xlsx, .xls, .csv, .ods">
                                         <button type="submit" class="btn btn-cyan">Tải lên</button>
                                     </div>
                                 </x-form>
@@ -25,9 +26,9 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2">
-                        <x-link :href="route('admin.school.download')" class="btn btn-success">
+                        <x-link :href="route('admin.school.export')" class="btn btn-warning">
                             <i class="ti ti-download"></i>
-                            <span class="ms-1">{{ __('Tải file mẫu') }}</span>
+                            <span class="ms-1">{{ __('Xuất excel') }}</span>
                         </x-link>
                         <x-link :href="route('admin.school.create')" class="btn btn-primary">
                             <i class="ti ti-plus"></i>
