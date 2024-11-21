@@ -17,7 +17,8 @@ class District extends Model
 
     public function wards()
     {
-        return $this->hasMany(Ward::class, 'district_code', 'code');
+        return $this->hasMany(Ward::class, 'district_code', 'code')
+            ->orderBy('name', 'desc');
     }
 
     public function province()

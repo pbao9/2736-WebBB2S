@@ -7,12 +7,26 @@ use App\Admin\Http\Controllers\Controller;
 use App\Models\District;
 use App\Models\Province;
 use App\Models\School;
+use App\Repositories\District\DistrictRepositoryInterface;
+use App\Repositories\Province\ProvinceRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class AddressController extends Controller
 {
+
+
+    protected $districtRepository;
+    public function __construct(
+        ProvinceRepositoryInterface $repository,
+        DistrictRepositoryInterface $districtRepository,
+    ) {
+        parent::__construct();
+        $this->districtRepository = $districtRepository;
+        $this->repository = $repository;
+    }
+
     /**
      * Handle the event of province selection and retrieve corresponding districts.
      *
@@ -22,7 +36,7 @@ class AddressController extends Controller
     public function getDistrictsByProvince(Request $request): JsonResponse
     {
 
-        $province = Province::where('code', $request->province_code)->first();
+        $province = $this->repository->findByField('code', $request->province_code, []);
 
         if (!$province) {
             return response()->json(['message' => 'Province not found'], 404);
@@ -36,8 +50,7 @@ class AddressController extends Controller
     public function getWardsByDistrict(Request $request): JsonResponse
     {
 
-        $district = District::where('code', $request->district_code)->first();
-
+        $district = $this->districtRepository->findByField('code', $request->district_code, []);
         if (!$district) {
             return response()->json(['message' => 'District not found'], 404);
         }
@@ -46,7 +59,7 @@ class AddressController extends Controller
 
         return response()->json($wards);
     }
-    
+
     public function getSchoolsByDistrict(Request $request): JsonResponse
     {
         $district = District::where('code', $request->district_code)->first();

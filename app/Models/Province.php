@@ -29,7 +29,8 @@ class Province extends Model
 
     public function district()
     {
-        return $this->hasMany(District::class, 'province_code', 'code');
+        return $this->hasMany(District::class, 'province_code', 'code')
+            ->orderBy('name', 'desc');
     }
 
 

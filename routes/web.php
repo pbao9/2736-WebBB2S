@@ -17,8 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 
 // Dia chi 
-Route::get('/address/districts', [AddressController::class, 'getDistrictsByProvince'])->name('districts');
-Route::get('/address/wards', [AddressController::class, 'getWardsByDistrict'])->name('wards');
+Route::controller(App\Http\Controllers\Address\AddressController::class)
+    ->prefix('/address')
+    ->as('.address')
+    ->group(function () {
+        Route::get('/districts', 'getDistrictsByProvince')->name('districts');
+        Route::get('/wards', 'getWardsByDistrict')->name('wards');
+    });
+
 Route::get('/address/schools-by-district', [SchoolSearchSelectController::class, 'getSchoolsByDistrict'])->name('schools');
 
 Route::controller(App\Http\Controllers\Contact\ContactController::class)
